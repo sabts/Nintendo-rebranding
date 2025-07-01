@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import COLORS from './colors';
 export const GlobalStyles = createGlobalStyle`
     *,
     *::after,
@@ -26,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     body{
         font-family: sans-serif;
         margin: 0;
-        background-color: #FBFBFB;
+        background-color: ${COLORS.base.primary}
     }
 
 `;
