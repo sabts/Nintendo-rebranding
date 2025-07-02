@@ -55,7 +55,7 @@ const MENU_ITEMS = [
 	{
 		title: 'News',
 		items: [
-			{ label: 'Latest News', key: 'latest-news', url: '/news' } // La página que se carga directamente
+			{ label: 'News', key: 'news', url: '/news' } // La página que se carga directamente
 		]
 	}
 ];
