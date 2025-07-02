@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { StyledContentButtons, StyledContentContainer } from './menu-styles';
 
 const Content = ({ items }) => {
   return (
-    <div>
+    <StyledContentContainer>
       {items.map((item, index) => {
         if (item.subitems) {
           return (
@@ -19,13 +20,13 @@ const Content = ({ items }) => {
           );
         } else {
           return (
-            <div key={item.key}>
+            <StyledContentButtons key={item.key}>
               <Link to={item.url}>{item.label}</Link>
-            </div>
+            </StyledContentButtons>
           );
         }
       })}
-    </div>
+    </StyledContentContainer>
   );
 };
 

@@ -1,13 +1,15 @@
+import { StyledTabContainer, SyledButtonCategory } from "./menu-styles";
+
 const Tabs = ({ tabs, activeTab, onTabChange }) => {
     return (
-      <div>
+      <StyledTabContainer>
         {tabs.map(tab => (
-          <button key={tab.title} onClick={() => onTabChange(tab.title)}>
+          <SyledButtonCategory key={tab.title} onClick={() => onTabChange(tab.title)}>
             <img src={tab.icon} alt={`${tab.title} icon`} />
             {tab.title}
-          </button>
+          </SyledButtonCategory>
         ))}
-      </div>
+      </StyledTabContainer>
     );
   };
   
