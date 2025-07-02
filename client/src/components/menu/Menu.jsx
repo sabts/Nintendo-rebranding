@@ -1,10 +1,11 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../lib/context/AuthContext';
 import { StyledHeader, StyledMenu, StyledRadio } from './menu-styles';
 
 const Menu = () => {
 	const { user } = useContext(AuthContext);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
 		<>
@@ -49,7 +50,7 @@ const Menu = () => {
 
 		  <section>
   <StyledMenu>
-    <StyledRadio type="radio" name="menu" id="menu-home" />
+    <StyledRadio type="radio" name="menu" id="menu-home"  onClick={() => setIsMenuOpen(!isMenuOpen)}/>
     <label htmlFor="menu-home">
       <img src="/icons/menu - hamburger icon mobile.svg" alt="hamburger menu icon" />
     </label>
