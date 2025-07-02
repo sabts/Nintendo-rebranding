@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../lib/context/AuthContext';
-import { StyledHeader, StyledMenu, StyledRadio } from './menu-styles';
+import { StyledMenu, StyledRadio } from './menu-styles';
 
 const Menu = () => {
 	const { user } = useContext(AuthContext);
@@ -9,45 +9,6 @@ const Menu = () => {
 
 	return (
 		<>
-		  <StyledHeader>
-			<Link to='/'>
-			  <picture>
-				<source
-				  srcSet='/icons/shoping cart icon ipad and desktop.svg'
-				  media='(min-width: 1024px)'
-				/>
-				<source
-				  srcSet='/icons/shoping cart icon ipad and desktop.svg'
-				  media='(min-width: 768px)'
-				/>
-				<source
-				  srcSet='/icons/nintendo logo small.png'
-				  media='(min-width: 393px)'
-				/>
-				<img src='/icons/nintendo logo small.png' alt='Nintendo logo' />
-			  </picture>
-			</Link>
-			
-			<Link to='/'>
-			  <picture>
-				<source
-				  srcSet='/icons/shoping cart icon ipad and desktop.svg'
-				  media='(min-width: 1024px)'
-				/>
-				<source
-				  srcSet='/icons/shoping cart icon ipad and desktop.svg'
-				  media='(min-width: 768px)'
-				/>
-				<source
-				  srcSet='/icons/shoping cart icon mobile.svg'
-				  media='(min-width: 393px)'
-				/>
-				<img src='/icons/shoping cart icon mobile.svg' alt='Shopping cart icon' />
-			  </picture>
-			</Link>
-		  </StyledHeader>
-	
-
 		  <section>
   <StyledMenu>
     <StyledRadio type="radio" name="menu" id="menu-home"  onClick={() => setIsMenuOpen(!isMenuOpen)}/>

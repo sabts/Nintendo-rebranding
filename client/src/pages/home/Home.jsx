@@ -2,24 +2,15 @@ import { useContext } from 'react';
 import { AuthContext } from '../../lib/context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { StyledMainContainer } from './home-styles';
+import Header from '../../components/header/Header';
 
 const Home = () => {
 	const { user } = useContext(AuthContext);
-	return (
-		<StyledMainContainer>
-			<div>
-				{!user && (
-					<>
-						<h1>Bienvenido(a)</h1>
-					</>
-				)}
-				{user && (
-					<>
-						<h1>Bienvenido(a), {user.name}</h1>
-					</>
-				)}
-			</div>
+	return (<>
+			<Header/>
+			<StyledMainContainer>
 		</StyledMainContainer>
+		</>
 	);
 };
 

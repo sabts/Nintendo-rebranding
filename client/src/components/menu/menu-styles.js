@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 import COLORS from '../../styles/colors';
-const StyledHeader = styled.section`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 34px;
-	padding-inline: 1.25rem;
-	height: 140px;
-	background-color: ${COLORS.base.tertiary};
-`;
 
 const StyledMenu = styled.div`
 	display: flex;
@@ -35,4 +26,4 @@ const StyledUl = styled.ul`
 	gap: 2rem;
 `;
 
-export { StyledHeader, StyledMenu, StyledRadio, StyledUl };
+export { StyledMenu, StyledRadio, StyledUl };
