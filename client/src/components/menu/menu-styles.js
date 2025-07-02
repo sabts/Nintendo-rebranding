@@ -53,24 +53,32 @@ const StyledContentContainer = styled.div`
 const SyledButtonCategory = styled.button`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	width: 121px;
 	height: 98px;
-	border: none;
 	background-color: transparent;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 200%;
+	color: ${COLORS.base.tertiary};
+	border: none;
 `;
 
 const StyledContentButtons = styled.button`
 	display: flex;
 	width: 298px;
-	height: 48px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 300%;
 	padding: 8px 16px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 	gap: 10px;
-	border-radius: 16px;
+	border-radius: 20px;
 	border: 1px solid ${COLORS.variants.primaryOpacity};
 `;
 
