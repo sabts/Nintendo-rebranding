@@ -1,4 +1,4 @@
-const MENU_ITEMS = [
+export const MENU_CONTENT = [
 	{
 		title: 'Games',
 		icon: '/icons/games icon menu.svg',

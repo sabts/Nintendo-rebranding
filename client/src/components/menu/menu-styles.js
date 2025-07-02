@@ -17,13 +17,8 @@ const StyledMenu = styled.div`
 	list-style: none;
 `;
 
-const StyledRadio = styled.input`
-	display: none;
+const StyledButton = styled.button`
+	background: none;
+	border: none;
 `;
-
-const StyledUl = styled.ul`
-	display: flex;
-	gap: 2rem;
-`;
-
-export { StyledMenu, StyledRadio, StyledUl };
+export { StyledMenu, StyledButton };
