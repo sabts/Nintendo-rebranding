@@ -1,6 +1,7 @@
 const MENU_ITEMS = [
 	{
 		title: 'Games',
+		icon: '/icons/games icon menu.svg',
 		items: [
 			{
 				label: 'Switch 2 Games',
@@ -18,6 +19,7 @@ const MENU_ITEMS = [
 	},
 	{
 		title: 'Shop',
+		icon: '/icons/shop icon menu.svg',
 		items: [
 			{
 				label: 'Hardware',
@@ -54,8 +56,7 @@ const MENU_ITEMS = [
 	},
 	{
 		title: 'News',
-		items: [
-			{ label: 'News', key: 'news', url: '/news' } // La página que se carga directamente
-		]
+		icon: '/icons/news icon menu.svg',
+		items: [{ label: 'News', key: 'news', url: '/news' }]
 	}
 ];

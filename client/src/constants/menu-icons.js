@@ -1,12 +1,18 @@
 export const MENU_ICONS = user => [
 	{
-		id: 'menu-home',
+		id: 'menu-categories',
 		icon: {
 			mobile: '/icons/menu - hamburger icon mobile.svg',
 			tablet: '/icons/menu - hamburger icon tablet.svg',
-			desktop: '/icons/menu - hamburger icon desktop.svg'
+			desktop: '/icons/menu - hamburger icon desktop.svg',
+			mobileOpen: '/icons/close - icon mobile.svg',
+			tabletOpen: '/icons/close - icon tablet.svg',
+			desktopOpen: '/icons/close - icon desktop.svg'
 		},
-		alt: 'hamburger menu icon',
+		alt: {
+			closed: 'hamburger menu icon',
+			open: 'close menu icon'
+		},
 		action: 'toggleMenu'
 	},
 	{
