@@ -48,6 +48,7 @@ const StyledContentContainer = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 20px;
+	background: ${COLORS.base.primary};
 `;
 
 const SyledButtonCategory = styled.button`
@@ -66,27 +67,33 @@ const SyledButtonCategory = styled.button`
 	border: none;
 `;
 
-const StyledContentButtons = styled.button`
+const StyledContentButtons = styled.div`
 	display: flex;
+	flex-direction: column;
 	width: 298px;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 300%;
 	padding: 8px 16px;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: flex-start;
 	gap: 10px;
 	border-radius: 20px;
 	border: 1px solid ${COLORS.variants.primaryOpacity};
 `;
 
+const StyledDropMenu = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+`;
 export {
 	StyledMenu,
 	StyledButton,
 	StyledTabContainer,
 	StyledContentContainer,
 	SyledButtonCategory,
-	StyledContentButtons
+	StyledContentButtons,
+	StyledDropMenu
 };
