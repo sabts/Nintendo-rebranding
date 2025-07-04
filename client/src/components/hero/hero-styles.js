@@ -56,7 +56,7 @@ const StyledHeroButtons = styled.div`
 
 		&.outline {
 			background-color: white;
-			border: 2px solid #e70012;
+			border: 1px solid #e70012;
 			color: #e70012;
 		}
 	}
