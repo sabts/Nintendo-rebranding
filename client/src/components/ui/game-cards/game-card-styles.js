@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+const StyledCard = styled.div`
 	width: 140px;
 	border-radius: 20px;
 	background-color: #fff;
@@ -11,7 +11,7 @@ export const Card = styled.div`
 	justify-content: space-between;
 `;
 
-export const ImageArea = styled.div`
+const StyledImageArea = styled.div`
 	width: 100%;
 	height: 140px;
 	background-color: cornsilk;
@@ -20,30 +20,39 @@ export const ImageArea = styled.div`
 	background-position: center;
 `;
 
-export const InfoArea = styled.div`
+const StyledInfoArea = styled.div`
 	padding: 8px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 `;
 
-export const GameDetails = styled.div`
+const StyledGameDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 `;
 
-export const GameTitle = styled.span`
+const StyledGameTitle = styled.span`
 	font-size: 0.8rem;
 	color: #555;
 `;
 
-export const GamePrice = styled.span`
+const StyledGamePrice = styled.span`
 	font-size: 0.85rem;
 	font-weight: bold;
 	color: #000;
 `;
 
-export const FavoriteWrapper = styled.div`
+const StyledFavoriteWrapper = styled.div`
 	width: 24px;
 	height: 24px;
 `;
+
+export {
+	StyledCard,
+	StyledImageArea,
+	StyledInfoArea,
+	StyledGameDetails,
+	StyledGameTitle,
+	StyledGamePrice
+};

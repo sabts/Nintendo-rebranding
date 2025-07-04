@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledHeroWrapper = styled.section`
 	display: flex;
@@ -50,14 +51,14 @@ const StyledHeroButtons = styled.div`
 		display: inline-block;
 
 		&.red {
-			background-color: #e70012;
+			background-color: ${COLORS.base.tertiary};
 			color: white;
 		}
 
 		&.outline {
-			background-color: white;
-			border: 1px solid #e70012;
-			color: #e70012;
+			background-color: transparent;
+			border: 1px solid ${COLORS.base.tertiary};
+			color: ${COLORS.base.tertiary};
 		}
 	}
 `;

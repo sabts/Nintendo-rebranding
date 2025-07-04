@@ -1,20 +1,18 @@
 import { FavoriteButton } from "../buttons/Buttons"
-import { Card, FavoriteWrapper, GamePrice, GameTitle, InfoArea } from "./game-card-styles";
+import { StyledCard, StyledGamePrice, StyledGameTitle, StyledInfoArea } from "./game-card-styles";
 
 export const GamePreview = ({ name, thumbnail, price, isFavorite }) => {
       return (
-        <Card>
+        <StyledCard>
           <img src={thumbnail} alt={name} />
-          <InfoArea>
+          <StyledInfoArea>
             <div>
-              <GameTitle>{name}</GameTitle>
-              <GamePrice>{price}</GamePrice>
+              <StyledGameTitle>{name}</StyledGameTitle>
+              <StyledGamePrice>{price}</StyledGamePrice>
             </div>
-            <FavoriteWrapper>
               <FavoriteButton active={isFavorite} />
-            </FavoriteWrapper>
-          </InfoArea>
-        </Card>
+          </StyledInfoArea>
+        </StyledCard>
       );
     };
 export const GameStoreSite = () => {

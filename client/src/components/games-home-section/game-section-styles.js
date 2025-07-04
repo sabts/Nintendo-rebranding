@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledCategoryTabsWrapper = styled.section`
 	padding: 2rem 1rem;
@@ -7,25 +8,33 @@ const StyledCategoryTabsWrapper = styled.section`
 
 const StyledTabsHeader = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-items: center;
 	margin-bottom: 1rem;
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
 	gap: 0.5rem;
+	background-color: ${COLORS.variants.primaryOpacity};
 `;
 
 const StyledTabButton = styled.button`
-	flex: 1;
+	display: flex;
 	padding: 0.5rem;
+	height: 24px;
+	padding: 4px 12px;
 	border-radius: 999px;
 	border: none;
 	font-weight: bold;
-	background-color: ${({ active }) => (active ? '#2F2F2F' : '#F0F0F0')};
+	background-color: ${({ active }) =>
+		active ? COLORS.base.tertiary : 'transparent'};
 	color: ${({ active }) => (active ? '#fff' : '#000')};
 	transition: all 0.2s ease;
 	cursor: pointer;
 `;
 
 const StyledGamesGrid = styled.div`
-	display: grid;
+	display: flex;
 	gap: 1rem;
 `;
 
