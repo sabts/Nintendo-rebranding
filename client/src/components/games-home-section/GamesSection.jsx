@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CATEGORIES_TAB } from "../../constants/home-tabs-content";
 import { StyledCategoryTabsWrapper, StyledGameCard, StyledGamesGrid, StyledTabButton, StyledTabsHeader } from "./game-section-styles";
+import { GamePreview } from "../ui/game-cards/GameCards";
 
 
 const CATEGORIES = ['Recent Release', 'Best Seller', 'Offers'];
@@ -51,16 +52,16 @@ const GameSection = () => {
           </StyledTabsHeader>
     
           <StyledGamesGrid>
-            {GAMES[activeTab].map((game, index) => (
-              <StyledGameCard key={index}>
-                <img src={game.image} alt={game.title} />
-                <div className="info">
-                  <p>{game.title}</p>
-                  <img src={game.icon} alt="arrow icon" />
-                </div>
-              </StyledGameCard>
-            ))}
-          </StyledGamesGrid>
+  {GAMES[activeTab].map((game, index) => (
+    <GamePreview
+      key={index}
+      name={game.title}
+      thumbnail={game.image}
+      price={game.price}
+      isFavorite={game.isFavorite}
+    />
+  ))}
+</StyledGamesGrid>
         </StyledCategoryTabsWrapper>
       );
 }

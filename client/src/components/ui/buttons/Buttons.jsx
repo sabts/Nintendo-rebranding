@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-const PrimaryButton = ({children, action}) => {
+export const PrimaryButton = ({children, action}) => {
     return <button>{children}</button>
 }
 
-const SecondaryButton = ({children, action}) => {
+export const SecondaryButton = ({children, action}) => {
     return <button>{children}</button>
 }
 
-const FavoriteButton = () => {
+export const FavoriteButton = () => {
     const [isFavorite, setIsFavorite] = useState(false);
   
     return (
