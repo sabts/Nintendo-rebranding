@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../../styles/colors';
 
 const StyledCard = styled.div`
 	width: 140px;
@@ -15,16 +16,22 @@ const StyledImageArea = styled.div`
 	width: 100%;
 	height: 140px;
 	background-color: cornsilk;
-	//background-image: url(${props => props.src});;
+	//background-image: url(${props => props.src});
 	background-size: cover;
 	background-position: center;
+	position: relative;
+	overflow: hidden;
 `;
 
 const StyledInfoArea = styled.div`
-	padding: 8px;
+	padding: 8px 12px;
 	display: flex;
+	margin-top: -50px;
 	justify-content: space-between;
 	align-items: center;
+	background-image: ${COLORS.gradients.tertiary};
+	color: ${COLORS.base.primary};
+	backdrop-filter: blur(4px);
 `;
 
 const StyledGameDetails = styled.div`
@@ -34,18 +41,11 @@ const StyledGameDetails = styled.div`
 
 const StyledGameTitle = styled.span`
 	font-size: 0.8rem;
-	color: #555;
 `;
 
 const StyledGamePrice = styled.span`
 	font-size: 0.85rem;
 	font-weight: bold;
-	color: #000;
-`;
-
-const StyledFavoriteWrapper = styled.div`
-	width: 24px;
-	height: 24px;
 `;
 
 export {
