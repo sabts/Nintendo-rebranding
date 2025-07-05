@@ -29,7 +29,6 @@ const BannerContentNintendoOnline = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 2;
 
 	h4 {
 		font-size: 20px;
@@ -49,7 +48,6 @@ const BannerContentMyNintendo = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	z-index: 2;
 
 	h4 {
 		font-size: 20px;
@@ -70,7 +68,6 @@ const BannerImage = styled.img`
 	right: 0;
 	max-width: 100%;
 	height: auto;
-	z-index: 1;
 `;
 
 export {

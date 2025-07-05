@@ -34,6 +34,7 @@ const StyledTabContainer = styled.div`
 	background: ${COLORS.variants.primaryOpacity};
 	width: 354px;
 	height: 97px;
+	z-index: 10;
 `;
 
 const StyledContentContainer = styled.div`
@@ -49,6 +50,7 @@ const StyledContentContainer = styled.div`
 	align-items: flex-start;
 	gap: 20px;
 	background: ${COLORS.base.primary};
+	z-index: 1;
 `;
 
 const SyledButtonCategory = styled.button`
