@@ -39,6 +39,7 @@ const GameSection = () => {
 
     return (
         <StyledCategoryTabsWrapper>
+          <h2>Games</h2>
           <StyledTabsHeader>
             {CATEGORIES.map((category) => (
               <StyledTabButton

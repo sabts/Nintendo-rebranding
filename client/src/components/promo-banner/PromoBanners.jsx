@@ -1,5 +1,5 @@
 import { SecondaryButton } from "../ui/buttons/Buttons"
-import { BannerContentMyNintendo, BannerContentNintendoOnline, BannerImage, StyledMyNintendoWrap, StyledNintendoOnlineWrap } from "./promo-banners-styles"
+import {  BannerContentMyNintendo, BannerContentNintendoOnline, BannerImage, StyledMyNintendoWrap, StyledNintendoOnlineWrap } from "./promo-banners-styles"
 
 const NintendoOnlineBanner = () => {
     return <StyledNintendoOnlineWrap>
@@ -8,7 +8,7 @@ const NintendoOnlineBanner = () => {
                 <p>Get more out of your console with the paid subscription service Nintendo Switch Online!</p>
                 <SecondaryButton>Learn More</SecondaryButton>
                 </BannerContentNintendoOnline>
-        <BannerImage src="/home/nintendo online mobile.png" alt="Mario, Luigi, Peach and Toad playon togethers" />
+        <img src="/home/nintendo online mobile.png" alt="Mario, Luigi, Peach and Toad playon togethers" />
     </StyledNintendoOnlineWrap>
 }
 

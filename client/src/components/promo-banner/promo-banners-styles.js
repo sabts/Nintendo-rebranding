@@ -8,7 +8,7 @@ const BaseBanner = styled.div`
 	border-radius: 20px;
 	position: relative;
 	overflow: hidden;
-	width: 343px;
+	width: 378px;
 	justify-self: center;
 	padding: 20px;
 `;
