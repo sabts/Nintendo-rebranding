@@ -7,7 +7,7 @@ const StyledNewsContainer = styled.div`
 const StyledSmallNewsGrid = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	gap: 20px;
 `;
 

@@ -3,7 +3,6 @@ import COLORS from '../../styles/colors';
 
 const StyledCategoryTabsWrapper = styled.section`
 	padding: 2rem 1rem;
-	background: #fff;
 `;
 
 const StyledTabsHeader = styled.div`
