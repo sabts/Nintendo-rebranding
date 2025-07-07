@@ -310,7 +310,7 @@ export const GAME_DATA = [
 		franchise: 'Donkey Kong',
 		isOnSale: true,
 		tags: ['Offers'],
-		releaseDate: 'TBD',
+		releaseDate: 'July 17, 2025',
 		preorderAvailable: true,
 		heroBanner: '/games/donkey-kong-bananza/donkey-kong-bananza  hero.png',
 		overview: {
@@ -360,6 +360,48 @@ export const GAME_DATA = [
 			headline:
 				'Unravel the mysteries of the Pokémon world in Pokémon Legends Z-A!',
 			body: 'Explore a massive open world, encounter rare Pokémon, and discover the origins of the legendary creatures.'
+		}
+	},
+	{
+		name: 'Fortnite',
+		tags: ['Free-to-Play', 'Online Multiplayer'],
+		isFavorite: true,
+		price: { digital: 0, physical: null },
+		thumbnail: '/games/fornite/fortnite game miniature mobile.png ',
+		images: [
+			'https://cdn.example.com/fortnite/screen1.jpg',
+			'https://cdn.example.com/fortnite/screen2.jpg'
+		],
+		trailerUrl: 'https://youtu.be/fortnite-trailer',
+		description:
+			"Join the battle in the world's most popular free-to-play online battle royale game. Compete in fast-paced, ever-evolving matches and explore the vibrant world of Fortnite!",
+		platforms: ['Switch'],
+		platform: 'Multiple Platforms',
+		genres: ['Battle Royale', 'Shooter', 'Action'],
+		ageRating: 'PEGI 12',
+		fileSize: 'Approx. 20 GB',
+		publisher: 'Epic Games',
+		playModes: ['Online Multiplayer'],
+		players: ['Single System (1)', 'Online (1-99)'],
+		languages: [
+			'English',
+			'French',
+			'German',
+			'Italian',
+			'Spanish',
+			'Korean',
+			'Simplified Chinese',
+			'Traditional Chinese'
+		],
+		franchise: 'Fortnite',
+		isOnSale: false,
+		tags: ['Free-to-Play', 'Battle Royale', 'Online Multiplayer'],
+		releaseDate: 'June 12, 2018',
+		preorderAvailable: false,
+		heroBanner: '/games/fornite/fortnite hero.png',
+		overview: {
+			headline: 'The Ultimate Battle Royale Experience – Fortnite',
+			body: 'Join millions of players worldwide in *Fortnite*, where you can fight to be the last one standing in an ever-changing world. With constant updates and special events, every match is a new adventure!'
 		}
 	}
 ];

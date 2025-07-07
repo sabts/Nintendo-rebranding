@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { StyledCard, StyledContent, StyledDate, StyledDescription, StyledImage, StyledReadMore, StyledTitle} from "./news-card-styles"
 
 const BiggerNewsCard = ({ featuredNews }) => {
@@ -13,7 +14,9 @@ const BiggerNewsCard = ({ featuredNews }) => {
           <StyledDescription $variant="featured"> 
             {featuredNews.body.summary}
           </StyledDescription>
-          <StyledReadMore href={featuredNews.url}>Read more</StyledReadMore>
+          <Link to={`/news/${featuredNews.slug}`}>
+            <StyledReadMore>Read more</StyledReadMore> 
+          </Link>
         </StyledContent>
       </StyledCard>
     </>
@@ -30,7 +33,9 @@ const SmallNewsCard = ({ news }) => {
           <StyledTitle $variant="small">
             {news.title}
           </StyledTitle>
-          <StyledReadMore href={news.url}>Read more</StyledReadMore>
+          <Link to={`/news/${news.slug}`}>
+            <StyledReadMore>Read more</StyledReadMore> 
+          </Link>
         </StyledContent>
       </StyledCard>
     </>

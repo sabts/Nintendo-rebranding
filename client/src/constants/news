@@ -3,7 +3,7 @@ export const NEWS = [
 		title: 'Oh Banana! Donkey Kong Bananza Direct',
 		slug: 'donkey-kong-bananza-direct',
 		thumbnail: '/news/donkey-kong/donkey kong news mobile.png ',
-		heroImage: 'https://cdn.example.com/news/dk-bananza-hero.jpg',
+		heroImage: '/news/donkey-kong/donkey kong  bananza hero.png ',
 		datePublished: '2025-07-05',
 		author: 'Nintendo Newsroom',
 		categories: ['Games', 'Nintendo Direct'],
@@ -23,21 +23,18 @@ export const NEWS = [
 						"Join Donkey, Diddy, Dixie, and the all-new 'Drum Kong' as they battle King K. Rool’s metallic minions across sprawling jungle levels, volcano caverns, and high-tech banana factories."
 				}
 			],
-			images: [
-				'https://cdn.example.com/news/dk-bananza-gameplay1.jpg',
-				'https://cdn.example.com/news/dk-bananza-gameplay2.jpg'
-			]
+			images: ['/news/donkey-kong/donkey kong  bananza photo content.png']
 		},
 		cta: {
 			text: 'Watch the Direct',
-			url: 'https://www.nintendo.com/direct/dk-bananza'
+			url: 'https://www.youtube.com/watch?v=G2-ck8tU_E8'
 		}
 	},
 	{
 		title: 'Pokémon Legends: Z-A arrives October 16, 2025!',
 		slug: 'pokemon-legends-za-october-2025',
 		thumbnail: '/news/pokemon-legends-ZA/pokemon news mobile.png ',
-		heroImage: 'https://cdn.example.com/news/pokemon-z-a-banner.jpg',
+		heroImage: '/news/pokemon-legends-ZA/pokemon news hero.png ',
 		datePublished: '2025-07-06',
 		author: 'Nintendo Newsroom',
 		categories: ['Games', 'Announcements'],
@@ -63,9 +60,8 @@ export const NEWS = [
 				}
 			],
 			images: [
-				'https://cdn.example.com/news/pokemon-z-a-scene1.jpg',
-				'https://cdn.example.com/news/pokemon-z-a-scene2.jpg',
-				'https://cdn.example.com/news/pokemon-z-a-bundle.jpg'
+				'/news/pokemon-legends-ZA/photo news content.png',
+				'/news/pokemon-legends-ZA/pokemon gift news.png'
 			]
 		},
 		cta: {
@@ -77,7 +73,7 @@ export const NEWS = [
 		title: 'Summer Sale: Save on a Cool Selection of Games',
 		slug: 'nintendo-summer-sale-2025',
 		thumbnail: '/news/summer-sale/sale news mobile.png',
-		heroImage: 'https://cdn.example.com/news/summer-sale-banner.jpg',
+		heroImage: '/news/summer-sale/summer sale hero.png ',
 		datePublished: '2025-07-01',
 		author: 'Nintendo eShop Team',
 		categories: ['Sales', 'eShop'],
@@ -96,7 +92,7 @@ export const NEWS = [
 						'Special bundles featuring DLC, soundtracks, and digital bonuses will also be available at discounted prices during the sale window. Great time to stock up!'
 				}
 			],
-			images: ['https://cdn.example.com/news/summer-sale-eshop.jpg']
+			images: []
 		},
 		cta: {
 			text: 'Shop Now',
@@ -107,7 +103,7 @@ export const NEWS = [
 		title: 'Unleash Your True Power in Fortnite Battle Royale: Super!',
 		slug: 'fortnite-super-mode',
 		thumbnail: '/news/fornite/fornite super news mobile.png ',
-		heroImage: 'https://cdn.example.com/news/fortnite-super-banner.jpg',
+		heroImage: '/news/fornite/fortnite  hero.png ',
 		datePublished: '2025-07-03',
 		author: 'Nintendo Collaboration News',
 		categories: ['Games', 'Battle Royale'],
@@ -127,7 +123,7 @@ export const NEWS = [
 						'The update also introduces limited-time Nintendo crossover skins, including characters from *Metroid*, *Fire Emblem*, and *F-Zero*. Only available on the Switch version!'
 				}
 			],
-			images: ['https://cdn.example.com/news/fortnite-super-skills.jpg']
+			images: ['/news/fornite/fortnite photo content.png']
 		},
 		cta: {
 			text: 'Play Now',
@@ -139,7 +135,7 @@ export const NEWS = [
 			'Nintendo Switch 2 Sets Record, Selling Over 3.5 Million Units Globally in First Four Days',
 		slug: 'switch2-sales-record',
 		thumbnail: '/news/switch-2/switch news mobile.png',
-		heroImage: 'https://cdn.example.com/news/switch2-launch-hero.jpg',
+		heroImage: '/news/switch-2/switch 2 hero.png ',
 		datePublished: '2025-07-04',
 		author: 'Nintendo Investor Relations',
 		categories: ['Hardware', 'Business'],
@@ -158,7 +154,7 @@ export const NEWS = [
 						'Analysts attribute the success to robust launch titles, improved hardware (including 4K docked output), and a massive wave of returning and new players. Titles like *Zelda: Kingdomfall* and *Mario Kart Infinity* drove early adoption.'
 				}
 			],
-			images: ['https://cdn.example.com/news/switch2-sales-chart.jpg']
+			images: []
 		},
 		cta: {
 			text: 'Explore Switch 2',

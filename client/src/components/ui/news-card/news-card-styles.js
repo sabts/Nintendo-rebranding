@@ -42,7 +42,7 @@ const StyledDescription = styled.p`
 	display: ${({ $variant }) => ($variant === 'featured' ? 'block' : 'none')};
 `;
 
-const StyledReadMore = styled.a`
+const StyledReadMore = styled.span`
 	font-size: 0.875rem;
 	color: ${COLORS.base.tertiary};
 	font-weight: bold;

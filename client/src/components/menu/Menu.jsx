@@ -4,6 +4,7 @@ import { StyledButton, StyledMenu } from './menu-styles';
 import Tabs from './Tabs';
 import Content from './Content';
 import { MENU_CONTENT } from '../../constants/menu-content';
+import Header from '../header/Header';
 
 const Menu = () => {
   const { user } = useContext(AuthContext);
