@@ -9,12 +9,12 @@ const StyledMainContainer = styled.section`
 `;
 
 const StyledLine = styled.div`
-	display: flex;
+	display: block;
 	align-self: center;
 	justify-self: center;
 	width: 80%;
 	height: 1px;
 	background-color: ${COLORS.variants.secondaryOpacity};
-	margin: 24px;
+	margin: 20px;
 `;
 export { StyledMainContainer, StyledLine };

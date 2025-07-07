@@ -1,6 +1,8 @@
+import { StyledFooterWrapper, StyledIcons, StyledTextLinks } from "./footer-styles"
+
 const Footer = () => {
-    return   <>
-        <div>
+    return   <StyledFooterWrapper>
+        <StyledTextLinks>
           <span>About Nintendo</span>
           <span>Support</span>
           <span>Parents</span>
@@ -8,9 +10,9 @@ const Footer = () => {
           <span>Orders</span>
           <span>Community guidelines</span>
           <span>Document and policies</span>
-        </div>
+        </StyledTextLinks>
 
-        <div>
+        <StyledIcons>
         <a
           href="https://www.facebook.com/NintendoUK"
           target="_blank"
@@ -23,7 +25,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.instagram.com/nintendo/"
+          href="https://www.instagram.com/NintendoUK/"
           target="_blank"
           aria-label="Nintendo on Instagram"
           title="Nintendo on Instagram"
@@ -56,7 +58,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.twitch.tv/nintendo"
+          href="https://www.twitch.tv/NintendoUK"
           target="_blank"
           aria-label="Nintendo on Twitch"
           title="Nintendo on Twitch"
@@ -76,8 +78,8 @@ const Footer = () => {
             <img src="/footer/youtube.png" alt="YouTube" />
           </picture>
         </a>
-      </div>
-        </>
+      </StyledIcons>
+        </StyledFooterWrapper>
 }
 
 export default Footer
