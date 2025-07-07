@@ -7,7 +7,7 @@ import { StyledContentWrapper, StyledHeroImg } from "./news-detail-styles";
 
 const  NewsDetail = () => {
     const { id } = useParams();
-    console.log(id); 
+    
     const newsItem = NEWS.find((news) => news.slug === id); 
 
     if (!newsItem) {
@@ -17,30 +17,31 @@ const  NewsDetail = () => {
         <>
         <Header/>
             <StyledHeroImg src={newsItem.heroImage} alt={newsItem.title} />
-<StyledContentWrapper>
-    <div>
-      <h2>{newsItem.title}</h2>
-      <p>{newsItem.datePublished}</p>
-      <p>{newsItem.body.summary}</p>
-      </div>
+            <StyledContentWrapper>
+        <div>
+          <h2>{newsItem.title}</h2>
+          <p>{newsItem.datePublished}</p>
+          <p>{newsItem.body.summary}</p>
+        </div>
 
-      {newsItem.body.images && newsItem.body.images[0] && (
-        <img src={newsItem.body.images[0]} />
-      )}
-      <div>
-        {newsItem.body.sections.map((section, index) => (
+        {newsItem.body.sections && newsItem.body.sections.map((section, index) => (
           <div key={index}>
             <h3>{section.heading}</h3>
             <p>{section.content}</p>
+
+            {newsItem.body.images && newsItem.body.images[index] && (
+              <img src={newsItem.body.images[index]} alt={`Image ${index + 1}`} />
+            )}
           </div>
         ))}
-         {newsItem.body.images && newsItem.body.images[1] && (
-        <img src={newsItem.body.images[1]} alt="Image 2" />
-      )}
- <Link to={newsItem.cta.url}>
-          <PrimaryButton>{newsItem.cta.text}</PrimaryButton>
-        </Link>
-      </div>
+
+        {newsItem.cta && (
+          <div>
+            <Link to={newsItem.cta.url}>
+              <PrimaryButton>{newsItem.cta.text}</PrimaryButton>
+            </Link>
+          </div>
+        )}
       </StyledContentWrapper>
           <Footer/>
         </>
