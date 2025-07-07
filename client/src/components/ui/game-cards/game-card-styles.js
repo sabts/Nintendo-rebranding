@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import COLORS from '../../../styles/colors';
 
 const StyledCard = styled.div`
-	width: 140px;
+	width: 194px;
 	border-radius: 20px;
 	background-color: #fff;
 	overflow: hidden;
@@ -23,6 +23,8 @@ const StyledImageArea = styled.div`
 `;
 
 const StyledInfoArea = styled.div`
+	//width: 194px;
+	height: 60px;
 	padding: 8px 12px;
 	display: flex;
 	height: 60px;
@@ -40,6 +42,9 @@ const StyledGameDetails = styled.div`
 `;
 
 const StyledGameTitle = styled.span`
+	display: flex;
+	//width: 120px;
+	//height: 20px;
 	font-size: 0.8rem;
 `;
 

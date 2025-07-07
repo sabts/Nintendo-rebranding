@@ -35,13 +35,13 @@ const StyledTabButton = styled.button`
 
 const StyledGamesGrid = styled.div`
 	display: flex;
+	//como hago para que distorcione el
 	gap: 1rem;
 `;
 
 const StyledGameCard = styled.div`
 	border-radius: 1rem;
 	overflow: hidden;
-	background: #e70012;
 	color: white;
 	display: flex;
 	flex-direction: column;

@@ -4,14 +4,14 @@ const BiggerNewsCard = ({ featuredNews }) => {
   return (
     <>
       <StyledCard $variant="featured"> 
-        <StyledImage src={featuredNews.image} alt={featuredNews.title} $variant="featured" /> 
+        <StyledImage src={featuredNews.thumbnail} alt={featuredNews.title} $variant="featured" /> 
         <StyledContent $variant="featured">
           <StyledDate>{featuredNews.date}</StyledDate>
           <StyledTitle $variant="featured">
             {featuredNews.title}
           </StyledTitle>
           <StyledDescription $variant="featured"> 
-            {featuredNews.description}
+            {featuredNews.body.summary}
           </StyledDescription>
           <StyledReadMore href={featuredNews.url}>Read more</StyledReadMore>
         </StyledContent>
@@ -24,7 +24,7 @@ const SmallNewsCard = ({ news }) => {
   return (
     <>
       <StyledCard $variant="small"> 
-        <StyledImage src={news.image} alt={news.title} $variant="small" /> 
+        <StyledImage src={news.thumbnail} alt={news.title} $variant="small" /> 
         <StyledContent $variant="small"> 
           <StyledDate>{news.date}</StyledDate>
           <StyledTitle $variant="small">

@@ -2,45 +2,14 @@ import { useState } from "react";
 import { CATEGORIES_TAB } from "../../constants/home-tabs-content";
 import { StyledCategoryTabsWrapper, StyledGameCard, StyledGamesGrid, StyledTabButton, StyledTabsHeader } from "./game-section-styles";
 import { GamePreview } from "../ui/game-cards/GameCards";
+import { GAME_DATA } from "../../constants/game-data";
 
 
 const CATEGORIES = ['Recent Release', 'Best Seller', 'Offers'];
 
-const GAMES = {
-  'Recent Release': [
-    {
-      title: 'Mario Kart World',
-      image: '/home/mario kart game miniature mobile.png ',
-      favorite: true,
-    },
-    {
-      title: 'Donkey Kong Bananza',
-      image: '/home/donkey kong game miniature mobile.png ',
-      favorite: false,
-    },
-    {
-      title: 'Street Fighter™',
-      image: '/home/street fighter game miniature mobile.png ',
-      favorite: false,
-    },
-  ],
-  'Best Seller': [
-    {
-        title: 'Mario Kart World',
-        image: '/home/mario kart game miniature mobile.png ',
-        favorite: true,
-      },
-  ],
-  Offers: [  {
-    title: 'Street Fighter™',
-    image: '/home/street fighter game miniature mobile.png ',
-    favorite: false,
-  },],
-}
-
-
 const GameSection = () => {
     const [activeTab, setActiveTab] = useState(CATEGORIES[0]);
+    const filteredGames = filterGamesByCategory(activeTab);
 
     return (
         <StyledCategoryTabsWrapper>
@@ -58,13 +27,13 @@ const GameSection = () => {
           </StyledTabsHeader>
     
           <StyledGamesGrid>
-  {GAMES[activeTab].map((game, index) => (
+  {filteredGames.map((game, index) => (
     <GamePreview
     key={index}
-    name={game.title}
-    thumbnail={game.image}
+    name={game.name}
+    thumbnail={game.thumbnail}
     price={game.price}
-    isFavorite={game.favorite} 
+    isFavorite={game.isFavorite} 
     />
   ))}
 </StyledGamesGrid>
@@ -72,5 +41,8 @@ const GameSection = () => {
       );
 }
 
+const filterGamesByCategory = (category) => {
+  return GAME_DATA.filter((game) => game.tags.includes(category));
+};
 
 export  default GameSection

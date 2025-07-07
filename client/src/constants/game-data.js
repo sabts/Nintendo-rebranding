@@ -1,6 +1,7 @@
-[
+export const GAME_DATA = [
 	{
 		name: 'The Legend of Zelda: Tears of the Kingdom',
+		tags: ['Best Seller'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: 59.99 },
 		thumbnail: '/games/zelda-totk/zelda totk game miniature mobile.png ',
@@ -42,6 +43,7 @@
 	},
 	{
 		name: 'Super Mario Odyssey',
+		tags: ['Offers'],
 		isFavorite: true,
 		price: { digital: 49.99, physical: 49.99 },
 		thumbnail: '/games/mario-odyssey /mario odyssey game miniature mobile.png',
@@ -81,6 +83,7 @@
 	},
 	{
 		name: 'Pikmin 4',
+		tags: ['Offers'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: 59.99 },
 		thumbnail: '/games/pikmin 4/pikmin 4 game miniature mobile.png',
@@ -119,6 +122,7 @@
 	},
 	{
 		name: 'Minecraft',
+		tags: ['Best Seller', 'Offers'],
 		isFavorite: false,
 		price: { digital: 29.99, physical: null },
 		thumbnail: '/games/minecraft/minecraft game miniature mobile.png',
@@ -157,6 +161,7 @@
 	},
 	{
 		name: 'Street Fighter 6',
+		tags: ['Recent Release'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: null },
 		thumbnail: '/games/street-fighter/street fighter game miniature mobile.png',
@@ -195,6 +200,7 @@
 	},
 	{
 		name: 'Undertale',
+		tags: ['Offers'],
 		isFavorite: true,
 		price: { digital: 14.99, physical: null },
 		thumbnail: '/games/undertale/undertale game miniature mobile.png',
@@ -233,6 +239,7 @@
 	},
 	{
 		name: 'Mario Kart World',
+		tags: ['Recent Release', 'Best Seller'],
 		isFavorite: false,
 		price: { digital: 79.99, physical: 79.99 },
 		thumbnail: '/games/mario-kart-world/mario kart game miniature mobile.png',
@@ -243,7 +250,7 @@
 		trailerUrl: 'https://youtu.be/mario-kart-world-trailer',
 		description:
 			'Race against friends and foes in the ultimate Mario Kart experience!',
-		platforms: ['Switch'],
+		platforms: ['Switch 2'],
 		platform: 'Nintendo Switch',
 		genres: ['Racing'],
 		ageRating: 'PEGI 3',
@@ -263,7 +270,7 @@
 		isOnSale: false,
 		tags: ['Recent Release'],
 		releaseDate: 'TBD',
-		preorderAvailable: true,
+		preorderAvailable: false,
 		heroBanner: '/games/mario-kart-world/mario kart  hero.png ',
 		overview: {
 			headline: 'Get ready for the race of a lifetime with Mario Kart World!',
@@ -272,6 +279,7 @@
 	},
 	{
 		name: 'Donkey Kong Bananza',
+		tags: ['Recent Release'],
 		isFavorite: true,
 		price: { digital: 69.99, physical: 69.99 },
 		thumbnail:
@@ -283,7 +291,7 @@
 		trailerUrl: 'https://youtu.be/donkey-kong-bananza-trailer',
 		description:
 			'Join Donkey Kong on an epic journey to save the jungle from danger!',
-		platforms: ['Switch'],
+		platforms: ['Switch 2'],
 		platform: 'Nintendo Switch',
 		genres: ['Platformer', 'Adventure'],
 		ageRating: 'PEGI 7',
@@ -308,6 +316,50 @@
 		overview: {
 			headline: 'Swing, jump, and roll through the jungle with Donkey Kong!',
 			body: 'Help Donkey Kong rescue his jungle home from mysterious invaders and restore peace.'
+		}
+	},
+	{
+		name: 'Pokémon Legends Z-A',
+		tags: ['Recent Release'],
+		isFavorite: true,
+		price: { digital: 69.99, physical: null },
+		thumbnail:
+			'/games/pokemon legends ZA/pokemon legends ZA game miniature mobile.png ',
+		images: [
+			'https://cdn.example.com/pokemon-legends/screen1.jpg',
+			'https://cdn.example.com/pokemon-legends/screen2.jpg'
+		],
+		trailerUrl: 'https://youtu.be/pokemon-legends-z-a-trailer',
+		description:
+			'Embark on a journey to uncover the origins of the Pokémon world in an all-new open-world adventure!',
+		platforms: ['Switch'],
+		platform: 'Nintendo Switch',
+		genres: ['RPG', 'Adventure'],
+		ageRating: 'PEGI 7',
+		fileSize: '10 GB',
+		publisher: 'The Pokémon Company',
+		playModes: ['TV mode', 'Tabletop mode', 'Handheld mode'],
+		players: 'Single System (1)',
+		languages: [
+			'English',
+			'French',
+			'German',
+			'Italian',
+			'Spanish',
+			'Korean',
+			'Simplified Chinese',
+			'Traditional Chinese'
+		],
+		franchise: 'Pokémon',
+		isOnSale: false,
+		tags: ['Upcoming Release'],
+		releaseDate: 'October 16, 2025',
+		preorderAvailable: true,
+		heroBanner: '/games/pokemon-legends/pokemon-legends-hero.png',
+		overview: {
+			headline:
+				'Unravel the mysteries of the Pokémon world in Pokémon Legends Z-A!',
+			body: 'Explore a massive open world, encounter rare Pokémon, and discover the origins of the legendary creatures.'
 		}
 	}
 ];
