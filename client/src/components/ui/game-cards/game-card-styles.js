@@ -15,7 +15,6 @@ const StyledCard = styled.div`
 const StyledImageArea = styled.div`
 	width: 100%;
 	height: 140px;
-	background-color: cornsilk;
 	//background-image: url(${props => props.src});
 	background-size: cover;
 	background-position: center;
@@ -26,6 +25,7 @@ const StyledImageArea = styled.div`
 const StyledInfoArea = styled.div`
 	padding: 8px 12px;
 	display: flex;
+	height: 60px;
 	margin-top: -50px;
 	justify-content: space-between;
 	align-items: center;

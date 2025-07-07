@@ -14,6 +14,11 @@ const GAMES = {
       favorite: true,
     },
     {
+      title: 'Donkey Kong Bananza',
+      image: '/home/donkey kong game miniature mobile.png ',
+      favorite: false,
+    },
+    {
       title: 'Street Fighter™',
       image: '/home/street fighter game miniature mobile.png ',
       favorite: false,
@@ -44,7 +49,7 @@ const GameSection = () => {
             {CATEGORIES.map((category) => (
               <StyledTabButton
                 key={category}
-                active={category === activeTab}
+                $active={category === activeTab}
                 onClick={() => setActiveTab(category)}
               >
                 {category}
@@ -55,11 +60,11 @@ const GameSection = () => {
           <StyledGamesGrid>
   {GAMES[activeTab].map((game, index) => (
     <GamePreview
-      key={index}
-      name={game.title}
-      thumbnail={game.image}
-      price={game.price}
-      isFavorite={game.isFavorite}
+    key={index}
+    name={game.title}
+    thumbnail={game.image}
+    price={game.price}
+    isFavorite={game.favorite} 
     />
   ))}
 </StyledGamesGrid>

@@ -25,9 +25,10 @@ const StyledTabButton = styled.button`
 	border-radius: 999px;
 	border: none;
 	font-weight: bold;
-	background-color: ${({ active }) =>
-		active ? COLORS.base.tertiary : 'transparent'};
-	color: ${({ active }) => (active ? '#fff' : '#000')};
+	background-color: ${({ $active }) =>
+		$active ? COLORS.base.tertiary : 'transparent'};
+	color: ${({ $active }) =>
+		$active ? COLORS.base.primary : COLORS.base.secondary};
 	transition: all 0.2s ease;
 	cursor: pointer;
 `;
