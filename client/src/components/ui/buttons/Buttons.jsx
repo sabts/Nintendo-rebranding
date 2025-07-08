@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { StyledFavoriteButton, StyledSecondaryButton } from "./buttons-styles"
+import { StyledFavoriteButton, StyledPrimaryButton, StyledSecondaryButton } from "./buttons-styles"
 
 export const PrimaryButton = ({children, action}) => {
-    return <button>{children}</button>
+    return <StyledPrimaryButton>{children}</StyledPrimaryButton>
 }
 
 export const SecondaryButton = ({children, action}) => {

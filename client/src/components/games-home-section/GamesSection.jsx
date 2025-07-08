@@ -27,9 +27,9 @@ const GameSection = () => {
           </StyledTabsHeader>
     
           <StyledGamesGrid>
-  {filteredGames.map((game, index) => (
+  {filteredGames.map((game) => (
     <GamePreview
-    key={index}
+    key={game.name}
     name={game.name}
     thumbnail={game.thumbnail}
     price={game.price}

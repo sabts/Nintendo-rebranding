@@ -1,6 +1,7 @@
 export const GAME_DATA = [
 	{
 		name: 'The Legend of Zelda: Tears of the Kingdom',
+		slug: 'the-legend-of-zelda-tears-of-the-kingdom',
 		tags: ['Best Seller'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: 59.99 },
@@ -43,6 +44,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Super Mario Odyssey',
+		slug: 'super-mario-odyssey',
 		tags: ['Offers'],
 		isFavorite: true,
 		price: { digital: 49.99, physical: 49.99 },
@@ -83,6 +85,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Pikmin 4',
+		slug: 'pikmin-4',
 		tags: ['Offers'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: 59.99 },
@@ -122,6 +125,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Minecraft',
+		slug: 'minecraft',
 		tags: ['Best Seller', 'Offers'],
 		isFavorite: false,
 		price: { digital: 29.99, physical: null },
@@ -161,6 +165,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Street Fighter 6',
+		slug: 'street-fighter-6',
 		tags: ['Recent Release'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: null },
@@ -200,6 +205,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Undertale',
+		slug: 'undertale',
 		tags: ['Offers'],
 		isFavorite: true,
 		price: { digital: 14.99, physical: null },
@@ -239,6 +245,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Mario Kart World',
+		slug: 'mario-kart-world',
 		tags: ['Recent Release', 'Best Seller'],
 		isFavorite: false,
 		price: { digital: 79.99, physical: 79.99 },
@@ -279,6 +286,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Donkey Kong Bananza',
+		slug: 'donkey-kong-bananza',
 		tags: ['Recent Release'],
 		isFavorite: true,
 		price: { digital: 69.99, physical: 69.99 },
@@ -320,6 +328,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Pokémon Legends Z-A',
+		slug: 'pokemon-legends-z-a',
 		tags: ['Recent Release'],
 		isFavorite: true,
 		price: { digital: 69.99, physical: null },
@@ -364,6 +373,7 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Fortnite',
+		slug: 'fornite',
 		tags: ['Free-to-Play', 'Online Multiplayer'],
 		isFavorite: true,
 		price: { digital: 0, physical: null },

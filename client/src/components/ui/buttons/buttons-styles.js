@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 import COLORS from '../../../styles/colors';
 
+const StyledPrimaryButton = styled.button`
+	display: flex;
+	width: 116px;
+	height: 40px;
+	padding: 13px 11.246px 12.035px 11.691px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	background-color: ${COLORS.base.tertiary};
+	border: none;
+	color: ${COLORS.base.primary};
+`;
+
 const StyledSecondaryButton = styled.button`
 	display: flex;
 	width: 116px;
@@ -28,4 +41,4 @@ const StyledFavoriteButton = styled.button`
 	}
 `;
 
-export { StyledFavoriteButton, StyledSecondaryButton };
+export { StyledPrimaryButton, StyledFavoriteButton, StyledSecondaryButton };

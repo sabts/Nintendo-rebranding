@@ -16,7 +16,7 @@ const Router = () => {
 					<Route path='login' element={<LoginPage />} />
 					<Route path='register' element={<RegisterPage />} />
 					<Route path='/profile' element={<Profile/>} />
-					<Route path='/game/:id' element={<GameProfile />} />
+					<Route path='/game/:name' element={<GameProfile />} />
 					<Route path='/news/:id' element={<NewsDetail />} />
 				</Route>
 			</Routes>
