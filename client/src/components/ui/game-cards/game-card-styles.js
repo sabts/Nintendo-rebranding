@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import COLORS from '../../../styles/colors';
+import { Link } from 'react-router-dom';
 
 const StyledCard = styled.div`
 	width: 194px;
@@ -34,6 +35,10 @@ const StyledInfoArea = styled.div`
 	background-image: ${COLORS.gradients.tertiary};
 	color: ${COLORS.base.primary};
 	backdrop-filter: blur(4px);
+
+	a{
+		pointer-events: none;
+	}
 `;
 
 const StyledGameDetails = styled.div`
@@ -61,3 +66,13 @@ export {
 	StyledGameTitle,
 	StyledGamePrice
 };
+
+
+
+
+
+
+
+//const DisabledLink = styled(Link)`
+// pointer - events: none;
+// `;

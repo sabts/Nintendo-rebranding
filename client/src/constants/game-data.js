@@ -1,7 +1,6 @@
 export const GAME_DATA = [
 	{
 		name: 'The Legend of Zelda: Tears of the Kingdom',
-		slug: 'the-legend-of-zelda-tears-of-the-kingdom',
 		tags: ['Best Seller'],
 		isFavorite: false,
 		price: { digital: 59.99, physical: 59.99 },
@@ -18,7 +17,7 @@ export const GAME_DATA = [
 		platform: 'Nintendo Switch',
 		genres: ['Adventure', 'Action'],
 		ageRating: 'PEGI 12',
-		fileSize: 'TBD',
+		fileSize: '18 GB',
 		publisher: 'Nintendo',
 		playModes: ['TV mode', 'Tabletop mode', 'Handheld mode'],
 		players: 'Single System (1)',
@@ -32,8 +31,8 @@ export const GAME_DATA = [
 		],
 		franchise: 'Zelda',
 		isOnSale: true,
-		tags: ['Recent Release', 'Best Seller', 'Offers'],
-		releaseDate: 'TBD',
+		tags: ['Best Seller', 'Zelda'],
+		releaseDate: 'May 12, 2023',
 		preorderAvailable: true,
 		heroBanner: '/games/zelda-totk/zelda hero.png ',
 		overview: {
@@ -286,7 +285,6 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Donkey Kong Bananza',
-		slug: 'donkey-kong-bananza',
 		tags: ['Recent Release'],
 		isFavorite: true,
 		price: { digital: 69.99, physical: 69.99 },
@@ -316,7 +314,7 @@ export const GAME_DATA = [
 			'Japanese'
 		],
 		franchise: 'Donkey Kong',
-		isOnSale: true,
+		isOnSale: false,
 		tags: ['Offers'],
 		releaseDate: 'July 17, 2025',
 		preorderAvailable: true,
@@ -328,7 +326,6 @@ export const GAME_DATA = [
 	},
 	{
 		name: 'Pokémon Legends Z-A',
-		slug: 'pokemon-legends-z-a',
 		tags: ['Recent Release'],
 		isFavorite: true,
 		price: { digital: 69.99, physical: null },
