@@ -1,0 +1,83 @@
+@HOST = http://localhost:3000
+
+POST {{HOST}}/api/games
+Content-Type: application/json
+
+{
+    "name": "The Legend of Zelda: Tears of the Kingdom",
+    "slug": "the-legend-of-zelda-tears-of-the-kingdom",
+    "uuid": "{{$guid}}", 
+    "price": {
+        "digital": 59.99,
+        "physical": 69.99
+    },
+    "overview": {
+        "headline": "Experience the world of The Legend of Zelda: Tears of the Kingdom like never before!",
+        "body": "Jump into the universe of Zelda. Discover, fight, and explore as you uncover the secrets that await."
+    },
+    "description": "Soar through the skies above Hyrule and uncover the ancient secrets buried in its floating islands... An epic journey of courage, creativity, and discovery awaits.",
+    "tags": ["Best Seller", "Zelda"],
+    "thumbnail": {
+        "mobile": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
+        "tablet": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
+        "desktop": "/images/zelda-totk/zelda-totk-thumbnail-desktop.png"
+    },
+    "herobanner": {
+        "mobile": "/images/zelda-totk/zelda-hero-mobile.png",
+        "tablet": "/images/zelda-totk/zelda-totk-hero-tablet.png",
+        "desktop": "/images/zelda-totk/zelda-totk-hero-desktop.png"
+    },
+    "images": [
+        {
+            "mobile": "/images/zelda-totk/zelda-fight-hero-mobile.png",
+            "tablet": "/images/zelda-totk/zelda-fight-hero-tablet.png",
+            "desktop": "/images/zelda-totk/zelda-fight-hero-desktop.png"
+        },
+        {
+            "mobile": "/images/zelda-totk/zelda-new-funtions-mobile.png",
+            "tablet": "/images/zelda-totk/zelda-new-funtions-tablet.png",
+            "desktop": "/images/zelda-totk/zelda-new-funtions-desktop.png"
+        },
+        {
+            "mobile": "/images/zelda-totk/zelda-new-monsters-hero-mobile.png",
+            "tablet": "//images/zelda-totk/zelda-new-monsters-hero-tablet.png",
+            "desktop": "/images/zelda-totk/zelda-new-monsters-hero-desktop.png"
+        },
+        {
+            "mobile": "/images/zelda-totk/zelda-sky-hero-mobile.png",
+            "tablet": "/images/zelda-totk/zelda-sky-hero-tablet.png",
+            "desktop": "/images/zelda-totk/zelda-sky-hero-desktop.png"
+        },
+        {
+            "mobile": "/images/zelda-totk/zelda-construction-hero-mobile.png",
+            "tablet": "images/zelda-totk/zelda-construction-hero-tablet.png",
+            "desktop": "images/zelda-totk/zelda-construction-hero-desktop.png"
+        },
+         {
+            "mobile": "/images/zelda-totk/zelda-underground-hero-mobile.png",
+            "tablet": "/images/zelda-totk/zelda-underground-hero-tablet.png",
+            "desktop": "/images/zelda-totk/zelda-underground-hero-desktop.png"
+        }
+    ],
+    "trailerurl": "https://youtu.be/uHGShqcAHlQ",
+    "fileSize": 18,
+    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
+    "numOfPlayer": "Single System (1)",
+    "system": ["Switch", "Switch2"],
+    "publisher": "Nintendo",
+    "languages": [
+        "English",
+        "French",
+        "German",
+        "Italian",
+        "Spanish",
+        "Japanese"
+    ],
+    "franchise": "Zelda",
+    "ageRating": "PEGI 12",
+    "genres": "adventure",
+    "releaseDate": "May 12, 2023",
+    "preOrderAvailable": false,
+    "isOnSale": false,
+    "nintendoPoints": 100
+}

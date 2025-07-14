@@ -1,5 +1,5 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-// Define your routes here
+router.use("/games", require("./api/games.routes"));
 
 module.exports = router;

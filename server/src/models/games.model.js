@@ -1,35 +1,38 @@
-const { model, Schema } = require('mongoose')
+const { model, Schema } = require("mongoose");
 
-const gameSchema = new Schema({
+const gameSchema = new Schema(
+  {
     name: String,
     slug: String,
     uuid: String,
     price: {
-        digital: Number,
-        physical: Number
+      digital: Number,
+      physical: Number,
     },
     overview: { headline: String, body: String },
     description: String,
-    tags: ['new'],
-    thumnnail: { mobile: String, tablet: String, desktop: String },
+    tags: ["new"],
+    thumbnail: { mobile: String, tablet: String, desktop: String },
     herobanner: { mobile: String, tablet: String, desktop: String },
-    images: { mobile: String, tablet: String, desktop: String },
+    images: [{ mobile: String, tablet: String, desktop: String }],
     trailerurl: String,
     fileSize: Number,
-    playModes: String,
-    nOfPlayer: String,
-    system: String,
+    playModes: ["new"],
+    numOfPlayer: String,
+    system: ["new"],
     publisher: String,
-    languages: ['new'],
+    languages: ["new"],
     franchise: String,
     ageRating: String,
     genres: String,
-    releseDate: String,
+    releaseDate: String,
     preOrderAvailable: Boolean,
     isOnSale: Boolean,
-    nintendoPoints: Number
-}, { timestamps: true, versionKey: false })
+    nintendoPoints: Number,
+  },
+  { timestamps: true, versionKey: false }
+);
 
 const Game = model("game", gameSchema);
 
-module.exports = Game
+module.exports = Game;

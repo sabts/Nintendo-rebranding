@@ -1,5 +1,8 @@
-const getAll = (req, res) => {
-    // Implement your logic here
-}
+const Game = require("../models/games.model");
 
-module.exports = { getAll }
+const createGame = async (req, res) => {
+  const newGame = await Game.create(req.body);
+  res.json(newGame);
+};
+
+module.exports = { createGame };

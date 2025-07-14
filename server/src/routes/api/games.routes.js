@@ -1,10 +1,7 @@
-const Game = require("../../models/games.model")
+const { createGame } = require("../../controllers/games.controller");
 
-const router = require('express').Router();
+const router = require("express").Router();
 
-const createGame = async (req, res) => {
-    const newGame = await Game.create(req.body)
-    res.json(newGame)
-}
+router.post("/", createGame);
 
-module.exports = { createGame };
+module.exports = router;
