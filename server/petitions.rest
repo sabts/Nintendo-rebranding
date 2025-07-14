@@ -4,80 +4,57 @@ POST {{HOST}}/api/games
 Content-Type: application/json
 
 {
-    "name": "The Legend of Zelda: Tears of the Kingdom",
-    "slug": "the-legend-of-zelda-tears-of-the-kingdom",
-    "uuid": "{{$guid}}", 
+  {
+    "name": "Super Mario Odyssey",
+    "slug": "super-mario-odyssey",
+    "uuid": "{{$guid}}",
     "price": {
-        "digital": 59.99,
-        "physical": 69.99
+      "digital": 39.99,
+      "physical": 49.99
     },
     "overview": {
-        "headline": "Experience the world of The Legend of Zelda: Tears of the Kingdom like never before!",
-        "body": "Jump into the universe of Zelda. Discover, fight, and explore as you uncover the secrets that await."
+      "headline": "Experience the world of Super Mario Odyssey like never before!",
+      "body": "Join Mario and Cappy as they embark on a globe‑trotting adventure beyond imagination..."
     },
-    "description": "Soar through the skies above Hyrule and uncover the ancient secrets buried in its floating islands... An epic journey of courage, creativity, and discovery awaits.",
-    "tags": ["Best Seller", "Zelda"],
+    "description": "Join Mario on a globe‑trotting 3D adventure!",
+    "tags": ["Offers", "Mario"],
     "thumbnail": {
-        "mobile": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-        "tablet": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-totk-thumbnail-desktop.png"
+      "mobile": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png",
+      "tablet": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png",
+      "desktop": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png"
     },
     "herobanner": {
-        "mobile": "/images/zelda-totk/zelda-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-totk-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-totk-hero-desktop.png"
+      "mobile": "/games/mario-odyssey/mario-odyssey-hero.png",
+      "tablet": "/games/mario-odyssey/mario-odyssey-hero.png",
+      "desktop": "/games/mario-odyssey/mario-odyssey-hero.png"
     },
     "images": [
-        {
-            "mobile": "/images/zelda-totk/zelda-fight-hero-mobile.png",
-            "tablet": "/images/zelda-totk/zelda-fight-hero-tablet.png",
-            "desktop": "/images/zelda-totk/zelda-fight-hero-desktop.png"
-        },
-        {
-            "mobile": "/images/zelda-totk/zelda-new-funtions-mobile.png",
-            "tablet": "/images/zelda-totk/zelda-new-funtions-tablet.png",
-            "desktop": "/images/zelda-totk/zelda-new-funtions-desktop.png"
-        },
-        {
-            "mobile": "/images/zelda-totk/zelda-new-monsters-hero-mobile.png",
-            "tablet": "//images/zelda-totk/zelda-new-monsters-hero-tablet.png",
-            "desktop": "/images/zelda-totk/zelda-new-monsters-hero-desktop.png"
-        },
-        {
-            "mobile": "/images/zelda-totk/zelda-sky-hero-mobile.png",
-            "tablet": "/images/zelda-totk/zelda-sky-hero-tablet.png",
-            "desktop": "/images/zelda-totk/zelda-sky-hero-desktop.png"
-        },
-        {
-            "mobile": "/images/zelda-totk/zelda-construction-hero-mobile.png",
-            "tablet": "images/zelda-totk/zelda-construction-hero-tablet.png",
-            "desktop": "images/zelda-totk/zelda-construction-hero-desktop.png"
-        },
-         {
-            "mobile": "/images/zelda-totk/zelda-underground-hero-mobile.png",
-            "tablet": "/images/zelda-totk/zelda-underground-hero-tablet.png",
-            "desktop": "/images/zelda-totk/zelda-underground-hero-desktop.png"
-        }
+      {
+        "mobile": "https://cdn.example.com/mario/screen1.jpg",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
+      },
+      {
+        "mobile": "https://cdn.example.com/mario/screen2.jpg",
+        "tablet": "https://cdn.example.com/mario/screen2.jpg",
+        "desktop": "https://cdn.example.com/mario/screen2.jpg"
+      }
     ],
-    "trailerurl": "https://youtu.be/uHGShqcAHlQ",
-    "fileSize": 18,
+    "trailerurl": "https://youtu.be/wGQHQc_3ycE",
+    "fileSize": 5.7,
     "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
     "numOfPlayer": "Single System (1)",
-    "system": ["Switch", "Switch2"],
+    "system": ["Switch",],
     "publisher": "Nintendo",
     "languages": [
-        "English",
-        "French",
-        "German",
-        "Italian",
-        "Spanish",
-        "Japanese"
+      "English", "French", "German", "Italian", "Spanish", "Japanese","Russian"," Dutch"
     ],
-    "franchise": "Zelda",
-    "ageRating": "PEGI 12",
-    "genres": "adventure",
-    "releaseDate": "May 12, 2023",
+    "franchise": "Mario",
+    "ageRating": "PEGI 7",
+    "genres": "Platformer",
+    "releaseDate": "October 27, 2017",
     "preOrderAvailable": false,
     "isOnSale": false,
     "nintendoPoints": 100
+  },
 }
