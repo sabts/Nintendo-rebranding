@@ -6,6 +6,7 @@ const dayjs = require("dayjs")
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'))
 
 //Middlewares
 app.use((req, res, next) => {
