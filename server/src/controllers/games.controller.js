@@ -5,4 +5,10 @@ const createGame = async (req, res) => {
   res.json(newGame);
 };
 
-module.exports = { createGame };
+const getGameById = async (req, res) => {
+  const { uuid } = req.params;
+  const game = await Game.findOne({ uuid });
+  res.json(game);
+};
+
+module.exports = { createGame, getGameById };
