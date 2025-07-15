@@ -1,5 +1,10 @@
 @HOST = http://localhost:3000
 
+
+GET {{HOST}}/api/games
+
+
+###
 POST {{HOST}}/api/games
 Content-Type: application/json
 

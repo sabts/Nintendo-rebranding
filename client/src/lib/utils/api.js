@@ -1,5 +1,6 @@
 const URL_BASE = 'http://localhost:3000';
-const URL_API = '/api/users/';
+const URL_API_USERS = '/api/users/';
+const URL_API_GAMES = '/api/games';
 
 export const saveUserData = async (uid, email, name) => {
 	try {
@@ -21,11 +22,26 @@ export const saveUserData = async (uid, email, name) => {
 	}
 };
 
-export const getDataById = async uid => {
+export const getAllGames = async () => {
 	try {
-		const response = await fetch(URL_BASE + URL_API + uid);
+		const response = await fetch(URL_BASE + URL_API_GAMES);
 		if (response.ok) {
 			const data = await response.json();
+			return data;
+		} else {
+			return [];
+		}
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const getGameById = async uuid => {
+	try {
+		const response = await fetch(URL_BASE + URL_API_GAMES + uuid);
+		if (response.ok) {
+			const data = await response.json();
+			console.log('Datos de juegos recibidos:', data);
 			return data;
 		} else {
 			return [];

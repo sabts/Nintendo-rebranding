@@ -1,36 +1,35 @@
 import { useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { auth } from '../config/firebase.config';
-import { getDataById} from '../utils/api';
-
+import { getAllGames} from '../utils/api';
 const AuthProvider = ({ children }) => {
-	const [user, setUser] = useState(null);
+	const [games, setGames] = useState([]);
+  
+	// Llamada a la función para obtener los juegos de la API
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged(user => {
-			if (user) {
-				//console.log('_ID DE moNGO:', user.uid);
-				getUserInMongoDB(user.uid, setUser);
-			} else {
-				setUser(null);
-			}
-		});
-
-
-		return () => unsubscribe();
+	  getGamesInMongoDB(setGames); // Aquí se usa la función getGamesInMongoDB
 	}, []);
+  
 	return (
-		<AuthContext.Provider
-		value={{ user, setUser }}
-		>
-			{children}
-		</AuthContext.Provider>
+	  <AuthContext.Provider
+		value={{
+		  games,
+		  setGames
+		}}
+	  >
+		{children}
+	  </AuthContext.Provider>
 	);
-};
-
-const getUserInMongoDB = async (uid, setUser) => {
-	const user = await getDataById(uid);
-	console.log('User desde MongoDB:', user);
-	setUser(user);
-};
-
-export default AuthProvider;
+  };
+  
+  // Aquí defines la función getGamesInMongoDB, que obtiene los juegos de la API
+  const getGamesInMongoDB = async (setGames) => {
+	try {
+	  const allGames = await getAllGames();
+	  console.log('Games desde MongoDB:', allGames); // Verifica los juegos obtenidos
+	  setGames(allGames); // Actualiza el estado con los juegos
+	} catch (error) {
+	  console.error('Error al obtener juegos:', error); // Manejo de errores
+	}
+  };
+  
+  export default AuthProvider;
