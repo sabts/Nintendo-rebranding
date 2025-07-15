@@ -3,11 +3,11 @@
 POST {{HOST}}/api/games
 Content-Type: application/json
 
-{
+[
   {
     "name": "Super Mario Odyssey",
     "slug": "super-mario-odyssey",
-    "uuid": "{{$guid}}",
+    "uuid": "1234567Mario",
     "price": {
       "digital": 39.99,
       "physical": 49.99
@@ -19,32 +19,52 @@ Content-Type: application/json
     "description": "Join Mario on a globe‑trotting 3D adventure!",
     "tags": ["Offers", "Mario"],
     "thumbnail": {
-      "mobile": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png",
-      "tablet": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png",
-      "desktop": "/games/mario-odyssey/mario-odyssey-game-miniature-mobile.png"
+      "mobile": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+      "tablet": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+      "desktop": "/images/mario-odyssey/mario-odyssey-thumnail-desktop.png "
     },
     "herobanner": {
-      "mobile": "/games/mario-odyssey/mario-odyssey-hero.png",
-      "tablet": "/games/mario-odyssey/mario-odyssey-hero.png",
-      "desktop": "/games/mario-odyssey/mario-odyssey-hero.png"
+      "mobile": "/images/mario-odyssey/mario-odyssey-hero-mobile.png ",
+      "tablet": "/images/mario-odyssey/mario-odyssey-hero-tablet.png ",
+      "desktop": "/images/mario-odyssey/mario-odyssey-hero-desktop.png "
     },
     "images": [
       {
-        "mobile": "https://cdn.example.com/mario/screen1.jpg",
+        "mobile": "/images/mario-odyssey/mario-odyssey-new-friend-hero-mobile.png",
         "tablet": "https://cdn.example.com/mario/screen1.jpg",
         "desktop": "https://cdn.example.com/mario/screen1.jpg"
       },
       {
-        "mobile": "https://cdn.example.com/mario/screen2.jpg",
+        "mobile": "/images/mario-odyssey/mario-odyssey-new-world-funtions-mobile.png",
         "tablet": "https://cdn.example.com/mario/screen2.jpg",
         "desktop": "https://cdn.example.com/mario/screen2.jpg"
+      },
+      {
+        "mobile": "/images/mario-odyssey/mario-odyssey-challenge-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
+      },
+      {
+        "mobile": "/images/mario-odyssey/mario-odyssey-transform-hero-mobile.png ",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
+      },
+        {
+        "mobile": "/images/mario-odyssey/mario-odyssey-explore-hero-mobile.png ",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
+      },
+      {
+        "mobile": "/images/mario-odyssey/mario-odyssey-bowser-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
       }
     ],
     "trailerurl": "https://youtu.be/wGQHQc_3ycE",
     "fileSize": 5.7,
     "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": "Single System (1)",
-    "system": ["Switch",],
+    "numOfPlayer": ["Single System (1)", "multiplayer (2)"],
+    "system": ["Switch"],
     "publisher": "Nintendo",
     "languages": [
       "English", "French", "German", "Italian", "Spanish", "Japanese","Russian"," Dutch"
@@ -57,4 +77,68 @@ Content-Type: application/json
     "isOnSale": false,
     "nintendoPoints": 100
   },
-}
+  {
+    "name": "Minecraft",
+    "slug": "minecraft",
+    "uuid": "1234567Minecraft",
+    "price": {
+      "digital": 29.99,
+      "physical": null
+    },
+    "overview": {
+      "headline": "Experience the world of Minecraft like never before!",
+      "body": "Step into a blocky universe where creativity knows no bounds..."
+    },
+    "description": "Build, explore, and survive in a blocky world.",
+    "tags": ["Best Seller", "Offers", "Simulation", "Online co-op"],
+    "thumbnail": {
+      "mobile": "/images/minecraft/minecraft game-thumnail-tablet.png",
+      "tablet": "/images/minecraft/minecraft game-thumnail-tablet.png",
+      "desktop": "/images/minecraft/minecraft-thumnail-desktop.png "
+    },
+    "herobanner": {
+      "mobile": "/images/minecraft/minecraft-hero-mobile.png",
+      "tablet": "/images/minecraft/minecraft-hero-tablet.png",
+      "desktop": "/images/minecraft/minecraft-hero-desktop.png"
+    },
+    "images": [
+      {
+        "mobile": "/images/minecraft/minecraft-mines-hero-mobile.png",
+        "tablet": "/images/minecraft/minecraft-mines-hero-tablet.png",
+        "desktop": "/images/minecraft/minecraft-mines-hero-desktop.png"
+      },
+      {
+        "mobile": "/images/minecraft/minecraft-nether-hero-mobile.png",
+        "tablet": "/images/minecraft/minecraft-nether-hero-tablet.png",
+        "desktop": "/images/minecraft/minecraft-nether-hero-desktop.png"
+      },
+       {
+        "mobile": "/images/minecraft/minecraft-villagers-hero-mobile.png",
+        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
+        "desktop": "/images/minecraft/minecraft-villagers-hero-mobile.png"
+      },
+      {
+        "mobile": "/images/minecraft/minecraft-super-mario-hero-mobile.png",
+        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
+        "desktop": "/images/minecraft/minecraft-villagers-hero-desktop.png"
+      }
+
+    ],
+    "trailerurl": "https://youtu.be/MmB9b5njVbA",
+    "fileSize": 0.5,
+    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
+    "numOfPlayer": ["Single System (1-4)", "Local wireless (2-8)", "Online (2-8)"],
+    "system": ["Switch","Switch 2" ],
+    "publisher": "Mojang",
+    "languages": [
+      "English", "French", "German", "Italian", "Spanish", "Japanese"
+    ],
+    "franchise": "Minecraft",
+    "ageRating": "PEGI 7",
+    "genres": "Action”, ”Simulation",
+    "releaseDate": "June 20, 2018",
+    "preOrderAvailable": false,
+    "isOnSale": true,
+    "nintendoPoints": 50
+  }
+]

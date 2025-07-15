@@ -18,7 +18,7 @@ const gameSchema = new Schema(
     trailerurl: String,
     fileSize: Number,
     playModes: ["new"],
-    numOfPlayer: String,
+    numOfPlayer: ["new"],
     system: ["new"],
     publisher: String,
     languages: ["new"],
