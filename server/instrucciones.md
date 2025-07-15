@@ -40,13 +40,34 @@ Response:
 ###Recuperar el ID de un juego
 url: /api/games/gameId
 Method: GET
+
+body:
+-name: String
+-price{digital: number, physical: number}
+-description: String
+-plataforms: String
+-trailerUrl: String
+thumnnail{mobile, tablet, desktop} String
+-images{mobile, tablet, desktop} String
+-genres: String
+-ageRating: String
+-fileSize: String / Number (en teoria se puede descargar el juego una vez que lo compras en la tienda)
+-publisher: String
+-playModes: String
+-players: String
+-languages: String
+-releseDate: String
+-preOrderAvailable: true/false
+-herobanner String
+-overview{headline: String, body: String}
+
 Response:
 -Status 200
--array de todos los juegos
-
+-Se ve la informacion del juego
 ---
 
 ##Users
+###Cargar los datos del usario
 collection name: users
 url: /api/users/userId
 Method: GET
@@ -70,6 +91,8 @@ Response:
 -Status 200
 -Informacion del usario
 
+
+###Registrar al usario
 url: /api/user/register
 Method: POST
 
@@ -85,4 +108,15 @@ Body:
 
 Response:
 -Status 200
--Informacion del usario
+-Se registra un usuario nuevo
+
+###Log in del usario
+url: /api/user/login
+Method: GET
+
+Body:
+-email
+-password
+
+-Status 200
+-El usario de conecta y accede a sus datos
