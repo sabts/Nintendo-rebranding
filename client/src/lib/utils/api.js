@@ -1,4 +1,4 @@
-const URL_BASE = 'http://localhost:3000';
+export const URL_BASE = 'http://localhost:3000';
 const URL_API_USERS = '/api/users/';
 const URL_API_GAMES = '/api/games';
 
