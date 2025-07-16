@@ -17,7 +17,7 @@ export const GamePreview = ({ name, slug, thumbnail }) => {
           <div>
             <StyledGameTitle>{name}</StyledGameTitle>
           </div>
-          <FavoriteButton />
+          <FavoriteButton $isCardPreview={true} />
         </StyledInfoArea>
       </StyledCard>
     </Link>
@@ -40,7 +40,7 @@ export const GameStoreSite = ({ name, slug, thumbnail, price, isFavorite }) => {
           <StyledGameTitle>{name}</StyledGameTitle>
           <StyledGamePrice>{price}</StyledGamePrice>
         </div>
-        <FavoriteButton active={isFavorite} />
+        <FavoriteButton isCardPreview={false} />
       </StyledInfoArea>
     </StyledCard>
   );

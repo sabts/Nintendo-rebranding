@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { PrimaryButton } from "../../components/ui/buttons/Buttons";
+import { FavoriteButton, PrimaryButton } from "../../components/ui/buttons/Buttons";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useContext } from "react";
@@ -52,7 +52,10 @@ const GameProfile = () => {
                 ))}
             </StyledImagesDiv>
 
-            <h1>{game.name}</h1>
+            <div>
+                <h2>{game.name}</h2>
+                <FavoriteButton isCardPreview={false} />
+            </div>
             <div><strong>Price:</strong> {price}</div>
             {/* Botón según disponibilidad */}
             {game.preorderAvailable ? (
