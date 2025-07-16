@@ -1,82 +1,14 @@
 @HOST = http://localhost:3000
 
+
+GET {{HOST}}/api/games
+
+
+###
 POST {{HOST}}/api/games
 Content-Type: application/json
 
 [
-  {
-    "name": "Super Mario Odyssey",
-    "slug": "super-mario-odyssey",
-    "uuid": "1234567Mario",
-    "price": {
-      "digital": 39.99,
-      "physical": 49.99
-    },
-    "overview": {
-      "headline": "Experience the world of Super Mario Odyssey like never before!",
-      "body": "Join Mario and Cappy as they embark on a globe‑trotting adventure beyond imagination..."
-    },
-    "description": "Join Mario on a globe‑trotting 3D adventure!",
-    "tags": ["Offers", "Mario"],
-    "thumbnail": {
-      "mobile": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
-      "tablet": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
-      "desktop": "/images/mario-odyssey/mario-odyssey-thumnail-desktop.png "
-    },
-    "herobanner": {
-      "mobile": "/images/mario-odyssey/mario-odyssey-hero-mobile.png ",
-      "tablet": "/images/mario-odyssey/mario-odyssey-hero-tablet.png ",
-      "desktop": "/images/mario-odyssey/mario-odyssey-hero-desktop.png "
-    },
-    "images": [
-      {
-        "mobile": "/images/mario-odyssey/mario-odyssey-new-friend-hero-mobile.png",
-        "tablet": "https://cdn.example.com/mario/screen1.jpg",
-        "desktop": "https://cdn.example.com/mario/screen1.jpg"
-      },
-      {
-        "mobile": "/images/mario-odyssey/mario-odyssey-new-world-funtions-mobile.png",
-        "tablet": "https://cdn.example.com/mario/screen2.jpg",
-        "desktop": "https://cdn.example.com/mario/screen2.jpg"
-      },
-      {
-        "mobile": "/images/mario-odyssey/mario-odyssey-challenge-hero-mobile.png",
-        "tablet": "https://cdn.example.com/mario/screen1.jpg",
-        "desktop": "https://cdn.example.com/mario/screen1.jpg"
-      },
-      {
-        "mobile": "/images/mario-odyssey/mario-odyssey-transform-hero-mobile.png ",
-        "tablet": "https://cdn.example.com/mario/screen1.jpg",
-        "desktop": "https://cdn.example.com/mario/screen1.jpg"
-      },
-        {
-        "mobile": "/images/mario-odyssey/mario-odyssey-explore-hero-mobile.png ",
-        "tablet": "https://cdn.example.com/mario/screen1.jpg",
-        "desktop": "https://cdn.example.com/mario/screen1.jpg"
-      },
-      {
-        "mobile": "/images/mario-odyssey/mario-odyssey-bowser-hero-mobile.png",
-        "tablet": "https://cdn.example.com/mario/screen1.jpg",
-        "desktop": "https://cdn.example.com/mario/screen1.jpg"
-      }
-    ],
-    "trailerurl": "https://youtu.be/wGQHQc_3ycE",
-    "fileSize": 5.7,
-    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": ["Single System (1)", "multiplayer (2)"],
-    "system": ["Switch"],
-    "publisher": "Nintendo",
-    "languages": [
-      "English", "French", "German", "Italian", "Spanish", "Japanese","Russian"," Dutch"
-    ],
-    "franchise": "Mario",
-    "ageRating": "PEGI 7",
-    "genres": "Platformer",
-    "releaseDate": "October 27, 2017",
-    "preOrderAvailable": false,
-    "isOnSale": false,
-    "nintendoPoints": 100
-  },
   {
     "name": "Minecraft",
     "slug": "minecraft",
@@ -142,3 +74,6 @@ Content-Type: application/json
     "nintendoPoints": 50
   }
 ]
+
+###
+GET {{HOST}}/api/games/48961602-5d47-43df-97a2-ee5fc1f692e8
