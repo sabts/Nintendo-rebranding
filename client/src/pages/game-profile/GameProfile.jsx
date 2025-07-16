@@ -4,6 +4,8 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../../lib/context/AuthContext";
+import { URL_BASE } from "../../lib/utils/api";
+import { StyledImagesDiv } from "./game-profile-styles";
 
 const GameProfile = () => {
     const { slug } = useParams();
@@ -18,30 +20,38 @@ const GameProfile = () => {
         <Header />
         <div>
             {/* Imagen principal del juego */}
-            <img src={game.heroBanner} alt={`Banner of ${game.name}`} />
-            <div>
+            <picture>
+                <source media="(min-width: 1024px)" srcSet={URL_BASE + game.herobanner.desktop} />
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={URL_BASE + game.herobanner.tablet} />
+                <source media="(min-width:380 px)" srcSet={URL_BASE + game.herobanner.mobile} />
+                <img src={URL_BASE + game.herobanner.mobile} alt={`Banner of ${game.name}`} />
+            </picture>
+
+            {/*imagenes de abajo*/}
+            <StyledImagesDiv>
                 {/* Mapa de imágenes del juego */}
                 {game.images.map((imgObj, index) => (
                     <picture key={index}>
                         <source
                             media="(min-width: 1024px)"
-                            srcSet={imgObj.desktop}
+                            srcSet={URL_BASE + imgObj.desktop}
                         />
                         <source
-                            media="(min-width: 768px)"
-                            srcSet={imgObj.tablet}
+                            media="(min-width: 768px) and (max-width: 768px)"
+                            srcSet={URL_BASE + imgObj.tablet}
                         />
                         <source
-                            media="(min-width: 380px)"
-                            srcSet={imgObj.mobile}
+                            media="(max-width: 380px)"
+                            srcSet={URL_BASE + imgObj.mobile}
                         />
                         <img
-                            src={imgObj.mobile}
+                            src={URL_BASE + imgObj.mobile}
                             alt={`Screenshot ${index + 1} of ${game.name}`}
                         />
                     </picture>
                 ))}
-            </div>
+            </StyledImagesDiv>
+
             <h1>{game.name}</h1>
             <div><strong>Price:</strong> {price}</div>
             {/* Botón según disponibilidad */}
@@ -57,17 +67,17 @@ const GameProfile = () => {
             <p>{game.overview.body}</p>
 
             <ul>
-                <li><strong>Platform:</strong> {game.platform}</li>
+                <li><strong>System:</strong> {game.system.join(', ')}</li>
                 <li><strong>Genres:</strong> {game.genres}</li>
                 <li><strong>Play Modes:</strong> {game.playModes.join(', ')}</li>
-                <li><strong>Players:</strong> {game.players}</li>
+                <li><strong>Players:</strong> {game.numOfPlayer.join(', ')}</li>
                 <li><strong>Languages:</strong> {game.languages.join(', ')}</li>
-                <li><strong>Age Rating:</strong> {game.ageRating}</li>
                 <li><strong>Publisher:</strong> {game.publisher}</li>
-                <li><strong>Release Date:</strong> {game.releaseDate}</li>
                 <li><strong>Franchise:</strong> {game.franchise}</li>
+                <li><strong>Age Rating:</strong> {game.ageRating}</li>
+                <li><strong>Release Date:</strong> {game.releaseDate}</li>
             </ul>
-        </div>
+        </div >
         <Footer />
     </>);
 };

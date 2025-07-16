@@ -17,6 +17,15 @@ const StyledImage = styled.img`
 	margin-bottom: 1rem;
 `;
 
+const StyledImagesDiv = styled.div`
+display: flex;
+height: 78px;
+justify-content: flex-end;
+align-items: flex-start;
+gap: 4px;
+align-self: stretch;
+`
+
 const StyledTags = styled.div`
 	display: flex;
 	flex-wrap: wrap;
@@ -46,7 +55,7 @@ const StyledText = styled.p`
 
 export {
 	StyledPage,
-	StyledHeroBanner,
+	StyledImagesDiv,
 	StyledTitle,
 	StyledTag,
 	StyledSection,
