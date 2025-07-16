@@ -1,24 +1,23 @@
 import { useContext, useState } from 'react';
 import { CATEGORIES_TAB } from '../../constants/home-tabs-content';
 import {
-	StyledCategoryTabsWrapper,
-	StyledGameCard,
-	StyledGamesGrid,
-	StyledTabButton,
-	StyledTabsHeader
+  StyledCategoryTabsWrapper,
+  StyledGameCard,
+  StyledGamesGrid,
+  StyledTabButton,
+  StyledTabsHeader
 } from './game-section-styles';
 
 import { GamePreview } from '../ui/game-cards/GameCards';
-import { getAllGames } from '../../lib/utils/api';
 import { AuthContext } from "../../lib/context/AuthContext";
 
 const CATEGORIES = ['Recent Release', 'Best Seller', 'Offers'];
 
 const GameSection = () => {
-	const { games } = useContext(AuthContext);
-	const [activeTab, setActiveTab] = useState(CATEGORIES[0]);
+  const { games } = useContext(AuthContext);
+  const [activeTab, setActiveTab] = useState(CATEGORIES[0]);
 
-	//const filteredGames = filterGamesByCategory(activeTab);
+  //const filteredGames = filterGamesByCategory(activeTab);
   const filteredGames = Array.isArray(games) ? filterGamesByCategory(activeTab, games) : [];
 
   return (
