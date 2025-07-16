@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../lib/context/AuthContext";
 import { URL_BASE } from "../../lib/utils/api";
 import { StyledImagesDiv } from "./game-profile-styles";
+import GamePurchaseOptions from "../../components/game-purchase-options/GamePurchaseOption";
 
 const GameProfile = () => {
     const { slug } = useParams();
@@ -56,16 +57,7 @@ const GameProfile = () => {
                 <h2>{game.name}</h2>
                 <FavoriteButton isCardPreview={false} />
             </div>
-            <div><strong>Price:</strong> {price}</div>
-            {/* Botón según disponibilidad */}
-            {game.preorderAvailable ? (
-                <PrimaryButton>Pre-order</PrimaryButton>
-            ) : game.isOnSale ? (
-                <PrimaryButton>Buy Now</PrimaryButton>
-            ) : (
-                <PrimaryButton>Add to Cart</PrimaryButton>
-            )}
-
+            <GamePurchaseOptions game={game} />
             <p><strong>{game.overview.headline}</strong></p>
             <p>{game.overview.body}</p>
 
@@ -85,4 +77,15 @@ const GameProfile = () => {
     </>);
 };
 
+
+
+//<div><strong>Price:</strong> {price}</div>
+//{/* Botón según disponibilidad */}
+//{game.preorderAvailable ? (
+//    <PrimaryButton>Pre-order</PrimaryButton>
+//) : game.isOnSale ? (
+//    <PrimaryButton>Buy Now</PrimaryButton>
+//) : (
+//    <PrimaryButton>Add to Cart</PrimaryButton>
+//)}
 export default GameProfile;

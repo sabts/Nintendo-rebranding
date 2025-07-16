@@ -12,6 +12,15 @@ const StyledPrimaryButton = styled.button`
 	background-color: ${COLORS.base.tertiary};
 	border: none;
 	color: ${COLORS.base.primary};
+
+	&:hover {
+		background-color: ${COLORS.gradients.tertiary};
+	}
+
+	&:disabled {
+		background-color: ${COLORS.variants.tertiarySaturated};
+		cursor: not-allowed;
+	}
 `;
 
 const StyledSecondaryButton = styled.button`
@@ -27,22 +36,22 @@ const StyledSecondaryButton = styled.button`
 
 const StyledFavoriteButton = styled.button`
 	display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
 
-  background-color: ${({ $isCardPreview }) =>
-		$isCardPreview ? COLORS.base.tertiary : "transparent"};
-  border: 1px solid
-    ${({ $isCardPreview }) =>
-		$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
+	background-color: ${({ $isCardPreview }) =>
+		$isCardPreview ? COLORS.base.tertiary : 'transparent'};
+	border: 1px solid
+		${({ $isCardPreview }) =>
+			$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
 
-  img {
-    width: 24px;
-    height: 24px;
-  }
+	img {
+		width: 24px;
+		height: 24px;
+	}
 `;
 
 export { StyledPrimaryButton, StyledFavoriteButton, StyledSecondaryButton };
