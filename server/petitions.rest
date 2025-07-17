@@ -9,68 +9,78 @@ POST {{HOST}}/api/games
 Content-Type: application/json
 
 [
-  {
-    "name": "Minecraft",
-    "slug": "minecraft",
-    "uuid": "1234567Minecraft",
+   {
+    "name": "Super Mario Odyssey",
+    "slug": "super-mario-odyssey",
+    "uuid": "ad365ef7-7f99-4851-9d2a-7ad49d5dfa89",
     "price": {
-      "digital": 29.99,
-      "physical": null
+      "digital": 39.99,
+      "physical": 49.99
     },
     "overview": {
-      "headline": "Experience the world of Minecraft like never before!",
-      "body": "Step into a blocky universe where creativity knows no bounds..."
+      "headline": "Experience the world of Super Mario Odyssey like never before!",
+      "body": "Join Mario and Cappy as they embark on a globe‑trotting adventure beyond imagination..."
     },
-    "description": "Choose your path: brave Explorer, master Builder, or cunning Redstone Engineer, and dive into a limitless open-world experience!\n\nMine, craft, and battle—all in real time!\n\nFrom lush forests to the deepest caverns, gather resources, craft powerful tools, and face off against mobs like never before. Dodge, strike, and build your way through every challenge in dynamic, real-time combat.\n\nWith enchanted gear, potions, and elytra-powered flight, the sky’s not even the limit.\n\nTeam up with friends, take on massive Ender raids, or conquer the Nether’s fiery depths. Then step into the Block Wars Arena, where only the best survive in fast-paced PvP competitions!\n\nThe world is yours to shape—block by block.",
-    "tags": ["Best Seller", "Offers", "Simulation", "Online co-op"],
+    "description": "Join Mario and Cappy as they embark on an unforgettable globe‑trotting adventure!\n\nExplore vast kingdoms filled with secrets, Power Moons, and creative platforming challenges.\n\nUse Cappy’s unique capture ability to take control of enemies, objects, and more—transform into a Bullet Bill, a Goomba stack, or even a T-Rex!\n\nDiscover hidden costumes, play minigames, and snap photos in Snapshot Mode.\n\nTravel from the bustling streets of New Donk City to the glittering beaches of Bubblaine, and beyond.\n\nWhether you're playing solo or teaming up with a friend in co-op, there's always something new around the corner.\n\nA spectacular platforming adventure awaits—jump in and start your journey!",
+    "tags": ["Offers", "Mario"],
     "thumbnail": {
-      "mobile": "/images/minecraft/minecraft game-thumnail-tablet.png",
-      "tablet": "/images/minecraft/minecraft game-thumnail-tablet.png",
-      "desktop": "/images/minecraft/minecraft-thumnail-desktop.png "
+      "mobile": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+      "tablet": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+      "desktop": "/images/mario-odyssey/mario-odyssey-thumnail-desktop.png "
     },
     "images": [
       {
-        "mobile": "/images/minecraft/minecraft-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-hero-desktop.png",
-        "youtubeUrl": "https://youtu.be/MmB9b5njVbA"
+    "mobile": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+    "tablet": "/images/mario-odyssey/mario-odyssey--thumnail-tablet.png",
+    "desktop": "/images/mario-odyssey/mario-odyssey-thumnail-desktop.png",
+    "youtubeUrl": "https://youtu.be/wGQHQc_3ycE"
+  },
+      {
+        "mobile": "/images/mario-odyssey/mario-odyssey-new-friend-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
       },
       {
-        "mobile": "/images/minecraft/minecraft-mines-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-mines-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-mines-hero-desktop.png"
+        "mobile": "/images/mario-odyssey/mario-odyssey-new-world-funtions-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen2.jpg",
+        "desktop": "https://cdn.example.com/mario/screen2.jpg"
       },
       {
-        "mobile": "/images/minecraft/minecraft-nether-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-nether-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-nether-hero-desktop.png"
+        "mobile": "/images/mario-odyssey/mario-odyssey-challenge-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
       },
       {
-        "mobile": "/images/minecraft/minecraft-villagers-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-villagers-hero-mobile.png"
+        "mobile": "/images/mario-odyssey/mario-odyssey-transform-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
       },
       {
-        "mobile": "/images/minecraft/minecraft-super-mario-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-villagers-hero-desktop.png"
+        "mobile": "/images/mario-odyssey/mario-odyssey-explore-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
+      },
+      {
+        "mobile": "/images/mario-odyssey/mario-odyssey-bowser-hero-mobile.png",
+        "tablet": "https://cdn.example.com/mario/screen1.jpg",
+        "desktop": "https://cdn.example.com/mario/screen1.jpg"
       }
     ],
-    "fileSize": 0.5,
+    "fileSize": 5.7,
     "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": ["Single System (1-4)", "Local wireless (2-8)", "Online (2-8)"],
-    "system": ["Switch", "Switch 2"],
-    "publisher": "Mojang",
+    "numOfPlayer": ["Single System (1)", "multiplayer (2)"],
+    "system": ["Switch"],
+    "publisher": "Nintendo",
     "languages": [
-      "English", "French", "German", "Italian", "Spanish", "Japanese"
+      "English", "French", "German", "Italian", "Spanish", "Japanese", "Russian", " Dutch"
     ],
-    "franchise": "Minecraft",
+    "franchise": "Mario",
     "ageRating": "PEGI 7",
-    "genres": "Action”, ”Simulation",
-    "releaseDate": "June 20, 2018",
+    "genres": "Platformer",
+    "releaseDate": "October 27, 2017",
     "preOrderAvailable": false,
-    "isOnSale": true,
-    "nintendoPoints": 50
+    "isOnSale": false,
+    "nintendoPoints": 100
   }
 ]
 
