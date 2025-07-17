@@ -4,38 +4,38 @@ import { useState } from 'react';
 
 const Content = ({ items }) => {
   const [visibleSubitems, setVisibleSubitems] = useState({});
-
   return (
     <StyledContentContainer>
-      {items.map((item, index) => (
-        <div key={index}>
-          <div
-            onClick={() =>
-              setVisibleSubitems(prevState => ({
-                ...prevState,
-                [item.key]: !prevState[item.key],
-              }))
-            }
-          >
-          <StyledContentButtons>
-  <div>
-    <span>{item.label}</span>
-    {item.subitems && (
-      <span>{visibleSubitems[item.key] ? '↓' : '↑'}</span>
-    )}
-  </div>
+      {items.map((item) => (
+        <div key={item.key}>
+          <Link to={item.url}>
+            <StyledContentButtons>
+              <div
+                onClick={() =>
+                  setVisibleSubitems((prevState) => ({
+                    ...prevState,
+                    [item.key]: !prevState[item.key],
+                  }))
+                }
+              >
+                <span>{item.label}</span>
+                {item.subitems && (
+                  <span>{visibleSubitems[item.key] ? '↓' : '↑'}</span>
+                )}
+              </div>
+            </StyledContentButtons>
+          </Link>
 
-  {item.subitems && visibleSubitems[item.key] && (
-    <ul>
-      {item.subitems.map(subitem => (
-        <li key={subitem.key}>
-          <Link to={subitem.url}>{subitem.label}</Link>
-        </li>
-      ))}
-    </ul>
-  )}
-</StyledContentButtons>
-          </div>
+          {/* Render subitems */}
+          {item.subitems && visibleSubitems[item.key] && (
+            <ul>
+              {item.subitems.map((subitem) => (
+                <li key={subitem.key}>
+                  <Link to={subitem.url}>{subitem.label}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </StyledContentContainer>

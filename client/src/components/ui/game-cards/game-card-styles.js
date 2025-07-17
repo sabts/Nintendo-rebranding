@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import COLORS from '../../../styles/colors';
-import { Link } from 'react-router-dom';
 
 const StyledCard = styled.div`
 	width: 194px;
@@ -16,15 +15,12 @@ const StyledCard = styled.div`
 const StyledImageArea = styled.div`
 	width: 100%;
 	height: 140px;
-	//background-image: url(${props => props.src});
 	background-size: cover;
 	background-position: center;
 	position: relative;
-	overflow: hidden;
 `;
 
 const StyledInfoArea = styled.div`
-	//width: 194px;
 	height: 60px;
 	padding: 8px 12px;
 	display: flex;
@@ -35,10 +31,7 @@ const StyledInfoArea = styled.div`
 	background-image: ${COLORS.gradients.tertiary};
 	color: ${COLORS.base.primary};
 	backdrop-filter: blur(4px);
-
-	a{
-		pointer-events: none;
-	}
+	pointer-events: none;
 `;
 
 const StyledGameDetails = styled.div`
@@ -48,14 +41,76 @@ const StyledGameDetails = styled.div`
 
 const StyledGameTitle = styled.span`
 	display: flex;
-	//width: 120px;
-	//height: 20px;
+	width: 100px;
+	height: 30px;
 	font-size: 0.8rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `;
 
-const StyledGamePrice = styled.span`
+const StyledStoreCard = styled.div`
+	display: flex;
+	width: 154px;
+	height: 244px;
+	align-items: center;
+	gap: 12px;
+	flex-direction: column;
+	border-radius: 1rem;
+	overflow: hidden;
+	border: 1px solid ${COLORS.variants.primaryOpacity};
+
+	@media (min-width: 768px) {
+		max-width: 340px;
+	}
+
+	@media (min-width: 1024px) {
+		max-width: 380px;
+	}
+`;
+
+const StyledStoreInfo = styled.div`
+	color: ${COLORS.base.secondary};
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 0px 12.583px 6.291px 12.583px;
+	gap: 0.75rem;
+
+	@media (min-width: 768px) {
+		padding: 1.25rem;
+	}
+
+	@media (min-width: 1024px) {
+		padding: 1.5rem;
+	}
+`;
+
+const StyledStoreTitle = styled.h3`
+	font-size: 0.875rem;
+	font-weight: 600;
+	width: 100px;
+	height: 30px;
+	margin: 0;
+	color: ${COLORS.base.secondary};
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	@media (min-width: 768px) {
+		font-size: 1.1rem;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 1.2rem;
+	}
+`;
+
+const StyledGamePrice = styled.p`
 	font-size: 0.85rem;
 	font-weight: bold;
+
+	@media (min-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 
 export {
@@ -64,14 +119,11 @@ export {
 	StyledInfoArea,
 	StyledGameDetails,
 	StyledGameTitle,
+	StyledStoreCard,
+	StyledStoreInfo,
+	StyledStoreTitle,
 	StyledGamePrice
 };
-
-
-
-
-
-
 
 //const DisabledLink = styled(Link)`
 // pointer - events: none;
