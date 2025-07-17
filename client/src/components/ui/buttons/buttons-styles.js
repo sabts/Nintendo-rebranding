@@ -51,6 +51,7 @@ const StyledFavoriteButton = styled.button`
 	img {
 		width: 24px;
 		height: 24px;
+		object-fit: contain;
 	}
 `;
 

@@ -6,51 +6,69 @@ import { StyledGamePurchaseSection, StyledRadioContainer, StyledRadioSelectButto
 const GamePurchaseOptions = ({ game }) => {
   const [hardware, setHardware] = useState("");
   const [format, setFormat] = useState("");
+  const [showOptions, setShowOptions] = useState(false);
 
   const toggle = (current, value) => (current === value ? "" : value);
 
   return (
     <StyledGamePurchaseSection>
-      <StyledSectionTitle>Choose a console</StyledSectionTitle>
-      <StyledToggleContainer>
-        {game.system.map((s) => (
-          <StyledToggleButton
-            key={s}
-            $isActive={hardware === s}
-            onClick={() => setHardware(toggle(hardware, s))}
-          >
-            {s}
-          </StyledToggleButton>
-        ))}
-      </StyledToggleContainer>
+      {/* Se muestra el botón para activar las opciones */}
+      {!showOptions && (
+        <StyledPrimaryButton onClick={() => handleShowOptions(setShowOptions)}>Buy</StyledPrimaryButton>
+      )}
 
-      <StyledSectionTitle>Choose a version</StyledSectionTitle>
-      <StyledRadioContainer>
-        {game.price.digital && (
-          <StyledRadioSelectButton
-            $isActive={format === "Digital"}
-            onClick={() => setFormat(toggle(format, "Digital"))}
-          >
-            Digital – {game.price.digital.toFixed(2)} €
-          </StyledRadioSelectButton>
-        )}
-        {game.price.physical && (
-          <StyledRadioSelectButton
-            $isActive={format === "Physical"}
-            onClick={() => setFormat(toggle(format, "Physical"))}
-          >
-            Physical – {game.price.physical.toFixed(2)} €
-          </StyledRadioSelectButton>
-        )}
-      </StyledRadioContainer>
+      {/* Las opciones de consola y versión solo se muestran si showOptions es true */}
+      {showOptions && (
+        <>
+          <StyledSectionTitle>Choose a console</StyledSectionTitle>
+          <StyledToggleContainer>
+            {game.system.map((s) => (
+              <StyledToggleButton
+                key={s}
+                $isActive={hardware === s}
+                onClick={() => setHardware(toggle(hardware, s))}
+              >
+                {s}
+              </StyledToggleButton>
+            ))}
+          </StyledToggleContainer>
 
-      <StyledPrimaryButton disabled={!hardware || !format} onClick={() => handleBuy(hardware, format, game)}>
-        {game.preOrderAvailable ? "Pre-order" : "Buy Now"}
-      </StyledPrimaryButton>
+          <StyledSectionTitle>Choose a version</StyledSectionTitle>
+          <StyledRadioContainer>
+            {game.price.digital && (
+              <StyledRadioSelectButton
+                $isActive={format === "Digital"}
+                onClick={() => setFormat(toggle(format, "Digital"))}
+              >
+                Digital – {game.price.digital.toFixed(2)} €
+              </StyledRadioSelectButton>
+            )}
+            {game.price.physical && (
+              <StyledRadioSelectButton
+                $isActive={format === "Physical"}
+                onClick={() => setFormat(toggle(format, "Physical"))}
+              >
+                Physical – {game.price.physical.toFixed(2)} €
+              </StyledRadioSelectButton>
+            )}
+          </StyledRadioContainer>
+
+          {/* Botón de compra*/}
+          <StyledPrimaryButton
+            disabled={!hardware || !format}
+            onClick={() => handleBuy(hardware, format, game)}
+          >
+            {game.preOrderAvailable ? "Pre-order" : "Add to Cart"}
+          </StyledPrimaryButton>
+        </>
+      )}
     </StyledGamePurchaseSection>
   );
 };
 
+const handleShowOptions = ( setShowOptions) => {
+  setShowOptions(true);
+};
 
 const handleBuy = (hardware, format, game) => {
   if (hardware && format) {

@@ -18,13 +18,17 @@ export const FavoriteButton = ({ isCardPreview }) => {
       onClick={() => setIsFavorite(!isFavorite)}
     >
       <img
-        src={
-          isFavorite
-            ? "/icons/favorite true - icon.svg"
+      src={
+        isCardPreview
+          ? isFavorite
+            ? "/icons/favorite true - icon.svg" 
             : "/icons/favorite false - icon.svg"
-        }
-        alt="Favorite icon"
-      />
+          : isFavorite
+          ? "/icons/favorite true - icon.svg"
+          : "/icons/empty-favorite-star-isnotpreview.png"
+      }
+      alt="Favorite icon"
+    />
     </StyledFavoriteButton>
   );
 };
