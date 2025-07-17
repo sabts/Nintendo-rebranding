@@ -22,10 +22,10 @@ const GameProfile = () => {
         <div>
             {/* Imagen principal del juego */}
             <picture>
-                <source media="(min-width: 1024px)" srcSet={URL_BASE + game.herobanner.desktop} />
-                <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={URL_BASE + game.herobanner.tablet} />
-                <source media="(min-width:380 px)" srcSet={URL_BASE + game.herobanner.mobile} />
-                <img src={URL_BASE + game.herobanner.mobile} alt={`Banner of ${game.name}`} />
+                <source media="(min-width: 1024px)" srcSet={URL_BASE + game.images[0].desktop} />
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={URL_BASE + game.images[0].tablet} />
+                <source media="(min-width:380 px)" srcSet={URL_BASE + game.images[0].mobile} />
+                <img src={URL_BASE + game.images[0].mobile} alt={`Banner of ${game.name}`} />
             </picture>
 
             {/*imagenes de abajo*/}

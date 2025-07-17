@@ -21,19 +21,20 @@ Content-Type: application/json
       "headline": "Experience the world of Minecraft like never before!",
       "body": "Step into a blocky universe where creativity knows no bounds..."
     },
-    "description": "Build, explore, and survive in a blocky world.",
+    "description": "Choose your path: brave Explorer, master Builder, or cunning Redstone Engineer, and dive into a limitless open-world experience!\n\nMine, craft, and battle—all in real time!\n\nFrom lush forests to the deepest caverns, gather resources, craft powerful tools, and face off against mobs like never before. Dodge, strike, and build your way through every challenge in dynamic, real-time combat.\n\nWith enchanted gear, potions, and elytra-powered flight, the sky’s not even the limit.\n\nTeam up with friends, take on massive Ender raids, or conquer the Nether’s fiery depths. Then step into the Block Wars Arena, where only the best survive in fast-paced PvP competitions!\n\nThe world is yours to shape—block by block.",
     "tags": ["Best Seller", "Offers", "Simulation", "Online co-op"],
     "thumbnail": {
       "mobile": "/images/minecraft/minecraft game-thumnail-tablet.png",
       "tablet": "/images/minecraft/minecraft game-thumnail-tablet.png",
       "desktop": "/images/minecraft/minecraft-thumnail-desktop.png "
     },
-    "herobanner": {
-      "mobile": "/images/minecraft/minecraft-hero-mobile.png",
-      "tablet": "/images/minecraft/minecraft-hero-tablet.png",
-      "desktop": "/images/minecraft/minecraft-hero-desktop.png"
-    },
     "images": [
+      {
+        "mobile": "/images/minecraft/minecraft-hero-mobile.png",
+        "tablet": "/images/minecraft/minecraft-hero-tablet.png",
+        "desktop": "/images/minecraft/minecraft-hero-desktop.png",
+        "youtubeUrl": "https://youtu.be/MmB9b5njVbA"
+      },
       {
         "mobile": "/images/minecraft/minecraft-mines-hero-mobile.png",
         "tablet": "/images/minecraft/minecraft-mines-hero-tablet.png",
@@ -44,7 +45,7 @@ Content-Type: application/json
         "tablet": "/images/minecraft/minecraft-nether-hero-tablet.png",
         "desktop": "/images/minecraft/minecraft-nether-hero-desktop.png"
       },
-       {
+      {
         "mobile": "/images/minecraft/minecraft-villagers-hero-mobile.png",
         "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
         "desktop": "/images/minecraft/minecraft-villagers-hero-mobile.png"
@@ -54,13 +55,11 @@ Content-Type: application/json
         "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
         "desktop": "/images/minecraft/minecraft-villagers-hero-desktop.png"
       }
-
     ],
-    "trailerurl": "https://youtu.be/MmB9b5njVbA",
     "fileSize": 0.5,
     "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
     "numOfPlayer": ["Single System (1-4)", "Local wireless (2-8)", "Online (2-8)"],
-    "system": ["Switch","Switch 2" ],
+    "system": ["Switch", "Switch 2"],
     "publisher": "Mojang",
     "languages": [
       "English", "French", "German", "Italian", "Spanish", "Japanese"
