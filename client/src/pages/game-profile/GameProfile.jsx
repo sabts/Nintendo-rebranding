@@ -5,7 +5,7 @@ import Footer from "../../components/footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../../lib/context/AuthContext";
 import { URL_BASE } from "../../lib/utils/api";
-import { StyledImagesDiv } from "./game-profile-styles";
+import { StyledImage, StyledImagesDiv, StyledLi, StyledPage, StyledStrongLi, StyledTitle, StyledTitleContainer, StyledUl } from "./game-profile-styles";
 import GamePurchaseOptions from "../../components/game-purchase-options/GamePurchaseOption";
 
 const GameProfile = () => {
@@ -19,60 +19,62 @@ const GameProfile = () => {
 
     return (<>
         <Header />
-        <div>
-            {/* Imagen principal del juego */}
-            <picture>
-                <source media="(min-width: 1024px)" srcSet={URL_BASE + game.images[0].desktop} />
-                <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={URL_BASE + game.images[0].tablet} />
-                <source media="(min-width:380 px)" srcSet={URL_BASE + game.images[0].mobile} />
-                <img src={URL_BASE + game.images[0].mobile} alt={`Banner of ${game.name}`} />
-            </picture>
+        {/* Imagen principal del juego */}
+        <picture>
+            <source media="(min-width: 1024px)" srcSet={URL_BASE + game.images[0].desktop} />
+            <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={URL_BASE + game.images[0].tablet} />
+            <source media="(min-width:380 px)" srcSet={URL_BASE + game.images[0].mobile} />
+            <StyledImage src={URL_BASE + game.images[0].mobile} alt={`Banner of ${game.name}`} />
+        </picture>
 
-            {/*imagenes de abajo*/}
-            <StyledImagesDiv>
-                {/* Mapa de imágenes del juego */}
-                {game.images.map((imgObj, index) => (
-                    <picture key={index}>
-                        <source
-                            media="(min-width: 1024px)"
-                            srcSet={URL_BASE + imgObj.desktop}
-                        />
-                        <source
-                            media="(min-width: 768px) and (max-width: 768px)"
-                            srcSet={URL_BASE + imgObj.tablet}
-                        />
-                        <source
-                            media="(max-width: 380px)"
-                            srcSet={URL_BASE + imgObj.mobile}
-                        />
-                        <img
-                            src={URL_BASE + imgObj.mobile}
-                            alt={`Screenshot ${index + 1} of ${game.name}`}
-                        />
-                    </picture>
-                ))}
-            </StyledImagesDiv>
+        {/*imagenes de abajo*/}
+        <StyledImagesDiv>
+            {/* Mapa de imágenes del juego */}
+            {game.images.map((imgObj, index) => (
+                <picture key={index}>
+                    <source
+                        media="(min-width: 1024px)"
+                        srcSet={URL_BASE + imgObj.desktop}
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 768px)"
+                        srcSet={URL_BASE + imgObj.tablet}
+                    />
+                    <source
+                        media="(max-width: 380px)"
+                        srcSet={URL_BASE + imgObj.mobile}
+                    />
+                    <img
+                        src={URL_BASE + imgObj.mobile}
+                        alt={`Screenshot ${index + 1} of ${game.name}`}
+                    />
+                </picture>
+            ))}
+        </StyledImagesDiv>
+        <StyledPage>
+            <StyledTitleContainer>
+                <StyledTitle>{game.name}</StyledTitle>
+                <FavoriteButton isCardPreview={false} />
+            </StyledTitleContainer>
+            <GamePurchaseOptions game={game} />
 
             <div>
-                <h2>{game.name}</h2>
-                <FavoriteButton isCardPreview={false} />
+                <p><strong>{game.overview.headline}</strong></p>
+                <p>{game.overview.body}</p>
+                <p dangerouslySetInnerHTML={{ __html: game.description.replaceAll("\n", "<br>") }}></p>
             </div>
-            <GamePurchaseOptions game={game} />
-            <p><strong>{game.overview.headline}</strong></p>
-            <p>{game.overview.body}</p>
-            <p dangerouslySetInnerHTML={{ __html: game.description.replaceAll("\n", "<br>") }}></p>
-            <ul>
-                <li><strong>System:</strong> {game.system.join(', ')}</li>
-                <li><strong>Genres:</strong> {game.genres}</li>
-                <li><strong>Play Modes:</strong> {game.playModes.join(', ')}</li>
-                <li><strong>Players:</strong> {game.numOfPlayer.join(', ')}</li>
-                <li><strong>Languages:</strong> {game.languages.join(', ')}</li>
-                <li><strong>Publisher:</strong> {game.publisher}</li>
-                <li><strong>Franchise:</strong> {game.franchise}</li>
-                <li><strong>Age Rating:</strong> {game.ageRating}</li>
-                <li><strong>Release Date:</strong> {game.releaseDate}</li>
-            </ul>
-        </div >
+            <StyledUl>
+                <StyledLi><StyledStrongLi>System:</StyledStrongLi> {game.system.join(', ')}</StyledLi>
+                <StyledLi><StyledStrongLi>Genres:</StyledStrongLi> {game.genres}</StyledLi>
+                <StyledLi><StyledStrongLi>Play Modes:</StyledStrongLi> {game.playModes.join(', ')}</StyledLi>
+                <StyledLi><StyledStrongLi>Players:</StyledStrongLi> {game.numOfPlayer.join(', ')}</StyledLi>
+                <StyledLi><StyledStrongLi>Languages:</StyledStrongLi> {game.languages.join(', ')}</StyledLi>
+                <StyledLi><StyledStrongLi>Publisher:</StyledStrongLi> {game.publisher}</StyledLi>
+                <StyledLi><StyledStrongLi>Franchise:</StyledStrongLi> {game.franchise}</StyledLi>
+                <StyledLi><StyledStrongLi>Age Rating:</StyledStrongLi> {game.ageRating}</StyledLi>
+                <StyledLi><StyledStrongLi>Release Date:</StyledStrongLi> {game.releaseDate}</StyledLi>
+            </StyledUl>
+        </StyledPage>
         <Footer />
     </>);
 };
