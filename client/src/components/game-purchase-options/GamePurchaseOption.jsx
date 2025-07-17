@@ -27,20 +27,20 @@ const GamePurchaseOptions = ({ game }) => {
       <StyledSectionTitle>Choose a version</StyledSectionTitle>
       <StyledRadioContainer>
         {game.price.digital && (
-         <StyledRadioSelectButton
-         $isActive={format === "Digital"}
-         onClick={() => setFormat(toggle(format, "Digital"))}
-       >
-         Digital – {game.price.digital.toFixed(2)} €
-       </StyledRadioSelectButton>
-     )}
-     {game.price.physical && (
-       <StyledRadioSelectButton
-         $isActive={format === "Physical"}
-         onClick={() => setFormat(toggle(format, "Physical"))}
-       >
-         Physical – {game.price.physical.toFixed(2)} €
-       </StyledRadioSelectButton>
+          <StyledRadioSelectButton
+            $isActive={format === "Digital"}
+            onClick={() => setFormat(toggle(format, "Digital"))}
+          >
+            Digital – {game.price.digital.toFixed(2)} €
+          </StyledRadioSelectButton>
+        )}
+        {game.price.physical && (
+          <StyledRadioSelectButton
+            $isActive={format === "Physical"}
+            onClick={() => setFormat(toggle(format, "Physical"))}
+          >
+            Physical – {game.price.physical.toFixed(2)} €
+          </StyledRadioSelectButton>
         )}
       </StyledRadioContainer>
 
@@ -53,10 +53,10 @@ const GamePurchaseOptions = ({ game }) => {
 
 
 const handleBuy = (hardware, format, game) => {
-    if (hardware && format) {
-      const price = format === "Digital" ? game.price.digital : game.price.physical;
-      alert(`Buying ${game.name} for ${price}€ on ${hardware} (${format})`);
-    }
-  };
-  
+  if (hardware && format) {
+    const price = format === "Digital" ? game.price.digital : game.price.physical;
+    console.log(`Add ${game.name} for ${price}€ on ${hardware} (${format}) in cart`);
+  }
+};
+
 export default GamePurchaseOptions;

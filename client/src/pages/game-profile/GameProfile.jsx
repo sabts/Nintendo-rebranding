@@ -60,7 +60,7 @@ const GameProfile = () => {
             <GamePurchaseOptions game={game} />
             <p><strong>{game.overview.headline}</strong></p>
             <p>{game.overview.body}</p>
-
+            <p>{game.description}</p>
             <ul>
                 <li><strong>System:</strong> {game.system.join(', ')}</li>
                 <li><strong>Genres:</strong> {game.genres}</li>
