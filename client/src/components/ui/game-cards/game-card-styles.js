@@ -31,7 +31,6 @@ const StyledInfoArea = styled.div`
 	background-image: ${COLORS.gradients.tertiary};
 	color: ${COLORS.base.primary};
 	backdrop-filter: blur(4px);
-	pointer-events: none;
 `;
 
 const StyledGameDetails = styled.div`

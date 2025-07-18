@@ -10,78 +10,77 @@ Content-Type: application/json
 
 [
   {
-    "name": "The Legend of Zelda: Tears of the Kingdom",
-    "slug": "the-legend-of-zelda-tears-of-the-kingdom",
-    "uuid": "48961602-5d47-43df-97a2-ee5fc1f692e8",
-    "price": {
-      "digital": 59.99,
-      "physical": 69.99
+  "name": "Donkey Kong Bananza",
+  "slug": "donkey-kong-bananza",
+  "uuid": "f1d2a3b4-c5e6-7f89-0123-456789abcdef",
+  "price": {
+    "digital": 69.99,
+    "physical": 89.99
+  },
+  "overview": {
+    "headline": "Go bananas underground in this wild Donkey Kong adventure!",
+    "body": "Dig, smash, and discover Banandium gems with Donkey Kong and Pauline in a chaotic new platforming journey!"
+  },
+  "description": "Donkey Kong Bananza sends DK and Pauline deep below the surface on a mission to recover mysterious banana-shaped gems known as Banandium.\n\nUtilizing groundbreaking voxel-based terrain destruction, players can carve their own paths through dynamic underground worlds. Donkey Kong's strength reshapes the environment, while Pauline brings powerful musical abilities that unlock doors, defeat enemies, and assist exploration.\n\nMaster unique transformations:\n- **Kong Bananza**: A brute-force form perfect for breaking through thick terrain.\n- **Zebra Bananza**: Grants extra speed and lets DK traverse water and unstable ground with ease.\n\nPlay solo or in chaotic local co-op. Player two can control Pauline, using rhythm attacks and harmony combos to solve puzzles or disrupt gameplay.\n\nCustomize your characters, unlock skill trees, and uncover secrets hidden deep within the molten core of Ingot Isle. Face greedy mining corporations, musical bosses, and sentient machinery standing in your way.\n\nIt’s explosive. It’s musical. It’s DK like you’ve never seen him before.",
+  "tags": ["Recent Release"],
+  "thumbnail": {
+    "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-tablet.png",
+    "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-tablet.png",
+    "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-desktop.png"
+  },
+  "images": [
+    {
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-hero-mobile.png ",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-desktop.png ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=uhG_DwkdbzI"
     },
-    "overview": {
-      "headline": "Experience the world of The Legend of Zelda: Tears of the Kingdom like never before!",
-      "body": "Jump into the universe of Zelda. Discover, fight, and explore as you uncover the secrets that await."
+    {
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-mobile.png",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-desktop.png"
     },
-    "description": "Unleash your destiny as the Hero of Hyrule—forge your own path across a shattered kingdom!\n\nSoar through the skies, dive into ancient ruins, and shape the land itself with the power of new abilities.\n\nFuse, build, and battle—all in real time!\n\nFrom sunlit sky islands to the shadowy depths below, use your ingenuity to craft vehicles, weapons, and solutions to every challenge. Outthink monstrous foes, manipulate time, and ascend to impossible heights with the power of Ultrahand, Recall, and more.\n\nWith your paraglider, Zonai devices, and fused gear, even gravity can’t hold you back.\n\nJoin forces with Hyrule’s champions, take down colossal constructs, and uncover the truth behind a long-forgotten evil. Then, enter the Coliseum and prove your skills in daring trials only the bold survive.\n\nThe fate of the kingdom is in your hands—rise above and rewrite Hyrule’s legend.",
-    "tags": ["Best Seller", "Zelda"],
-    "thumbnail": {
-      "mobile": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-      "tablet": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-      "desktop": "/images/zelda-totk/zelda-totk-thumbnail-desktop.png"
+    {
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-mobile.png",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-desktop.png "
     },
-    "images": [
+    {
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-mobile.png",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-dektop.png"
+    },
+    {
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-mobile.png",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-dektop.png"
+    },
       {
-        "mobile": "/images/zelda-totk/zelda-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-totk-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-totk-hero-desktop.png",
-        "youtubeUrl": "https://youtu.be/uHGShqcAHlQ"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-new-funtions-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-new-funtions-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-new-funtions-desktop.png"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-new-monsters-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-new-monsters-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-new-monsters-hero-desktop.png"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-sky-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-sky-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-sky-hero-desktop.png"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-construction-hero-mobile.png",
-        "tablet": "images/zelda-totk/zelda-construction-hero-tablet.png",
-        "desktop": "images/zelda-totk/zelda-construction-hero-desktop.png"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-underground-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-underground-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-underground-hero-desktop.png"
-      }
-    ],
-    "fileSize": 18,
-    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": ["Single System (1)"],
-    "system": ["Switch", "Switch2"],
-    "publisher": "Nintendo",
-    "languages": [
-      "English",
-      "French",
-      "German",
-      "Italian",
-      "Spanish",
-      "Japanese"
-    ],
-    "franchise": "Zelda",
-    "ageRating": "PEGI 12",
-    "genres": "adventure",
-    "releaseDate": "May 12, 2023",
-    "preOrderAvailable": false,
-    "isOnSale": false,
-    "nintendoPoints": 100
-  }
+      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-mobile.png",
+      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-tablet.png",
+      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-dektop.png"
+    }
+  ],
+  "fileSize": 8.7,
+  "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
+  "numOfPlayer": ["Single System (1–2)"],
+  "system": ["Switch 2"],
+  "publisher": "Nintendo",
+  "languages": [
+    "English",
+    "French",
+    "German",
+    "Spanish",
+    "Japanese"
+  ],
+  "franchise": "Donkey Kong",
+  "ageRating": "PEGI 7",
+  "genres": ["platform, adventure"],
+  "releaseDate": "July 17, 2025",
+  "preOrderAvailable": false,
+  "isOnSale": false,
+  "nintendoPoints": 100
+}
 ]
 
 ###

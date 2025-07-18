@@ -54,7 +54,6 @@ const StyledUl = styled.ul`
 
 const StyledLidiv = styled.div`
 	display: flex;
-	display: flex;
 	align-items: flex-start;
 	gap: 24px;
 	align-self: stretch;
