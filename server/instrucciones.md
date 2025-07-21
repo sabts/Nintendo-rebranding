@@ -112,7 +112,7 @@ Response:
 
 ###Log in del usario
 url: /api/user/login
-Method: GET
+Method: POST
 
 Body:
 -email

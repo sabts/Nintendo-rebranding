@@ -27,6 +27,7 @@ const filterGames = async (req, res) => {
       ageRating,
     } = req.body;
 
+    console.log(req.body)
     const filter = {};
 
     // Filtro por minPrice en digital o físico
@@ -38,22 +39,22 @@ const filterGames = async (req, res) => {
     }
 
     // Filtro por tags
-    if (tags) {
+    if (tags && tags.length !== 0) {
       filter.tags = { $in: Array.isArray(tags) ? tags : [tags] };
     }
 
     // Filtro por franquicia
-    if (franchise) {
+    if (franchise.length !== 0) {
       filter.franchise = franchise;
     }
 
     // Filtro por sistema
-    if (system) {
+    if (system.length !== 0) {
       filter.system = { $in: Array.isArray(system) ? system : [system] };
     }
 
     // Filtro por géneros
-    if (genres) {
+    if (genres.length !== 0) {
       filter.genres = { $in: Array.isArray(genres) ? genres : [genres] };
     }
 
@@ -61,6 +62,8 @@ const filterGames = async (req, res) => {
     if (ageRating) {
       filter.ageRating = ageRating;
     }
+
+    console.log(filter)
 
     const games = await Game.find(filter);
     res.status(200).json(games);

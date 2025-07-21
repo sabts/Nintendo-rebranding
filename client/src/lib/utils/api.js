@@ -52,7 +52,25 @@ const getGameById = async uuid => {
 };
 
 const filtersGames = async (body) => {
+	try {
+		const response = await fetch(URL_BASE + URL_API_GAMES + "/filters", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		});
 
-}
+		if (!response.ok) {
+			throw new Error("Error :(");
+		}
 
-export { saveUserData, getAllGames, getGameById }
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error("Error in filter", error);
+		return [];
+	}
+};
+
+export { saveUserData, getAllGames, getGameById, filtersGames }

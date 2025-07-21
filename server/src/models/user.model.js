@@ -1,45 +1,49 @@
 const { model, Schema } = require("mongoose");
 
 const userSchema = new Schema({
-  userName: String,
-  userNickname: String,
+  name: String,
+  nickname: String,
   region: String,
   email: String,
   password: String,
-  birthday: String,
-  //TODO: relacio 1-N
-  favorite: [],
-  gamesOwned: [
-    {
-      gameInfo: {
-        gameCode: {
-          type: String,
-          required: true,
-        },
-        dateRegistered: {
-          type: Date,
-          default: Date.now,
-        },
+  birthday: Date,
+  favorites: [{
+    type: Schema.Types.ObjectId,
+    ref: "game",
+  }],
+  gamesOwned: [{
+    game: {
+      type: Schema.Types.ObjectId,
+      ref: "game",
+    },
+    gameInfo: {
+      gameCode: String,
+      dateRegistered: {
+        type: Date,
+        default: Date.now,
       },
-      gameAchievements: [
-        {
-          type: String,
-        },
-      ],
     },
-  ],
-  friends: [
-    {
-      friends: [],
-      reques: [],
-    },
-  ],
+    gameAchievements: [String],
+  }],
+  friends: {
+    accepted: [{
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    }],
+    requests: [{
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    }],
+  },
+  shoppingCart: [{
+    type: Schema.Types.ObjectId,
+    ref: "game",
+  }],
   points: Number,
   profilePicture: {
     img: String,
     backgroundColor: String,
   },
-  shoppingCart: [],
 });
 
 // -userID

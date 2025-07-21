@@ -88,6 +88,7 @@ POST {{HOST}}/api/games/filters
 Content-Type: application/json
 
 {
-  "tags": ["Best Seller"],
-  "system": ["Switch"]
+  "minPrice": 60,
+  "system": [],
+  "genres": [ "Adventure" ]
 }

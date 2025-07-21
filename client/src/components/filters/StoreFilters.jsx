@@ -12,11 +12,11 @@ const StoreFilters = ({ applyFilters, onClose }) => {
 
   const handleSubmit = () => {
     applyFilters({
-      priceRange,
-      age,
-      hardware,
+      minPrice: priceRange,
+      ageRating: age && age[0],
+      system: hardware,
       franchise,
-      gameGender,
+      genres: gameGender,
     });
     onClose();
   };

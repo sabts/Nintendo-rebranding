@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GameStoreCard } from "../../components/ui/game-cards/GameCards"
 import { AuthContext } from "../../lib/context/AuthContext";
 import Header from "../../components/header/Header";
@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import { StyledFilterButton, StyledGamesContainer, StyledMainContainer, StyledTag, StyledTagsSection, StyledTitleSection } from "./game-store-styles";;
 import Modal from "../../components/modal/Modal";
 import Filters from "../../components/filters/StoreFilters";
+import { filtersGames } from "../../lib/utils/api";
 
 const GameStore = () => {
   const { games } = useContext(AuthContext);
@@ -16,11 +17,18 @@ const GameStore = () => {
     franchise: [],
     gameGender: [],
   });
+  const [gamesFilter, setGamesFilter] = useState([])
 
-  const applyFilters = (newFilters) => {
+  const applyFilters = async (newFilters) => {
     console.log("Filtros aplicados:", newFilters);
+    const filter = await filtersGames(newFilters)
+    setGamesFilter(filter)
     //lanzar peticion al back sobre la url que hemos creado para los filtros. Al metodo le pasamos por parametro newFilters
   };
+
+  useEffect(() => {
+    setGamesFilter(games)
+  }, [])
 
   return (
     <>
@@ -51,19 +59,15 @@ const GameStore = () => {
 
         {/* Mostrar los juegos filtrados */}
         <StyledGamesContainer>
-          {filterGames(games, selectedFilters).length > 0 ? (
-            filterGames(games, selectedFilters).map((game) => (
-              <GameStoreCard
-                key={game.uuid}
-                name={game.name}
-                slug={game.slug}
-                thumbnail={game.thumbnail}
-                price={game.price.digital}
-              />
-            ))
-          ) : (
-            <p>No games found</p>
-          )}
+          {gamesFilter.map((game) => (
+            <GameStoreCard
+              key={game.uuid}
+              name={game.name}
+              slug={game.slug}
+              thumbnail={game.thumbnail}
+              price={game.price.digital}
+            />
+          ))}
         </StyledGamesContainer>
       </StyledMainContainer>
       <Footer />
@@ -75,25 +79,6 @@ const GameStore = () => {
     </>
   );
 };
-
-
-const filterGames = (games, selectedFilters) => {
-  const { age, hardware, franchise, gameGender } = selectedFilters;
-
-  return games.filter(game => {
-    const matchAge = age.length === 0 || age.includes(game.ageRating);
-    const matchHardware = hardware.length === 0 || (
-      game.system && hardware.some(value => game.system.includes(value))
-    );
-    const matchFranchise = franchise.length === 0 || franchise.includes(game.franchise);
-    const matchGameGender = gameGender.length === 0 || gameGender.some(value => game.genres.includes(value));
-
-    const matchAllFilters = matchAge && matchHardware && matchFranchise && matchGameGender;
-
-    return matchAllFilters;
-  });
-};
-
 
 const removeFilter = (filterCategory, value, setSelectedFilters) => {
   setSelectedFilters((prevFilters) => {

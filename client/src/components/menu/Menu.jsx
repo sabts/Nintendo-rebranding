@@ -20,7 +20,7 @@ const Menu = () => {
           <img
             src={
               isMenuOpen
-                ? 'public/icons/close  menu - icon.svg'
+                ? '/icons/close  menu - icon.svg'
                 : '/icons/menu - hamburger icon mobile.svg'
             }
             alt="menu toggle icon"
@@ -28,12 +28,12 @@ const Menu = () => {
         </StyledButton>
 
         {/* BOTÓN DE BÚSQUEDA */}
-        <StyledButton onClick={() => {/* lógica de búsqueda */}}>
+        <StyledButton onClick={() => {/* lógica de búsqueda */ }}>
           <img src="/icons/menu icon - search.svg" alt="search menu icon" />
         </StyledButton>
 
         {/* BOTÓN DE USUARIO */}
-        <StyledButton onClick={() => {/* lógica de usuario */}}>
+        <StyledButton onClick={() => {/* lógica de usuario */ }}>
           <img
             src={user?.profileImageUrl || '/icons/no user - icon.svg'}
             alt={user ? `${user.username} profile` : 'no user connected menu icon'}
@@ -54,7 +54,7 @@ const Menu = () => {
 
 export default Menu;
 
-	{/*  <div>
+{/*  <div>
 			{!user ? (
 			  <nav>
 				<StyledUl>
