@@ -10,6 +10,8 @@ const GamePurchaseOptions = ({ game }) => {
 
   const toggle = (current, value) => (current === value ? "" : value);
 
+  console.log(game)
+
   return (
     <StyledGamePurchaseSection>
       {/* Se muestra el botón para activar las opciones */}
@@ -35,7 +37,7 @@ const GamePurchaseOptions = ({ game }) => {
 
           <StyledSectionTitle>Choose a version</StyledSectionTitle>
           <StyledRadioContainer>
-            {game.price.digital && (
+            {game.price.digital >= 0 && (
               <StyledRadioSelectButton
                 $isActive={format === "Digital"}
                 onClick={() => setFormat(toggle(format, "Digital"))}
@@ -66,7 +68,7 @@ const GamePurchaseOptions = ({ game }) => {
   );
 };
 
-const handleShowOptions = ( setShowOptions) => {
+const handleShowOptions = (setShowOptions) => {
   setShowOptions(true);
 };
 

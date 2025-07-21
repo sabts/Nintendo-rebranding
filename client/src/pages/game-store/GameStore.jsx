@@ -11,15 +11,15 @@ const GameStore = () => {
   const { games } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState({
-    age: [],      
-    hardware: [], 
-    franchise: [], 
+    age: [],
+    hardware: [],
+    franchise: [],
     gameGender: [],
   });
-  
+
   const applyFilters = (newFilters) => {
     console.log("Filtros aplicados:", newFilters);
-    setSelectedFilters(newFilters);
+    //lanzar peticion al back sobre la url que hemos creado para los filtros. Al metodo le pasamos por parametro newFilters
   };
 
   return (
@@ -40,9 +40,9 @@ const GameStore = () => {
               Array.isArray(values) ? (
                 values.map((value) => (
                   <StyledTag key={value}>
-                  {value} 
-                  <button onClick={() => removeFilter(filter, value, setSelectedFilters)}><img src="/icons/close  menu - icon.svg"/></button>
-                </StyledTag>
+                    {value}
+                    <button onClick={() => removeFilter(filter, value, setSelectedFilters)}><img src="/icons/close  menu - icon.svg" /></button>
+                  </StyledTag>
                 ))
               ) : null
             )}
@@ -51,20 +51,20 @@ const GameStore = () => {
 
         {/* Mostrar los juegos filtrados */}
         <StyledGamesContainer>
-  {filterGames(games, selectedFilters).length > 0 ? (
-    filterGames(games, selectedFilters).map((game) => (
-      <GameStoreCard
-        key={game.uuid}
-        name={game.name}
-        slug={game.slug}
-        thumbnail={game.thumbnail}
-        price={game.price.digital}
-      />
-    ))
-  ) : (
-    <p>No games found</p> 
-  )}
-</StyledGamesContainer>
+          {filterGames(games, selectedFilters).length > 0 ? (
+            filterGames(games, selectedFilters).map((game) => (
+              <GameStoreCard
+                key={game.uuid}
+                name={game.name}
+                slug={game.slug}
+                thumbnail={game.thumbnail}
+                price={game.price.digital}
+              />
+            ))
+          ) : (
+            <p>No games found</p>
+          )}
+        </StyledGamesContainer>
       </StyledMainContainer>
       <Footer />
 
