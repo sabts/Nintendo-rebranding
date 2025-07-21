@@ -9,84 +9,73 @@ POST {{HOST}}/api/games
 Content-Type: application/json
 
 [
-  {
-    "name": "Fortnite",
-    "slug": "fortnite",
-    "uuid": "a1b2c3d4-e5f6-7g89-h012-3456789abcdef",
+ {
+    "name": "Mario Kart World",
+    "slug": "mario-kart-world",
+    "uuid": "b1c2d3e4-f5g6-h789-i012-3456789abcdef",
     "price": {
-      "digital": 0.00,
-      "physical": null
+      "digital": 69.99,
+      "physical": 79.99
     },
     "overview": {
-      "headline": "Join the ultimate battle for survival in Fortnite's Battle Royale mode!",
-      "body": "Build, fight, and survive in a dynamic, ever-changing world filled with exciting challenges and rewards."
+      "headline": "Race around the globe in the most exciting Mario Kart adventure yet!",
+      "body": "Compete in global racing events, unlock new tracks, and use wild new power-ups to leave your opponents in the dust!"
     },
-    "description": "Fortnite Battle Royale is a free-to-play multiplayer online game that drops you onto an island with 99 other players, all fighting to be the last one standing. The game features fast-paced combat, building mechanics, and a variety of weapons and items.\n\nThe battle takes place in a large, open world with a shrinking play zone, forcing players into close combat as the game progresses. Fortnite's unique building system allows players to create walls, ramps, and fortresses in real-time to outwit and outmaneuver their opponents.\n\nCollaborate with friends in teams or fight solo in a tense free-for-all environment. Collect resources, discover hidden loot, and compete in special limited-time events.\n\nThe game is constantly evolving with seasonal updates, introducing new weapons, locations, and gameplay mechanics.\n\nFortnite is the ultimate battle royale experience—whether you’re a sharpshooter or a master builder, the game offers something for everyone.",
-    "tags": ["Free-to-Play", "Battle Royale", "Multiplayer"],
+    "description": "Mario Kart World brings the iconic kart-racing action to new heights! Travel across different countries and cities, each with their own unique challenges, environments, and local characters. New power-ups, like the **Turbo Glider** and **Magnet Ball**, spice up the classic gameplay.\n\nFor the first time, race through real-world locations such as Paris, Tokyo, and New York City, each featuring dynamic environments with hazards and shortcuts to master.\n\nTake on local or online multiplayer races, or challenge yourself in time trials to beat your personal best. Mario and friends are back with new moves, better kart customization, and more ways to play!\n\nUse Mario Kart Pass to unlock extra tracks, characters, and karts. Customize your ride with new parts and exclusive skins.\n\nWhether you’re a seasoned racer or a newcomer to the series, Mario Kart World offers thrills for all players!",
+    "tags": ["Recent Release", "Multiplayer", "Racing"],
     "thumbnail": {
-      "mobile": "/images/fortnite/fortnite-thumnail-tablet.png ",
-      "tablet": "/images/fortnite/fortnite-thumnail-tablet.png",
-      "desktop": "/images/fortnite/fortnite-thumnail-desktop.png "
+      "mobile": "/images/mario-kart-world/mario-kart-world-thumbnail-mobile.png",
+      "tablet": "/images/mario-kart-world/mario-kart-world-thumbnail-tablet.png",
+      "desktop": "/images/mario-kart-world/mario-kart-world-thumbnail-desktop.png"
     },
     "images": [
       {
-        "mobile": "/images/fortnite/fortnite-hero-mobile.png",
-        "tablet": "/images/fortnite/fortnite-hero-tablet.png ",
-        "desktop": "/images/fortnite/fortnite-hero-desktop.png",
-        "youtubeUrl": "https://www.youtube.com/watch?v=Ft2wE8XwTLk"
+        "mobile": "/images/mario-kart-world/mario-kart-world-hero-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-hero-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-hero-desktop.png",
+        "youtubeUrl": "https://www.youtube.com/watch?v=abcde12345"
       },
       {
-        "mobile": "/images/fortnite/fortnite-world-mobile.png",
-        "tablet":  "/images/fortnite/fortnite-world-mobile.png",
-        "desktop":  "/images/fortnite/fortnite-world-mobile.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-race-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-race-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-race-desktop.png"
       },
       {
-        "mobile": "/images/fortnite/fortnite-friends-mobile.png",
-        "tablet": "/images/fortnite/fortnite-friends-mobile.png",
-        "desktop": "/images/fortnite/fortnite-friends-mobile.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-power-ups-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-power-ups-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-power-ups-desktop.png"
       },
       {
-        "mobile": "/images/fortnite/fortnite-festival-mobile.png",
-        "tablet": "/images/fortnite/fortnite-festival-mobile.png",
-        "desktop": "/images/fortnite/fortnite-festival-mobile.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-multiplayer-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-multiplayer-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-multiplayer-desktop.png"
       },
       {
-        "mobile": "/images/fortnite/fortnite-smash-brick-mobile.png",
-        "tablet": "/images/fortnite/fortnite-smash-brick-mobile.png",
-        "desktop": "/images/fortnite/fortnite-smash-brick-mobile.png"
-      },
-       {
-        "mobile": "/images/fortnite/fortnite-skins-mobile.png",
-        "tablet": "/images/fortnite/fortnite-skins-mobile.png",
-        "desktop": "/images/fortnite/fortnite-skins-mobile.png"
-      },
-      {
-        "mobile": "images/fortnite/fortnite-dances-mobile.png",
-        "tablet": "images/fortnite/fortnite-dances-mobile.png",
-        "desktop": "images/fortnite/fortnite-dances-mobile.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-features-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-features-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-features-desktop.png"
       }
     ],
-    "fileSize": 5.0,
-    "playModes": ["Online Multiplayer", "Solo", "Squads", "Duos"],
-    "numOfPlayer": ["1-100 players online"],
-    "system": ["PC", "Switch"],
-    "publisher": "Epic Games",
+    "fileSize": 6.5,
+    "playModes": ["TV mode", "Tabletop mode", "Handheld mode", "Online Multiplayer", "Local Multiplayer"],
+    "numOfPlayer": ["1-4 players local", "1-8 players online"],
+    "system": ["Switch 2"],
+    "publisher": "Nintendo",
     "languages": [
       "English",
-      "Spanish",
       "French",
       "German",
+      "Spanish",
       "Italian",
-      "Japanese",
-      "Portuguese"
+      "Japanese"
     ],
-    "franchise": "Fortnite",
-    "ageRating": "PEGI 12",
-    "genres": ["Battle Royale", "Action", "Shooter"],
-    "releaseDate": "September 26, 2017",
+    "franchise": "Mario Kart",
+    "ageRating": "PEGI 3",
+    "genres": ["Racing", "Action"],
+    "releaseDate": "August 28, 2025",
     "preOrderAvailable": false,
     "isOnSale": false,
-    "nintendoPoints": 0
+    "nintendoPoints": 100
   }
 ]
 
