@@ -69,10 +69,10 @@ Content-Type: application/json
       "Italian",
       "Japanese"
     ],
-    "franchise": "Mario Kart",
+    "franchise": "Mario",
     "ageRating": "PEGI 3",
     "genres": ["Racing", "Action"],
-    "releaseDate": "August 28, 2025",
+    "releaseDate": "June 5, 2025",
     "preOrderAvailable": false,
     "isOnSale": false,
     "nintendoPoints": 100
