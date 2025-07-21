@@ -15,7 +15,7 @@ Content-Type: application/json
     "uuid": "a1b2c3d4-e5f6-7g89-h012-3456789abcdef",
     "price": {
       "digital": 0.00,
-      "physical": 0.00
+      "physical": null
     },
     "overview": {
       "headline": "Join the ultimate battle for survival in Fortnite's Battle Royale mode!",
@@ -69,7 +69,7 @@ Content-Type: application/json
     "fileSize": 5.0,
     "playModes": ["Online Multiplayer", "Solo", "Squads", "Duos"],
     "numOfPlayer": ["1-100 players online"],
-    "system": ["PC", "Switch", "Mobile"],
+    "system": ["PC", "Switch"],
     "publisher": "Epic Games",
     "languages": [
       "English",
