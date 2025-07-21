@@ -86,3 +86,13 @@ Content-Type: application/json
 
 ###
 GET {{HOST}}/api/games/48961602-5d47-43df-97a2-ee5fc1f692e8
+
+
+### Filtros combinados
+POST {{HOST}}/api/games/filters
+Content-Type: application/json
+
+{
+  "tags": ["Best Seller"],
+  "system": ["Switch"]
+}
