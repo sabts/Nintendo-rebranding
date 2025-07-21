@@ -1,30 +1,48 @@
 import { useState } from "react"
-import { StyledFavoriteButton, StyledPrimaryButton, StyledSecondaryButton } from "./buttons-styles"
+import { StyledFavoriteButton, StyledPrimaryButton, StyledSecondaryButton, StyledTertiaryButton } from "./buttons-styles"
 
-export const PrimaryButton = ({ children, action }) => {
+const PrimaryButton = ({ children, action }) => {
   return <StyledPrimaryButton>{children}</StyledPrimaryButton>
 }
 
-export const SecondaryButton = ({ children, action }) => {
+const SecondaryButton = ({ children, action }) => {
   return <StyledSecondaryButton>{children}</StyledSecondaryButton>
 }
 
-export const FavoriteButton = ({ isCardPreview }) => {
+const TertiaryButton = ({ children, action }) => {
+
+  return <StyledTertiaryButton>{children}</StyledTertiaryButton>
+}
+
+const FavoriteButton = ({ isCardPreview }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleFavoriteClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation()
+    setIsFavorite(!isFavorite)
+  }
 
   return (
     <StyledFavoriteButton
       $isCardPreview={isCardPreview}
-      onClick={() => setIsFavorite(!isFavorite)}
+      onClick={handleFavoriteClick}
     >
       <img
         src={
-          isFavorite
-            ? "/icons/favorite true - icon.svg"
-            : "/icons/favorite false - icon.svg"
+          isCardPreview
+            ? isFavorite
+              ? "/icons/favorite true - icon.svg"
+              : "/icons/favorite false - icon.svg"
+            : isFavorite
+              ? "/icons/favorite true - icon.svg"
+              : "/icons/empty-favorite-star-isnotpreview.svg"
         }
         alt="Favorite icon"
       />
     </StyledFavoriteButton>
   );
 };
+
+
+export { PrimaryButton, SecondaryButton, TertiaryButton, FavoriteButton }

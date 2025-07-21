@@ -31,7 +31,25 @@ const StyledSecondaryButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
+	background-color: transparent;
 	border: 1px solid ${COLORS.base.primary};
+	color: ${COLORS.base.primary};
+	font-weight: 700;
+	
+`;
+
+const StyledTertiaryButton = styled.button`
+	display: flex;
+	width: fit-content;
+	height: 40px;
+	padding: 13px 11.246px 12.035px 4px;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid ${COLORS.base.tertiary};
+	color: ${COLORS.base.tertiary};
+	font-weight: 700;
 `;
 
 const StyledFavoriteButton = styled.button`
@@ -46,12 +64,13 @@ const StyledFavoriteButton = styled.button`
 		$isCardPreview ? COLORS.base.tertiary : 'transparent'};
 	border: 1px solid
 		${({ $isCardPreview }) =>
-			$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
+		$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
 
 	img {
 		width: 24px;
 		height: 24px;
+		object-fit: contain;
 	}
 `;
 
-export { StyledPrimaryButton, StyledFavoriteButton, StyledSecondaryButton };
+export { StyledPrimaryButton, StyledFavoriteButton, StyledTertiaryButton, StyledSecondaryButton };

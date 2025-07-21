@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 const StyledContentWrapper = styled.div`
 	display: flex;
-	align-self: center;
+	align-items: center;
 	flex-direction: column;
 	padding-inline: 20px;
+	gap: 20px;
 `;
 
 const StyledHeroImg = styled.img`
@@ -12,4 +13,8 @@ const StyledHeroImg = styled.img`
 	height: 305px;
 `;
 
-export { StyledContentWrapper, StyledHeroImg };
+const StyledImg = styled.img`
+	align-self: center;
+`;
+
+export { StyledContentWrapper, StyledHeroImg, StyledImg };

@@ -11,7 +11,7 @@ const  NewsDetail = () => {
     const newsItem = NEWS.find((news) => news.slug === id); 
 
     if (!newsItem) {
-      return <div>Noticia no encontrada.</div>;
+      return <div>News no found</div>;
     }
     return (
         <>
@@ -30,7 +30,7 @@ const  NewsDetail = () => {
             <p>{section.content}</p>
 
             {newsItem.body.images && newsItem.body.images[index] && (
-              <img src={newsItem.body.images[index]} alt={`Image ${index + 1}`} />
+              <StyledHeroImg src={newsItem.body.images[index]} alt={`Image ${index + 1}`} />
             )}
           </div>
         ))}

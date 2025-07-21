@@ -9,75 +9,70 @@ POST {{HOST}}/api/games
 Content-Type: application/json
 
 [
-  {
-    "name": "The Legend of Zelda: Tears of the Kingdom",
-    "slug": "the-legend-of-zelda-tears-of-the-kingdom",
-    "uuid": "48961602-5d47-43df-97a2-ee5fc1f692e8",
+ {
+    "name": "Mario Kart World",
+    "slug": "mario-kart-world",
+    "uuid": "b1c2d3e4-f5g6-h789-i012-3456789abcdef",
     "price": {
-      "digital": 59.99,
-      "physical": 69.99
+      "digital": 69.99,
+      "physical": 79.99
     },
     "overview": {
-      "headline": "Experience the world of The Legend of Zelda: Tears of the Kingdom like never before!",
-      "body": "Jump into the universe of Zelda. Discover, fight, and explore as you uncover the secrets that await."
+      "headline": "Race around the globe in the most exciting Mario Kart adventure yet!",
+      "body": "Compete in global racing events, unlock new tracks, and use wild new power-ups to leave your opponents in the dust!"
     },
-    "description": "Unleash your destiny as the Hero of Hyrule—forge your own path across a shattered kingdom!\n\nSoar through the skies, dive into ancient ruins, and shape the land itself with the power of new abilities.\n\nFuse, build, and battle—all in real time!\n\nFrom sunlit sky islands to the shadowy depths below, use your ingenuity to craft vehicles, weapons, and solutions to every challenge. Outthink monstrous foes, manipulate time, and ascend to impossible heights with the power of Ultrahand, Recall, and more.\n\nWith your paraglider, Zonai devices, and fused gear, even gravity can’t hold you back.\n\nJoin forces with Hyrule’s champions, take down colossal constructs, and uncover the truth behind a long-forgotten evil. Then, enter the Coliseum and prove your skills in daring trials only the bold survive.\n\nThe fate of the kingdom is in your hands—rise above and rewrite Hyrule’s legend.",
-    "tags": ["Best Seller", "Zelda"],
+    "description": "Mario Kart World brings the iconic kart-racing action to new heights! Travel across different countries and cities, each with their own unique challenges, environments, and local characters. New power-ups, like the **Turbo Glider** and **Magnet Ball**, spice up the classic gameplay.\n\nFor the first time, race through real-world locations such as Paris, Tokyo, and New York City, each featuring dynamic environments with hazards and shortcuts to master.\n\nTake on local or online multiplayer races, or challenge yourself in time trials to beat your personal best. Mario and friends are back with new moves, better kart customization, and more ways to play!\n\nUse Mario Kart Pass to unlock extra tracks, characters, and karts. Customize your ride with new parts and exclusive skins.\n\nWhether you’re a seasoned racer or a newcomer to the series, Mario Kart World offers thrills for all players!",
+    "tags": ["Recent Release", "Multiplayer", "Racing"],
     "thumbnail": {
-      "mobile": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-      "tablet": "/images/zelda-totk/zelda-totk-thumbnail-mobile-tablet.png",
-      "desktop": "/images/zelda-totk/zelda-totk-thumbnail-desktop.png"
+      "mobile": "/images/mario-kart-world/mario-kart-world-thumbnail-mobile.png",
+      "tablet": "/images/mario-kart-world/mario-kart-world-thumbnail-tablet.png",
+      "desktop": "/images/mario-kart-world/mario-kart-world-thumbnail-desktop.png"
     },
     "images": [
       {
-        "mobile": "/images/zelda-totk/zelda-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-totk-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-totk-hero-desktop.png",
-        "youtubeUrl": "https://youtu.be/uHGShqcAHlQ"
+        "mobile": "/images/mario-kart-world/mario-kart-world-hero-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-hero-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-hero-desktop.png",
+        "youtubeUrl": "https://www.youtube.com/watch?v=abcde12345"
       },
       {
-        "mobile": "/images/zelda-totk/zelda-new-funtions-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-new-funtions-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-new-funtions-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-race-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-race-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-race-desktop.png"
       },
       {
-        "mobile": "/images/zelda-totk/zelda-new-monsters-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-new-monsters-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-new-monsters-hero-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-power-ups-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-power-ups-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-power-ups-desktop.png"
       },
       {
-        "mobile": "/images/zelda-totk/zelda-sky-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-sky-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-sky-hero-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-multiplayer-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-multiplayer-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-multiplayer-desktop.png"
       },
       {
-        "mobile": "/images/zelda-totk/zelda-construction-hero-mobile.png",
-        "tablet": "images/zelda-totk/zelda-construction-hero-tablet.png",
-        "desktop": "images/zelda-totk/zelda-construction-hero-desktop.png"
-      },
-      {
-        "mobile": "/images/zelda-totk/zelda-underground-hero-mobile.png",
-        "tablet": "/images/zelda-totk/zelda-underground-hero-tablet.png",
-        "desktop": "/images/zelda-totk/zelda-underground-hero-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-features-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-features-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-features-desktop.png"
       }
     ],
-    "fileSize": 18,
-    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": ["Single System (1)"],
-    "system": ["Switch", "Switch2"],
+    "fileSize": 6.5,
+    "playModes": ["TV mode", "Tabletop mode", "Handheld mode", "Online Multiplayer", "Local Multiplayer"],
+    "numOfPlayer": ["1-4 players local", "1-8 players online"],
+    "system": ["Switch 2"],
     "publisher": "Nintendo",
     "languages": [
       "English",
       "French",
       "German",
-      "Italian",
       "Spanish",
+      "Italian",
       "Japanese"
     ],
-    "franchise": "Zelda",
-    "ageRating": "PEGI 12",
-    "genres": "adventure",
-    "releaseDate": "May 12, 2023",
+    "franchise": "Mario",
+    "ageRating": "PEGI 3",
+    "genres": ["Racing", "Action"],
+    "releaseDate": "June 5, 2025",
     "preOrderAvailable": false,
     "isOnSale": false,
     "nintendoPoints": 100

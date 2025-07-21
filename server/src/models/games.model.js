@@ -24,7 +24,7 @@ const gameSchema = new Schema(
     languages: ["new"],
     franchise: String,
     ageRating: String,
-    genres: String,
+    genres: [String],
     releaseDate: String,
     preOrderAvailable: Boolean,
     isOnSale: Boolean,

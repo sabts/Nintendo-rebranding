@@ -96,7 +96,7 @@ export const NEWS = [
 		},
 		cta: {
 			text: 'Shop Now',
-			url: '/store/sale'
+			url: '/games'
 		}
 	},
 	{
@@ -127,7 +127,7 @@ export const NEWS = [
 		},
 		cta: {
 			text: 'Play Now',
-			url: '/gameId'
+			url: 'http://localhost:5173/game/fortnite'
 		}
 	},
 	{
@@ -151,14 +151,14 @@ export const NEWS = [
 				{
 					heading: 'Why the Hype?',
 					content:
-						'Analysts attribute the success to robust launch titles, improved hardware (including 4K docked output), and a massive wave of returning and new players. Titles like *Zelda: Kingdomfall* and *Mario Kart Infinity* drove early adoption.'
+						'Analysts attribute the success to robust launch titles, improved hardware (including 4K docked output), and a massive wave of returning and new players. Titles like Zelda: Kingdomfall and Mario Kart Infinity drove early adoption.'
 				}
 			],
 			images: []
 		},
 		cta: {
-			text: 'Explore Switch 2',
-			url: '/switch-2'
+			text: 'See more',
+			url: 'https://www.youtube.com/watch?v=0QeqO0kFz-E'
 		}
 	}
 ];
