@@ -1,25 +1,24 @@
-import styled from "styled-components";
-import COLORS from "../../styles/colors";
+import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledMainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 20px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	gap: 20px;
 `;
 
 const StyledTitleSection = styled.section`
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 `;
 
 const StyledGamesContainer = styled.div`
-  display: flex;
-   justify-content:center;
- align-items: flex-end;
-align-content: flex-end;
-gap: 24px;
-flex-wrap: wrap;
+	display: flex;
+	justify-content: flex-start;
+	gap: 38px;
+	flex-wrap: wrap;
+	padding: 20px;
 `;
 
 const StyledFilterButton = styled.button`
@@ -34,21 +33,33 @@ const StyledFilterButton = styled.button`
 `;
 
 const StyledTagsSection = styled.section`
-  display: flex;
- align-items: flex-start;
-gap: 20px;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
 `;
 
-
 const StyledTag = styled.div`
-display: flex;
-padding: 6px 14.445px 6.591px 12px;
-justify-content: center;
-align-items: flex-end;
-gap: 21px;
+	display: flex;
+	padding: 6px 14.445px 6.591px 12px;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 21px;
 	width: fit-content;
-border-radius: 20px;
-background-color:${COLORS.base.tertiary}
-`
+	border-radius: 20px;
+	color: ${COLORS.base.primary};
+	background-color: ${COLORS.base.tertiary};
 
-export { StyledMainContainer, StyledTitleSection, StyledGamesContainer, StyledFilterButton, StyledTagsSection, StyledTag }
+	button {
+		background-color: transparent;
+		border: none;
+	}
+`;
+
+export {
+	StyledMainContainer,
+	StyledTitleSection,
+	StyledGamesContainer,
+	StyledFilterButton,
+	StyledTagsSection,
+	StyledTag
+};

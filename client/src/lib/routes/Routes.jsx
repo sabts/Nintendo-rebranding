@@ -7,6 +7,7 @@ import RegisterPage from '../../pages/register/RegisterPage';
 import NewsDetail from '../../pages/news-detail/NewsDetail';
 import GameProfile from '../../pages/game-profile/GameProfile';
 import GameStore from '../../pages/game-store/GameStore';
+import ShoppingCart from '../../pages/shopping-cart/ShoppingCart';
 
 const Router = () => {
 	return (
@@ -20,6 +21,7 @@ const Router = () => {
 					<Route path='/games' element={<GameStore/>}/>
 					<Route path='/game/:slug' element={<GameProfile />} />
 					<Route path='/news/:id' element={<NewsDetail />} />
+					<Route path='/shopping-cart' element={<ShoppingCart />} />
 				</Route>
 			</Routes>
 		</>

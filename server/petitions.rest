@@ -10,77 +10,84 @@ Content-Type: application/json
 
 [
   {
-  "name": "Donkey Kong Bananza",
-  "slug": "donkey-kong-bananza",
-  "uuid": "f1d2a3b4-c5e6-7f89-0123-456789abcdef",
-  "price": {
-    "digital": 69.99,
-    "physical": 89.99
-  },
-  "overview": {
-    "headline": "Go bananas underground in this wild Donkey Kong adventure!",
-    "body": "Dig, smash, and discover Banandium gems with Donkey Kong and Pauline in a chaotic new platforming journey!"
-  },
-  "description": "Donkey Kong Bananza sends DK and Pauline deep below the surface on a mission to recover mysterious banana-shaped gems known as Banandium.\n\nUtilizing groundbreaking voxel-based terrain destruction, players can carve their own paths through dynamic underground worlds. Donkey Kong's strength reshapes the environment, while Pauline brings powerful musical abilities that unlock doors, defeat enemies, and assist exploration.\n\nMaster unique transformations:\n- **Kong Bananza**: A brute-force form perfect for breaking through thick terrain.\n- **Zebra Bananza**: Grants extra speed and lets DK traverse water and unstable ground with ease.\n\nPlay solo or in chaotic local co-op. Player two can control Pauline, using rhythm attacks and harmony combos to solve puzzles or disrupt gameplay.\n\nCustomize your characters, unlock skill trees, and uncover secrets hidden deep within the molten core of Ingot Isle. Face greedy mining corporations, musical bosses, and sentient machinery standing in your way.\n\nIt’s explosive. It’s musical. It’s DK like you’ve never seen him before.",
-  "tags": ["Recent Release"],
-  "thumbnail": {
-    "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-tablet.png",
-    "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-tablet.png",
-    "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-thumbnail-desktop.png"
-  },
-  "images": [
-    {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-hero-mobile.png ",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-desktop.png ",
-      "youtubeUrl": "https://www.youtube.com/watch?v=uhG_DwkdbzI"
+    "name": "Fortnite",
+    "slug": "fortnite",
+    "uuid": "a1b2c3d4-e5f6-7g89-h012-3456789abcdef",
+    "price": {
+      "digital": 0.00,
+      "physical": 0.00
     },
-    {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-mobile.png",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-explore-hero-desktop.png"
+    "overview": {
+      "headline": "Join the ultimate battle for survival in Fortnite's Battle Royale mode!",
+      "body": "Build, fight, and survive in a dynamic, ever-changing world filled with exciting challenges and rewards."
     },
-    {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-mobile.png",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-transform-hero-desktop.png "
+    "description": "Fortnite Battle Royale is a free-to-play multiplayer online game that drops you onto an island with 99 other players, all fighting to be the last one standing. The game features fast-paced combat, building mechanics, and a variety of weapons and items.\n\nThe battle takes place in a large, open world with a shrinking play zone, forcing players into close combat as the game progresses. Fortnite's unique building system allows players to create walls, ramps, and fortresses in real-time to outwit and outmaneuver their opponents.\n\nCollaborate with friends in teams or fight solo in a tense free-for-all environment. Collect resources, discover hidden loot, and compete in special limited-time events.\n\nThe game is constantly evolving with seasonal updates, introducing new weapons, locations, and gameplay mechanics.\n\nFortnite is the ultimate battle royale experience—whether you’re a sharpshooter or a master builder, the game offers something for everyone.",
+    "tags": ["Free-to-Play", "Battle Royale", "Multiplayer"],
+    "thumbnail": {
+      "mobile": "/images/fortnite/fortnite-thumnail-tablet.png ",
+      "tablet": "/images/fortnite/fortnite-thumnail-tablet.png",
+      "desktop": "/images/fortnite/fortnite-thumnail-desktop.png "
     },
-    {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-mobile.png",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-smash-hero-dektop.png"
-    },
-    {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-mobile.png",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-features-hero-dektop.png"
-    },
+    "images": [
       {
-      "mobile": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-mobile.png",
-      "tablet": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-tablet.png",
-      "desktop": "/images/donkey-kog-bananza/donkey-kong-bananza-bosses-hero-dektop.png"
-    }
-  ],
-  "fileSize": 8.7,
-  "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-  "numOfPlayer": ["Single System (1–2)"],
-  "system": ["Switch 2"],
-  "publisher": "Nintendo",
-  "languages": [
-    "English",
-    "French",
-    "German",
-    "Spanish",
-    "Japanese"
-  ],
-  "franchise": "Donkey Kong",
-  "ageRating": "PEGI 7",
-  "genres": ["platform, adventure"],
-  "releaseDate": "July 17, 2025",
-  "preOrderAvailable": false,
-  "isOnSale": false,
-  "nintendoPoints": 100
-}
+        "mobile": "/images/fortnite/fortnite-hero-mobile.png",
+        "tablet": "/images/fortnite/fortnite-hero-tablet.png ",
+        "desktop": "/images/fortnite/fortnite-hero-desktop.png",
+        "youtubeUrl": "https://www.youtube.com/watch?v=Ft2wE8XwTLk"
+      },
+      {
+        "mobile": "/images/fortnite/fortnite-world-mobile.png",
+        "tablet":  "/images/fortnite/fortnite-world-mobile.png",
+        "desktop":  "/images/fortnite/fortnite-world-mobile.png"
+      },
+      {
+        "mobile": "/images/fortnite/fortnite-friends-mobile.png",
+        "tablet": "/images/fortnite/fortnite-friends-mobile.png",
+        "desktop": "/images/fortnite/fortnite-friends-mobile.png"
+      },
+      {
+        "mobile": "/images/fortnite/fortnite-festival-mobile.png",
+        "tablet": "/images/fortnite/fortnite-festival-mobile.png",
+        "desktop": "/images/fortnite/fortnite-festival-mobile.png"
+      },
+      {
+        "mobile": "/images/fortnite/fortnite-smash-brick-mobile.png",
+        "tablet": "/images/fortnite/fortnite-smash-brick-mobile.png",
+        "desktop": "/images/fortnite/fortnite-smash-brick-mobile.png"
+      },
+       {
+        "mobile": "/images/fortnite/fortnite-skins-mobile.png",
+        "tablet": "/images/fortnite/fortnite-skins-mobile.png",
+        "desktop": "/images/fortnite/fortnite-skins-mobile.png"
+      },
+      {
+        "mobile": "images/fortnite/fortnite-dances-mobile.png",
+        "tablet": "images/fortnite/fortnite-dances-mobile.png",
+        "desktop": "images/fortnite/fortnite-dances-mobile.png"
+      }
+    ],
+    "fileSize": 5.0,
+    "playModes": ["Online Multiplayer", "Solo", "Squads", "Duos"],
+    "numOfPlayer": ["1-100 players online"],
+    "system": ["PC", "Switch", "Mobile"],
+    "publisher": "Epic Games",
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Japanese",
+      "Portuguese"
+    ],
+    "franchise": "Fortnite",
+    "ageRating": "PEGI 12",
+    "genres": ["Battle Royale", "Action", "Shooter"],
+    "releaseDate": "September 26, 2017",
+    "preOrderAvailable": false,
+    "isOnSale": false,
+    "nintendoPoints": 0
+  }
 ]
 
 ###

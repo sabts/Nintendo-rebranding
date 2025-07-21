@@ -96,7 +96,7 @@ export const NEWS = [
 		},
 		cta: {
 			text: 'Shop Now',
-			url: '/store/sale'
+			url: '/games'
 		}
 	},
 	{
