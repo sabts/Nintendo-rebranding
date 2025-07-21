@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FavoriteButton } from "../buttons/Buttons"
 import { StyledCard, StyledGamePrice, StyledGameTitle, StyledInfoArea, StyledStoreCard, StyledStoreInfo, StyledStoreTitle } from "./game-card-styles";
-import { URL_BASE } from "../../../lib/utils/api";
+import { URL_BASE } from "../../../lib/utils/games-api";
 
 export const GamePreview = ({ name, slug, thumbnail }) => {
   return (

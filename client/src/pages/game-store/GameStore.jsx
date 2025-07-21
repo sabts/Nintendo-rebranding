@@ -6,7 +6,7 @@ import Footer from "../../components/footer/Footer";
 import { StyledFilterButton, StyledGamesContainer, StyledMainContainer, StyledTag, StyledTagsSection, StyledTitleSection } from "./game-store-styles";;
 import Modal from "../../components/modal/Modal";
 import Filters from "../../components/filters/StoreFilters";
-import { filtersGames } from "../../lib/utils/api";
+import { filtersGames } from "../../lib/utils/games-api";
 
 const GameStore = () => {
   const { games } = useContext(AuthContext);

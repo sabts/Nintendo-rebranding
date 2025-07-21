@@ -1,16 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
-import AuthProvider from "./lib/providers/auth.providers";
-import Home from "./pages/home/Home";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import Router from "./lib/routes/Routes";
+import GameProvider from "./lib/providers/game.providers";
 
 const App = () => {
 	return <>
 	<BrowserRouter>
 	<GlobalStyles/>
-	<AuthProvider> 
+	<GameProvider> 
 		<Router/>
-	</AuthProvider>
+	</GameProvider>
 	</BrowserRouter>
 	</>
 };

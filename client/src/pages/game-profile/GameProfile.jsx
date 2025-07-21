@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../lib/context/AuthContext";
-import { URL_BASE } from "../../lib/utils/api";
+import { URL_BASE } from "../../lib/utils/games-api";
 import { StyledImage, StyledImagesDiv, StyledLi, StyledLidiv, StyledPage, StyledStrongLi, StyledTitle, StyledTitleContainer, StyledUl } from "./game-profile-styles";
 import GamePurchaseOptions from "../../components/game-purchase-options/GamePurchaseOption";
 

@@ -92,3 +92,24 @@ Content-Type: application/json
   "system": [],
   "genres": [ "Adventure" ]
 }
+
+#######
+USERS REQUESTS
+##########
+
+
+POST {{HOST}}/api/user/register
+Content-Type: application/json
+
+{
+"name":"Sabrina Taraschi", 
+"nickname": "sabriTest",
+"email": "sabrinatesting@gmail.com", 
+"password": "123456",
+"region": "Europe",
+"birthday": "September 25, 1996",
+"profilePicture": {
+    "img": "/images/profile/pikmin.svg",
+    "backgroundColor": "#F3D50F"
+  }
+}
