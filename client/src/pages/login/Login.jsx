@@ -1,9 +1,20 @@
 import { useUserContext } from '../../lib/providers/user.providers';
-import { TextInputPassword } from '../../components/ui/inputs/Inputs';
+import { TextInput, TextInputPassword } from '../../components/ui/inputs/Inputs';
+import { login } from '../../lib/utils/user-api';
+import { useState } from 'react';
 
 
 const Login = () => {
-	const { user } = useUserContext()
+	const [error, setError] = useState('')
+
+	const submitForm = async(data) => {
+		try {
+			const response = await login(data)
+		} catch (error) {
+			setError(error.response.data.message)
+		}
+	}
+
 
 	return (<>
 		<picture>
@@ -26,15 +37,25 @@ const Login = () => {
 		</picture>
 		<h3>Let the adventure continue!</h3>
 
-		<div>
+		<form>
+			<TextInput
+			label=""
+			value={value}
+			onChange={(e) => setValue(e.target.value)}  
+			/>
 			<TextInputPassword
 				label="Password"
 				value={value}
-				onChange={(e) => setValue(e.target.value)}  // Update state when user types
+				onChange={(e) => setValue(e.target.value)}
 			/>
-		</div>
-
+		</form>
+{error && <div>
+	{error}
+	</div>}
 	</>)
 };
 
 export default Login;
+
+
+//Error log in, it might be the password or email

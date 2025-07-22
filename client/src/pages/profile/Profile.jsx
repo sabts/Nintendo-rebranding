@@ -1,7 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { PrimaryButton } from '../../components/ui/buttons/Buttons';
-//import { AuthContext } from '../../lib/context/AuthContext';
 
 const Profile = () => {
 	const { user } = useUserContext();
