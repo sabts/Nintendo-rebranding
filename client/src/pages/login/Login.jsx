@@ -1,48 +1,40 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import {
-	StyledButtonsContainer,
-	StyledForm,
-	StyledMainContainer
-} from './login-styles';
+import { useUserContext } from '../../lib/providers/user.providers';
+import { TextInputPassword } from '../../components/ui/inputs/Inputs';
 
 
 const Login = () => {
-	//const { user } = useContext(AuthContext);
-	const navigate = useNavigate();
-	return //(
-		// <StyledMainContainer>
-		// 	{!user && (
-		// 		<>
-		// 			<StyledForm onSubmit={event => loginUser(event, navigate)}>
-		// 				<h2>Iniciar Sesión</h2>
-		// 				<input type='text' name='email' placeholder='Email' />
-		// 				<input type='password' name='password' placeholder='Password' />
-		// 				<button>Entrar</button>
-		// 			</StyledForm>
-		// 			<span>Log in With</span>
-		// 			<StyledButtonsContainer>
-		// 				<button>Google</button>
-		// 				<button>GitHub</button>
-		// 			</StyledButtonsContainer>
-		// 		</>
-		// 	)}
-		// </StyledMainContainer>
-	//);
+	const { user } = useUserContext()
+
+	return (<>
+		<picture>
+			<source
+				media="(min-width: 1024px)"
+				srcSet="/profile/no-user-nintendo-characters-tablet.png"
+			/>
+			<source
+				media="(min-width: 768px) and (max-width: 1023px)"
+				srcSet="/profile/no-user-nintendo-characters-tablet.png"
+			/>
+			<source
+				media="(min-width: 380px)"
+				srcSet="/profile/no-user-nintendo-characters-mobile.png"
+			/>
+			<img
+				src="/profile/no-user-nintendo-characters-mobile.png"
+				alt="User not connected, photo of Nintendo characters"
+			/>
+		</picture>
+		<h3>Let the adventure continue!</h3>
+
+		<div>
+			<TextInputPassword
+				label="Password"
+				value={value}
+				onChange={(e) => setValue(e.target.value)}  // Update state when user types
+			/>
+		</div>
+
+	</>)
 };
-
-// const loginUser = async event => {
-// 	event.preventDefault();
-// 	const formData = event.target;
-// 	const email = formData.email.value;
-// 	const password = formData.password.value;
-
-// 	try {
-// 		await signInWithEmailAndPassword(auth, email, password);
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
 
 export default Login;

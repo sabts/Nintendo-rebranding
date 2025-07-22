@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GameStoreCard } from "../../components/ui/game-cards/GameCards"
-import { AuthContext } from "../../lib/context/AuthContext";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { StyledFilterButton, StyledGamesContainer, StyledMainContainer, StyledTag, StyledTagsSection, StyledTitleSection } from "./game-store-styles";;
 import Modal from "../../components/modal/Modal";
 import Filters from "../../components/filters/StoreFilters";
 import { filtersGames } from "../../lib/utils/games-api";
+import { useGameContext } from "../../lib/providers/game.providers";
 
 const GameStore = () => {
-  const { games } = useContext(AuthContext);
+  const { games } = useGameContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState({
     age: [],
@@ -20,7 +20,6 @@ const GameStore = () => {
   const [gamesFilter, setGamesFilter] = useState([])
 
   const applyFilters = async (newFilters) => {
-    console.log("Filtros aplicados:", newFilters);
     const filter = await filtersGames(newFilters)
     setGamesFilter(filter)
     //lanzar peticion al back sobre la url que hemos creado para los filtros. Al metodo le pasamos por parametro newFilters
@@ -28,7 +27,7 @@ const GameStore = () => {
 
   useEffect(() => {
     setGamesFilter(games)
-  }, [])
+  }, [games])
 
   return (
     <>
@@ -44,7 +43,7 @@ const GameStore = () => {
           </StyledTitleSection>
 
           <StyledTagsSection>
-            {Object.entries(selectedFilters).map(([filter, values]) =>
+            {Object.entries(applyFilters).map(([filter, values]) =>
               Array.isArray(values) ? (
                 values.map((value) => (
                   <StyledTag key={value}>
@@ -84,6 +83,7 @@ const removeFilter = (filterCategory, value, setSelectedFilters) => {
   setSelectedFilters((prevFilters) => {
     const updatedFilters = { ...prevFilters };
     updatedFilters[filterCategory] = updatedFilters[filterCategory].filter((item) => item !== value);
+    // if(!updatedFilters){return games}
     return updatedFilters;
   });
 };

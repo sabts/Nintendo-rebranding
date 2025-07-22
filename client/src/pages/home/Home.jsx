@@ -1,6 +1,3 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../lib/context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Hero from '../../components/hero/Hero';
 import GameSection from '../../components/games-home-section/GamesSection';
@@ -10,18 +7,17 @@ import NewsSection from '../../components/news-section/NewsSection';
 import Footer from '../../components/footer/Footer';
 
 const Home = () => {
-	const { user } = useContext(AuthContext);
 	return (<>
-			<Header/>
-			<Hero/>
-			<GameSection/>
-			<StyledLine />
-			<NintendoOnlineBanner/>
-			<MyNintendoBanner/>
-			<StyledLine />
-			<NewsSection/>
-			<Footer/>
-		</>
+		<Header />
+		<Hero />
+		<GameSection />
+		<StyledLine />
+		<NintendoOnlineBanner />
+		<MyNintendoBanner />
+		<StyledLine />
+		<NewsSection />
+		<Footer />
+	</>
 	);
 };
 

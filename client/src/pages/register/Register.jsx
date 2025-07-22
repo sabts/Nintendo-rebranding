@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { saveUserData } from '../../lib/utils/user-api';
 import {
 	StyledButtonsContainer,
 	StyledForm,

@@ -1,60 +1,51 @@
-import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from '../../lib/providers/user.providers';
+import { PrimaryButton } from '../../components/ui/buttons/Buttons';
 //import { AuthContext } from '../../lib/context/AuthContext';
 
 const Profile = () => {
-	// //const { user, setUser } = useContext(AuthContext);
-	// const [nameInput, setNameInput] = useState(user?.name || '');
-	// const [isEditing, setIsEditing] = useState(false);
-	// const navigate = useNavigate();
+	const { user } = useUserContext();
+	const navigate = useNavigate();
 
-	// useEffect(() => {
-	// 	if (user) setNameInput(user.name);
-	// }, [user]);
+	if (!user) {
+		return (
+			<section>
+				<picture>
+					<source
+						media="(min-width: 1024px)"
+						srcSet="/profile/no-user-nintendo-characters-tablet.png"
+					/>
+					<source
+						media="(min-width: 768px) and (max-width: 1023px)"
+						srcSet="/profile/no-user-nintendo-characters-tablet.png"
+					/>
+					<source
+						media="(min-width: 380px)"
+						srcSet="/profile/no-user-nintendo-characters-mobile.png"
+					/>
+					<img
+						src="/profile/no-user-nintendo-characters-mobile.png"
+						alt="User not connected, photo of Nintendo characters"
+					/>
+				</picture>
+				<div>
+					<h3>Ready to play?</h3>
+					<h4>Log in or sign up to access your Nintendo World</h4>
+				</div>
+				<Link to="/login">
+					<PrimaryButton>Log in</PrimaryButton>
+				</Link>
+				<PrimaryButton onClick={() => navigate('/signup')}>Sign up</PrimaryButton>
+			</section>
+		);
+	}
 
-	// if (!user) {
-	// 	return <h2>No User</h2>;
-	// }
-	return //(
-	// 	<StyledMainContainer>
-	// 		<Link to='/'>
-	// 			<StyledBackButton>back to users</StyledBackButton>
-	// 		</Link>
-	// 		<StyledUserProfile>
-	// 			{!isEditing ? (
-	// 				<>
-	// 					<StyledPhoto />
-	// 					<h2>{user.name}</h2>
-	// 					<span>{user.email}</span>
-	// 					<div>
-	// 						<button onClick={() => setIsEditing(true)}>Edit</button>
-	// 						<button onClick={() => logout(navigate)}>Log Out</button>
-	// 					</div>
-	// 				</>
-	// 			) : (
-	// 				<>
-	// 					<StyledEdtUserProfile onSubmit={(e) => updateUser(user.uid, setUser, e, setIsEditing)}>
-	// 						<StyledPhoto />
-	// 						<StyledFieldDiv>
-	// 							<label htmlFor='name'>Nombre</label>
-	// 							<input
-	// 								type='text'
-	// 								id='name'
-	// 								name='name'
-	// 								defaultValue={nameInput}
-	// 								onChange={e => setNameInput(e.target.value)}
-	// 							/>
-	// 						</StyledFieldDiv>
-	// 						<StyledButtonsContainer>
-	// 							<input type='submit' value='SAVE CHANGES' />
-	// 							<button onClick={() => setIsEditing(false)}>CANCEL</button>
-	// 						</StyledButtonsContainer>
-	// 					</StyledEdtUserProfile>
-	// 				</>
-	// 			)}
-	// 		</StyledUserProfile>
-	// 	</StyledMainContainer>
-	// );
+	return (
+		<section>
+			<h2>Welcome, {user.name || user.email}!</h2>
+			{/* Aquí puedes poner más info del perfil */}
+		</section>
+	);
 };
 
 // const logout = async navigate => {

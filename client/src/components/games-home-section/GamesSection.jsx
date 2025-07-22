@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { CATEGORIES_TAB } from '../../constants/home-tabs-content';
 import {
   StyledCategoryTabsWrapper,
@@ -9,12 +9,12 @@ import {
 } from './game-section-styles';
 
 import { GamePreview } from '../ui/game-cards/GameCards';
-import { AuthContext } from "../../lib/context/AuthContext";
+import { useGameContext } from '../../lib/providers/game.providers';
 
 const CATEGORIES = ['Recent Release', 'Best Seller', 'Offers'];
 
 const GameSection = () => {
-  const { games } = useContext(AuthContext);
+  const { games } = useGameContext()
   const [activeTab, setActiveTab] = useState(CATEGORIES[0]);
 
   //const filteredGames = filterGamesByCategory(activeTab);

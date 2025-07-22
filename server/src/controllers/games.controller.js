@@ -63,8 +63,6 @@ const filterGames = async (req, res) => {
       filter.ageRating = ageRating;
     }
 
-    console.log(filter)
-
     const games = await Game.find(filter);
     res.status(200).json(games);
   } catch (err) {

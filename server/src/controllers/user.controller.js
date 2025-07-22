@@ -2,18 +2,34 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../models/user.model");
 
-const register = async () => {
-  const generateUserCode = () => {
-    return Math.floor(Math.random() * 900000000000) + 100000000000;
-  };
 
+const generateUserCode = () => {
+  const userCodeRegex = /^[A-Z]{2}\d{12}$/;
+
+  const generateLetter = () =>
+    String.fromCharCode(65 + Math.floor(Math.random() * 26));
+
+  const generateNumber = () =>
+    Math.floor(Math.random() * 900000000000) + 100000000000;
+
+  let code = "";
+
+  while (!userCodeRegex.test(code)) {
+    code = `${generateLetter()}${generateLetter()}${generateNumber()}`;
+  }
+
+  return code;
+};
+
+
+const register = async (req, res) => {
   req.body.userCode = generateUserCode();
   req.body.password = bcrypt.hashSync(req.body.password, 9);
   const newUser = await User.create(req.body);
   res.json(newUser);
 };
 
-const login = async () => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   //busca los usarios que tengan el mismo email del body a la BD
@@ -29,4 +45,4 @@ const login = async () => {
     return res.status(401).json({ message: "Error in email or password" });
 };
 
-export { register, login };
+module.exports = { register, login }

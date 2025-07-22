@@ -1,16 +1,25 @@
-import { useContext, useState } from 'react';
-import { AuthContext } from '../../lib/context/AuthContext';
+import { useState } from 'react';
 import { StyledButton, StyledMenu } from './menu-styles';
 import Tabs from './Tabs';
 import Content from './Content';
 import { MENU_CONTENT } from '../../constants/menu-content';
-import Header from '../header/Header';
+import { useUserContext } from '../../lib/providers/user.providers';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useUserContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(MENU_CONTENT[0].title);
   const currentSection = MENU_CONTENT.find(section => section.title === activeTab);
+  const navigate = useNavigate();
+
+  const profilePicture = () => {
+    // if (user && user.profilePicture.img) {
+    //   return user.profilePicture.img
+    // } else {
+    //   return '/icons/no user - icon.svg'
+    // }
+  }
 
   return (
     <>
@@ -33,9 +42,9 @@ const Menu = () => {
         </StyledButton>
 
         {/* BOTÓN DE USUARIO */}
-        <StyledButton onClick={() => {/* lógica de usuario */ }}>
+        <StyledButton onClick={() => { navigate('/profile') }}>
           <img
-            src={user?.profileImageUrl || '/icons/no user - icon.svg'}
+            src={profilePicture()}
             alt={user ? `${user.username} profile` : 'no user connected menu icon'}
           />
         </StyledButton>
@@ -74,3 +83,10 @@ export default Menu;
 			  </StyledUl>
 			)}
 		  </div> */}
+
+
+{/* <img
+  src={user?.profilePicture?.img || '/icons/no-user-icon.svg'}
+  alt={user ? `${user.username} profile` : 'no user connected menu icon'}
+  className={user?.profilePicture?.backgroundColor || ''}
+/> */}

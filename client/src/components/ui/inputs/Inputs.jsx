@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 import { CheckboxLabel, DropdownContainer, DropdownContent, StyledFilterLabel } from "./dropdown-styles";
 
 const DropdownCheckbox = ({ label, options, selectedValues, onChange }) => {
@@ -36,4 +36,29 @@ const DropdownCheckbox = ({ label, options, selectedValues, onChange }) => {
   );
 };
 
-export { DropdownCheckbox };
+const TextInputPassword = (label, value,) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const getPasswordIcon = (isOpen) => {
+    return isOpen ? '/icons/eye-open-password.svg' : '/icons/eye-close-password.svg';
+  };
+
+  return (
+    <>
+      <label>{label}</label>
+      <input
+        type={isOpen ? 'text' : 'password'}
+        value={value}
+        onChange={onChange}
+      />
+      <img
+        src={getPasswordIcon(isOpen)}
+        alt={isOpen ? 'Hide password' : 'Show password'}
+        onClick={() => setIsOpen(!isOpen)}
+      />
+    </>
+  );
+};
+
+
+export { DropdownCheckbox, TextInputPassword };
