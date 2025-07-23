@@ -50,7 +50,7 @@ const userSchema = new Schema({
       ref: "game",
     },
   ],
-  points: Number,
+  points: { type: Number, default: 0 },
   profilePicture: {
     img: String,
     backgroundColor: String,

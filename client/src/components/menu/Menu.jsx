@@ -18,7 +18,7 @@ const Menu = () => {
     if (user && user.profilePicture.img) {
       return URL_BASE + user.profilePicture.img
     } else {
-      return '/icons/no user - icon.svg'
+      return '/icons/no user - icon.svg' // cambiar a la foto a sin bordes
     }
   }
 

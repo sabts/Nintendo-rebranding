@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { PrimaryButton } from '../../components/ui/buttons/Buttons';
 import { URL_BASE } from '../../lib/utils/user-api';
+import { StyledAchievementsandPoints, StyledAchievementsandPointsContainer } from './profile-styles';
+import Header from '../../components/header/Header';
 
 const Profile = () => {
 	const { user } = useUserContext();
@@ -41,38 +43,71 @@ const Profile = () => {
 	}
 
 	return (
-		<section>
-			{/* SECCION DE FOTO */}
-			<div bg={user.profilePicture.backgroundColor}>
-				<img
-					src={URL_BASE + user.profilePicture.img}
-					alt={`${user.username}`}
-				/>
-			</div>
+		<>
+			<Header />
+			<section>
+				{/* SECCION DE FOTO */}
+				<div bg={user.profilePicture.backgroundColor}>
+					<img
+						src={URL_BASE + user.profilePicture.img}
+						alt={`${user.username}`}
+					/>
+				</div>
 
-			<h2>Hi!, {user.nickname}!</h2>
-		</section>
+				<h2>Hi!, {user.nickname}!</h2>
+			</section>
 
-		     {/* SECCION DE PUNTOS Y LOGROS */ }
-	<section>
-		<div>
-			<span>Points</span>
-			<span>{user.points}</span>
-			<img src='' />
-		</div>
-		<div>
-			<span>Achivements</span>
-			<span>{user.gameowned.achivements}</span>
-			<img src='' />
-		</div>
-	</section>
+			{/* SECCION DE PUNTOS Y LOGROS */}
+			<StyledAchievementsandPointsContainer>
+				<StyledAchievementsandPoints>
+					<img src='/icons/points icon.svg' alt='Points' />
+					<span>Points</span>
+					<span>{user?.points ?? 0}</span>
+				</StyledAchievementsandPoints>
+				<StyledAchievementsandPoints>
+					<img src='/icons/achievements icon.svg' alt='Achievements icon' />
+					<span>Achievements</span>
+					<span>{user?.gamesOwned?.gameAchievements ?? 0}</span>
+				</StyledAchievementsandPoints>
+			</StyledAchievementsandPointsContainer>
+			{/* SECCION DE INFO */}
+			<section>
+				<div>
+					<img src='/icons/user-icon-profile.svg' />
+					<h4>My info</h4>
+				</div>
+				<div>
+					<img src='/icons/games-icon-profile.svg' />
+					<h4>{user.nickname}´s games </h4>
+					{/* MAP DE LOS JUEGOS */}
+				</div>
+				<div>
+					<img src='/icons/favorite-icon-profile.svg' />
+					<h4>Favorites </h4>
+					{/* MAP DE FAVORITOS */}
+				</div>
+				<div>
+					<img src='/icons/friends-icon.svg' />
+					<h4>Friends</h4>
+					<div>
+						<h5>Friends ({user.friends.accepted.length})</h5>
+						{/* MAP DE AMIGOS */}
+					</div>
+					<div>
+						<h5>Friends request ({user.friends.requests.length})</h5>
+						{/* MAP DE REQUESTS */}
+					</div>
+				</div>
+			</section>
+			<PrimaryButton>Log out</PrimaryButton>
+		</>
 	);
 };
 
-// const logout = async navigate => {
-// 	await signOut(auth);
-// 	navigate('/');
-// };
+const logout = async navigate => {
+	await signOut(auth);
+	navigate('/');
+};
 
 // const updateUser = async (id, setUser, event, setIsEditing) => {
 // 	event.preventDefault();

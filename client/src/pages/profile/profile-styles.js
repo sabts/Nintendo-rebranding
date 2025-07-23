@@ -46,6 +46,30 @@ const StyledButtonsContainer = styled.div`
 	gap: 8px;
 `;
 
+
+//Perfil conectado
+
+const StyledAchievementsandPointsContainer = styled.section`
+display: flex;
+justify-content: center;
+gap: 24px
+`
+
+const StyledAchievementsandPoints = styled.div`
+display: flex;
+flex-direction: column;
+width: 132px;
+height: 140px;
+padding: 12px 29px;
+justify-content: center;
+align-items: center;
+//gap: 24px;
+border-radius: 20px;
+ background-color: ${COLORS.base.tertiary};
+box-shadow: 2px 1px 1.2px 0px #FBFBFB inset, 0px 3px 0px 0px #B6000D;
+color: ${COLORS.base.primary}
+`
+
 export {
 	StyledMainContainer,
 	StyledPhoto,
@@ -53,5 +77,7 @@ export {
 	StyledUserProfile,
 	StyledEdtUserProfile,
 	StyledFieldDiv,
-	StyledButtonsContainer
+	StyledButtonsContainer,
+	StyledAchievementsandPointsContainer,
+	StyledAchievementsandPoints
 };
