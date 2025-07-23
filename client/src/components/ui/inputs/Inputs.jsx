@@ -36,7 +36,7 @@ const DropdownCheckbox = ({ label, options, selectedValues, onChange }) => {
   );
 };
 
-const TextInputPassword = (label, value, onChange,) => {
+const TextInputPassword = ({ label, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const getPasswordIcon = (isOpen) => {
@@ -47,9 +47,9 @@ const TextInputPassword = (label, value, onChange,) => {
     <>
       <label>{label}</label>
       <input
-      type={isOpen ? 'text' : 'password'}
-      value={value}
-      onChange={onChange}
+        type={isOpen ? 'text' : 'password'}
+        value={value}
+        onChange={onChange}
       />
       <img
         src={getPasswordIcon(isOpen)}
@@ -60,16 +60,16 @@ const TextInputPassword = (label, value, onChange,) => {
   );
 };
 
-const TextInput = (label, value, onChange,) => {
+const TextInput = ({ label, value, onChange }) => {
   return (
     <>
       <label>{label}</label>
       <input
-      type={isOpen ? 'text' : 'password'}
-      value={value}
-      onChange={onChange}
+        type="text"
+        value={value}
+        onChange={onChange}
       />
     </>
   );
 };
-export { DropdownCheckbox, TextInputPassword, TextInput  };
+export { DropdownCheckbox, TextInputPassword, TextInput };

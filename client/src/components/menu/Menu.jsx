@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { StyledButton, StyledMenu } from './menu-styles';
+import { StyledButton, StyledMenu, StyledUserImage } from './menu-styles';
 import Tabs from './Tabs';
 import Content from './Content';
 import { MENU_CONTENT } from '../../constants/menu-content';
 import { useUserContext } from '../../lib/providers/user.providers';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { URL_BASE } from '../../lib/utils/user-api';
 
 const Menu = () => {
   const { user } = useUserContext();
@@ -14,11 +15,11 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const profilePicture = () => {
-    // if (user && user.profilePicture.img) {
-    //   return user.profilePicture.img
-    // } else {
-    //   return '/icons/no user - icon.svg'
-    // }
+    if (user && user.profilePicture.img) {
+      return URL_BASE + user.profilePicture.img
+    } else {
+      return '/icons/no user - icon.svg'
+    }
   }
 
   return (
@@ -42,12 +43,14 @@ const Menu = () => {
         </StyledButton>
 
         {/* BOTÓN DE USUARIO */}
-        <StyledButton onClick={() => { navigate('/profile') }}>
-          <img
-            src={profilePicture()}
-            alt={user ? `${user.username} profile` : 'no user connected menu icon'}
-          />
-        </StyledButton>
+        <Link to={"/profile"}>
+          <StyledButton >
+            <StyledUserImage bg={user?.profilePicture?.backgroundColor}
+              src={profilePicture()}
+              alt={user ? `${user.username} profile` : 'no user connected menu icon'}
+            />
+          </StyledButton>
+        </Link>
       </StyledMenu>
 
       {/* MENÚ EXPANDIDO */}

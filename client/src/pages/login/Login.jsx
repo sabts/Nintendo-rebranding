@@ -1,20 +1,29 @@
-import { useUserContext } from '../../lib/providers/user.providers';
 import { TextInput, TextInputPassword } from '../../components/ui/inputs/Inputs';
+import { useNavigate } from 'react-router-dom';
 import { login } from '../../lib/utils/user-api';
+import { useUserContext } from '../../lib/providers/user.providers';
 import { useState } from 'react';
+import { StyledForm } from './login-styles';
 
 
 const Login = () => {
-	const [error, setError] = useState('')
+	const { setUser } = useUserContext();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+	const navigate = useNavigate();
 
-	const submitForm = async(data) => {
+	const submitForm = async (e) => {
+		e.preventDefault();
 		try {
-			const response = await login(data)
+			const response = await login({ email, password });
+			setUser(response)
+			console.log('Login successful:', response);
+			navigate('/profile');
 		} catch (error) {
-			setError(error.response.data.message)
+			setError(error.response?.data?.message || 'Login failed');
 		}
-	}
-
+	};
 
 	return (<>
 		<picture>
@@ -35,25 +44,27 @@ const Login = () => {
 				alt="User not connected, photo of Nintendo characters"
 			/>
 		</picture>
-		<h3>Let the adventure continue!</h3>
-
-		<form>
-			<TextInput
-			label=""
-			value={value}
-			onChange={(e) => setValue(e.target.value)}  
-			/>
-			<TextInputPassword
-				label="Password"
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-			/>
-		</form>
-{error && <div>
-	{error}
-	</div>}
-	</>)
+		<div>
+			<h3>Let the adventure continue!</h3>
+			<StyledForm onSubmit={submitForm}>
+				<TextInput
+					label="Email"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+				<TextInputPassword
+					label="Password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<button type="submit">Login</button>
+			</StyledForm>
+			{error && <div>{error}</div>}
+		</div>
+	</>
+	);
 };
+
 
 export default Login;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledMainContainer = styled.section`
 	display: flex;
@@ -27,7 +28,8 @@ const StyledPhoto = styled.div`
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	background-color: black;
+	background: ${({ bg }) => bg || 'none'};
+	border: 1px solid ${COLORS.base.primary};
 `;
 
 const StyledFieldDiv = styled.div`

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { PrimaryButton } from '../../components/ui/buttons/Buttons';
+import { URL_BASE } from '../../lib/utils/user-api';
 
 const Profile = () => {
 	const { user } = useUserContext();
@@ -41,9 +42,30 @@ const Profile = () => {
 
 	return (
 		<section>
-			<h2>Welcome, {user.name || user.email}!</h2>
-			{/* Aquí puedes poner más info del perfil */}
+			{/* SECCION DE FOTO */}
+			<div bg={user.profilePicture.backgroundColor}>
+				<img
+					src={URL_BASE + user.profilePicture.img}
+					alt={`${user.username}`}
+				/>
+			</div>
+
+			<h2>Hi!, {user.nickname}!</h2>
 		</section>
+
+		     {/* SECCION DE PUNTOS Y LOGROS */ }
+	<section>
+		<div>
+			<span>Points</span>
+			<span>{user.points}</span>
+			<img src='' />
+		</div>
+		<div>
+			<span>Achivements</span>
+			<span>{user.gameowned.achivements}</span>
+			<img src='' />
+		</div>
+	</section>
 	);
 };
 

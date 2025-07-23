@@ -23,6 +23,14 @@ const StyledButton = styled.button`
 	border: none;
 `;
 
+const StyledUserImage = styled.img`
+ height: 32px;
+    width: 32px;
+    border-radius: 50%;
+	background: ${({ bg }) => bg || 'none'};
+	border: 1px solid ${COLORS.base.primary};
+`
+
 const StyledTabContainer = styled.div`
 	position: fixed;
 	display: flex;
@@ -93,6 +101,7 @@ const StyledDropMenu = styled.div`
 export {
 	StyledMenu,
 	StyledButton,
+	StyledUserImage,
 	StyledTabContainer,
 	StyledContentContainer,
 	SyledButtonCategory,

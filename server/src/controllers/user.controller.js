@@ -43,6 +43,8 @@ const login = async (req, res) => {
 
   if (!confirmPassword)
     return res.status(401).json({ message: "Error in email or password" });
+
+  return res.status(200).json(existingEmail);
 };
 
 module.exports = { register, login }

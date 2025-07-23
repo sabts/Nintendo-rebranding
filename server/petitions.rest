@@ -113,3 +113,12 @@ Content-Type: application/json
     "backgroundColor": "#F3D50F"
   }
 }
+
+###
+POST {{HOST}}/api/user/login
+Content-Type: application/json
+
+{
+"email": "sabrinatesting@gmail.com", 
+"password": "123456"
+}

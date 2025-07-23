@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState, } from 'react';
-import { login } from '../utils/user-api';
 
 export const UserContext = createContext()
 
@@ -8,21 +7,23 @@ export const useUserContext = () => {
 }
 
 const UserProvider = ({ children }) => {
-
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState();
 
     useEffect(() => {
-        const user = async () => {
-            try {
-                const userData = await login();
-                setUser(userData);
-            } catch (error) {
-                setUser(null);
-            }
-        };
-
-        user();
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
     }, []);
+
+    // Guardar usuario en localStorage cuando se actualiza
+    useEffect(() => {
+        if (user) {
+            localStorage.setItem('user', JSON.stringify(user));
+        } else {
+            localStorage.removeItem('user');
+        }
+    }, [user]);
 
     return (
         <UserContext.Provider
