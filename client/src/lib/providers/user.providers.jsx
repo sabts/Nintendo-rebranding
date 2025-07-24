@@ -20,16 +20,23 @@ const UserProvider = ({ children }) => {
     useEffect(() => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
-        } else {
-            localStorage.removeItem('user');
         }
     }, [user]);
+
+    const isLogged = () => {
+        const user = localStorage.getItem('user')
+        if (!user) {
+            return false;
+        }
+        return true
+    }
 
     return (
         <UserContext.Provider
             value={{
                 user,
-                setUser
+                setUser,
+                isLogged
             }}
         >
             {children}

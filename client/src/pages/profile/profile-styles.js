@@ -1,23 +1,6 @@
 import styled from 'styled-components';
 import COLORS from '../../styles/colors';
 
-const StyledMainContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-	gap: 24px;
-`;
-
-const StyledPhoto = styled.img`
-	width: 100%;
-`;
-
-const StyledButtonsContainer = styled.div`
-	display: flex;
-	gap: 8px;
-`;
 
 ///// PERFIL CONECTADO /////
 
@@ -37,6 +20,7 @@ const StyledProfileImg = styled.img`
 	border: 8px solid #fbfbfb;
 	border-radius: 50%;
 `;
+
 const StyledSectionsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -83,9 +67,6 @@ const StyledMyInfoDiv = styled.div`
 `;
 
 export {
-	StyledMainContainer,
-	StyledButtonsContainer,
-	StyledPhoto,
 	StyledMainContainerConnect,
 	StyledProfileImg,
 	StyledSectionsContainer,

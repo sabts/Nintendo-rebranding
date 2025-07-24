@@ -2,7 +2,7 @@ import { useState } from "react"
 import { StyledFavoriteButton, StyledPrimaryButton, StyledSecondaryButton, StyledTertiaryButton } from "./buttons-styles"
 
 const PrimaryButton = ({ children, action }) => {
-  return <StyledPrimaryButton>{children}</StyledPrimaryButton>
+  return <StyledPrimaryButton onClick={action}>{children}</StyledPrimaryButton>
 }
 
 const SecondaryButton = ({ children, isBackgroundDark }) => {

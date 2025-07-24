@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../lib/utils/user-api';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { useState } from 'react';
-import { StyledForm, StyledPhoto } from './login-styles';
+import { StyledForm, StyledMainContainer, StyledPhoto } from './login-styles';
+import { PrimaryButton } from '../../components/ui/buttons/Buttons';
 
 
 const Login = () => {
@@ -44,7 +45,7 @@ const Login = () => {
 				alt="User not connected, photo of Nintendo characters"
 			/>
 		</picture>
-		<div>
+		<StyledMainContainer>
 			<h3>Let the adventure continue!</h3>
 			<StyledForm onSubmit={submitForm}>
 				<TextInput
@@ -57,10 +58,10 @@ const Login = () => {
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
-				<button type="submit">Login</button>
+				<PrimaryButton type="submit">Login</PrimaryButton>
 			</StyledForm>
 			{error && <div>{error}</div>}
-		</div>
+		</StyledMainContainer>
 	</>
 	);
 };

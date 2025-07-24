@@ -2,66 +2,27 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
 import {
 	PrimaryButton,
-	SecondaryButton
 } from '../../components/ui/buttons/Buttons';
 import { URL_BASE } from '../../lib/utils/user-api';
 import {
 	StyledAchievementsandPoints,
 	StyledAchievementsandPointsContainer,
-	StyledMainContainer,
 	StyledMainContainerConnect,
 	StyledMyinfoContainer,
 	StyledMyInfoDiv,
-	StyledPhoto,
 	StyledProfileImg,
-	StyledSectionsContainer
 } from './profile-styles';
 import Header from '../../components/header/Header';
 import ProfileSections from '../../components/ui/profile-sections/ProfileSections';
 import Footer from '../../components/footer/Footer';
+import NoUser from '../../components/user-profile/UserLogout';
 
 const Profile = () => {
-	const { user, setUser } = useUserContext();
+	const { user, setUser, isLogged } = useUserContext();
 	const navigate = useNavigate();
 
-	if (!user) {
-		return (
-			<section>
-				<picture>
-					<source
-						media='(min-width: 1024px)'
-						srcSet='/profile/no-user-nintendo-characters-tablet.png'
-					/>
-					<source
-						media='(min-width: 768px) and (max-width: 1023px)'
-						srcSet='/profile/no-user-nintendo-characters-tablet.png'
-					/>
-					<source
-						media='(min-width: 380px)'
-						srcSet='/profile/no-user-nintendo-characters-mobile.png'
-					/>
-					<StyledPhoto
-						src='/profile/no-user-nintendo-characters-mobile.png'
-						alt='User not connected, photo of Nintendo characters'
-					/>
-				</picture>
-				<StyledMainContainer>
-					<div>
-						<h3>Ready to play?</h3>
-						<h4>Log in or sign up to access your Nintendo World</h4>
-					</div>
-					<Link to='/login'>
-						<PrimaryButton>Log in</PrimaryButton>
-					</Link>
-					<SecondaryButton
-						$isBackgroundDark={false}
-						onClick={() => navigate('/signup')}
-					>
-						Sign up
-					</SecondaryButton>
-				</StyledMainContainer>
-			</section>
-		);
+	if (!isLogged()) {
+		return <NoUser />
 	}
 
 	return (
@@ -145,7 +106,7 @@ const Profile = () => {
     ))} */}
 					</div>
 				</ProfileSections>
-				<PrimaryButton onClick={() => logout(setUser, navigate)}>
+				<PrimaryButton action={() => logout(setUser, navigate)}>
 					Log out
 				</PrimaryButton>
 			</StyledSectionsContainer>
@@ -154,13 +115,9 @@ const Profile = () => {
 	);
 };
 
-// const logout = async navigate => {
-// 	await signOut(auth);
-// 	navigate('/');
-// };
-
 const logout = (setUser, navigate) => {
-	setUser();
+	console.log('se esta desconectando')
+	setUser(null);
 	localStorage.removeItem('user');
 	sessionStorage.removeItem('user');
 	navigate('/');

@@ -6,7 +6,7 @@ const NintendoOnlineBanner = () => {
         <BannerContentNintendoOnline>
             <h4>Nintendo Online</h4>
             <p>Get more out of your console with the paid subscription service Nintendo Switch Online!</p>
-            <SecondaryButton $isBackgroundDark={true}>Learn More</SecondaryButton>
+            <SecondaryButton isBackgroundDark={true}>Learn More</SecondaryButton>
         </BannerContentNintendoOnline>
         <img src="/home/nintendo online mobile.png" alt="Mario, Luigi, Peach and Toad playon togethers" />
     </StyledNintendoOnlineWrap>
@@ -17,7 +17,7 @@ const MyNintendoBanner = () => {
         <BannerContentMyNintendo>
             <h4>My Nintendo</h4>
             <p>Easy, fun and rewarding!</p>
-            <SecondaryButton $isBackgroundDark={true}>Learn More</SecondaryButton>
+            <SecondaryButton isBackgroundDark={true}>Learn More</SecondaryButton>
         </BannerContentMyNintendo>
         <BannerImage src="/home/my nintendo mobile.png" alt="Mario looking up" />
     </StyledMyNintendoWrap>
