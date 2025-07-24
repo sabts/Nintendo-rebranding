@@ -65,31 +65,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
-{/*  <div>
-			{!user ? (
-			  <nav>
-				<StyledUl>
-				  <li>
-					<Link to='/login'>Login</Link>
-				  </li>
-				  <li>
-					<Link to='/register'>Register</Link>
-				  </li>
-				</StyledUl>
-			  </nav>
-			) : (
-			  <StyledUl>
-				<li>
-				  <Link to='/profile'>Profile</Link>
-				</li>
-			  </StyledUl>
-			)}
-		  </div> */}
-
-
-{/* <img
-  src={user?.profilePicture?.img || '/icons/no-user-icon.svg'}
-  alt={user ? `${user.username} profile` : 'no user connected menu icon'}
-  className={user?.profilePicture?.backgroundColor || ''}
-/> */}

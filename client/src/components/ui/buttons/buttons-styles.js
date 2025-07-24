@@ -32,10 +32,12 @@ const StyledSecondaryButton = styled.button`
 	align-items: center;
 	border-radius: 20px;
 	background-color: transparent;
-	border: 1px solid ${COLORS.base.primary};
-	color: ${COLORS.base.primary};
+	border: 1px solid
+		${({ $isBackgroundDark }) =>
+			$isBackgroundDark ? COLORS.base.primary : COLORS.base.tertiary};
+	color: ${({ $isBackgroundDark }) =>
+		$isBackgroundDark ? COLORS.base.primary : COLORS.base.tertiary};
 	font-weight: 700;
-	
 `;
 
 const StyledTertiaryButton = styled.button`
@@ -64,7 +66,7 @@ const StyledFavoriteButton = styled.button`
 		$isCardPreview ? COLORS.base.tertiary : 'transparent'};
 	border: 1px solid
 		${({ $isCardPreview }) =>
-		$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
+			$isCardPreview ? COLORS.base.primary : COLORS.base.secondary};
 
 	img {
 		width: 24px;
@@ -73,4 +75,9 @@ const StyledFavoriteButton = styled.button`
 	}
 `;
 
-export { StyledPrimaryButton, StyledFavoriteButton, StyledTertiaryButton, StyledSecondaryButton };
+export {
+	StyledPrimaryButton,
+	StyledFavoriteButton,
+	StyledTertiaryButton,
+	StyledSecondaryButton
+};

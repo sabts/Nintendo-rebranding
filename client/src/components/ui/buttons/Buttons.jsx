@@ -5,8 +5,9 @@ const PrimaryButton = ({ children, action }) => {
   return <StyledPrimaryButton>{children}</StyledPrimaryButton>
 }
 
-const SecondaryButton = ({ children, action }) => {
-  return <StyledSecondaryButton>{children}</StyledSecondaryButton>
+const SecondaryButton = ({ children, isBackgroundDark }) => {
+
+  return <StyledSecondaryButton $isBackgroundDark={isBackgroundDark}>{children}</StyledSecondaryButton>
 }
 
 const TertiaryButton = ({ children, action }) => {

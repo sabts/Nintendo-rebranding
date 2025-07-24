@@ -19,4 +19,8 @@ const StyledForm = styled.form`
 const StyledButtonsContainer = styled.div`
 	display: flex;
 `;
-export { StyledMainContainer, StyledForm, StyledButtonsContainer };
+
+const StyledPhoto = styled.img`
+	width: 100%;
+`;
+export { StyledMainContainer, StyledForm, StyledButtonsContainer, StyledPhoto };

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../lib/utils/user-api';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { useState } from 'react';
-import { StyledForm } from './login-styles';
+import { StyledForm, StyledPhoto } from './login-styles';
 
 
 const Login = () => {
@@ -39,7 +39,7 @@ const Login = () => {
 				media="(min-width: 380px)"
 				srcSet="/profile/no-user-nintendo-characters-mobile.png"
 			/>
-			<img
+			<StyledPhoto
 				src="/profile/no-user-nintendo-characters-mobile.png"
 				alt="User not connected, photo of Nintendo characters"
 			/>

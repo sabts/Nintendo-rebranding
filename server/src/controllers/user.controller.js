@@ -2,7 +2,6 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../models/user.model");
 
-
 const generateUserCode = () => {
   const userCodeRegex = /^[A-Z]{2}\d{12}$/;
 
@@ -21,7 +20,6 @@ const generateUserCode = () => {
   return code;
 };
 
-
 const register = async (req, res) => {
   req.body.userCode = generateUserCode();
   req.body.password = bcrypt.hashSync(req.body.password, 9);
@@ -32,13 +30,11 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
 
-  //busca los usarios que tengan el mismo email del body a la BD
   const existingEmail = await User.findOne({ email });
 
   if (!existingEmail)
     return res.status(401).json({ message: "Error in email or password" });
 
-  //confirmamos que la contraseña sea correcta, pero esta encriptado
   const confirmPassword = bcrypt.compareSync(password, existingEmail.password);
 
   if (!confirmPassword)
@@ -47,4 +43,21 @@ const login = async (req, res) => {
   return res.status(200).json(existingEmail);
 };
 
-module.exports = { register, login }
+const logout = (req, res) => {
+  res.clearCookie("user");
+  return res.status(200).json({
+    message: "Sesión cerrada. Usuario desconectado.",
+  });
+};
+
+const addProducts = async (req, res) => {
+  const { productId } = req.body;
+
+  req.user.cart.push(productId);
+  await req.user.save();
+
+  const product = await Product.findById(productId);
+  res.json({ message: `el produucto ${productId} se ha agregadp añ carrito` });
+};
+
+module.exports = { register, login, logout };
