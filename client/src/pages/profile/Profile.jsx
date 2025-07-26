@@ -11,6 +11,7 @@ import {
 	StyledMyinfoContainer,
 	StyledMyInfoDiv,
 	StyledProfileImg,
+	StyledSectionsContainer,
 } from './profile-styles';
 import Header from '../../components/header/Header';
 import ProfileSections from '../../components/ui/profile-sections/ProfileSections';
