@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import COLORS from '../../../styles/colors';
 
+const StyledInputContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-bottom: 16px;
+`;
+
+const StyledLabel = styled.label`
+	align-self: flex-start;
+`;
+
 const StyledInputText = styled.input`
 	display: flex;
 	width: 288px;
@@ -29,4 +40,10 @@ const StyledImgPassword = styled.img`
 	right: 4%;
 `;
 
-export { StyledInputText, StyledPasswordInput, StyledImgPassword };
+export {
+	StyledInputContainer,
+	StyledLabel,
+	StyledInputText,
+	StyledPasswordInput,
+	StyledImgPassword
+};

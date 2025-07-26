@@ -1,9 +1,10 @@
-import { PrimaryButton } from "../ui/buttons/Buttons"
 import { StyledMainContainer } from "./birthday-styles"
 
-const Birthday = () => {
-    return <StyledMainContainer>
-    <picture>
+const Birthday = ({ birthday, setBirthday, register }) => {
+
+  return (
+    <StyledMainContainer>
+      <picture>
       <source
         media='(min-width: 1024px)'
         srcSet='/register/birthday-register-process-mobile.png'
@@ -21,16 +22,19 @@ const Birthday = () => {
         alt='Peach and Daisy caring a present in birtday section in register'
       />
     </picture>
-    <h4>Welcome to Nintendo!</h4>
-    <span>we want to know more about you! So, can you tell us when is your birthday?</span>
-    <label htmlFor="birthday" />
-    <input
-      id="birthday"
-      name="birthday"
-      type="date"
-    />
-    <PrimaryButton>Continue</PrimaryButton>
-  </StyledMainContainer>
-}
+      <h4>Welcome to Nintendo!</h4>
+      <span>We want to know more about you! Can you tell us when is your birthday?</span>
 
-export default Birthday
+      <input
+        id="birthday"
+        name="birthday"
+        type="date"
+        value={birthday}
+        onChange={(e) => setBirthday(e.target.value)}
+        {...register('birthday', { required: true })}
+      />
+    </StyledMainContainer>
+  );
+};
+
+export default Birthday;

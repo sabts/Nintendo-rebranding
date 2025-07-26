@@ -1,6 +1,6 @@
 import { Children, useState } from "react";
 import { CheckboxLabel, DropdownContainer, DropdownContent, StyledFilterLabel } from "./dropdown-styles";
-import { StyledImgPassword, StyledInputText, StyledPasswordInput } from "./input-text-styles";
+import { StyledImgPassword, StyledInputContainer, StyledInputText, StyledLabel, StyledPasswordInput } from "./input-text-styles";
 
 const DropdownCheckbox = ({ label, options, selectedValues, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,8 +45,8 @@ const TextInputPassword = ({ label, value, onChange }) => {
   };
 
   return (
-    <>
-      <label>{label}</label>
+    <StyledInputContainer>
+      <StyledLabel>{label}</StyledLabel>
       <StyledPasswordInput>
         <StyledInputText
           type={isOpen ? 'text' : 'password'}
@@ -59,20 +59,20 @@ const TextInputPassword = ({ label, value, onChange }) => {
           onClick={() => setIsOpen(!isOpen)}
         />
       </StyledPasswordInput>
-    </>
+    </StyledInputContainer>
   );
 };
 
 const TextInput = ({ label, value, onChange }) => {
   return (
-    <>
-      <label>{label}</label>
+    <StyledInputContainer>
+      <StyledLabel>{label}</StyledLabel>
       <StyledInputText
         type="text"
         value={value}
         onChange={onChange}
       />
-    </>
+    </StyledInputContainer>
   );
 };
 export { DropdownCheckbox, TextInputPassword, TextInput };

@@ -1,10 +1,12 @@
 import { TextInput, TextInputPassword } from '../../components/ui/inputs/Inputs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../lib/utils/user-api';
 import { useUserContext } from '../../lib/providers/user.providers';
 import { useState } from 'react';
-import { StyledForm, StyledMainContainer, StyledPhoto } from './login-styles';
+import { StyledError, StyledForm, StyledMainContainer, StyledPhoto, StyledRedirection } from './login-styles';
 import { PrimaryButton } from '../../components/ui/buttons/Buttons';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 
 const Login = () => {
@@ -27,6 +29,7 @@ const Login = () => {
 	};
 
 	return (<>
+	<Header/>
 		<picture>
 			<source
 				media="(min-width: 1024px)"
@@ -60,8 +63,13 @@ const Login = () => {
 				/>
 				<PrimaryButton type="submit">Login</PrimaryButton>
 			</StyledForm>
-			{error && <div>{error}</div>}
+			{error && <StyledError>{error}</StyledError>}
+
+			<Link to="/register">
+< StyledRedirection>You don’t have an account?</ StyledRedirection>
+			</Link>
 		</StyledMainContainer>
+		<Footer/>
 	</>
 	);
 };

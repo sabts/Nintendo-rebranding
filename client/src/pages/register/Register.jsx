@@ -1,145 +1,84 @@
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../lib/utils/user-api";
-import { TextInput, TextInputPassword } from '../../components/ui/inputs/Inputs';
 import { PrimaryButton } from "../../components/ui/buttons/Buttons";
-import { StyledBoxSelection, StyledMainContainer, StyledProfileContainer, StyledProfileImg, StyledSelectionGrid } from "./register-styles";
 import { useState } from "react";
-import ProfileSections from "../../components/ui/profile-sections/ProfileSections";
-import COLORS from "../../styles/colors";
-import { PROFILE_CHARACTERS } from "../../constants/img-picture";
-import Footer from "../../components/footer/Footer";
-import CustomSelect from "../../components/ui/custom-select/CustomSelect";
 import HeaderProcess from "../../components/header/Header-process";
 import Birthday from "../../components/register-process/Birthday";
+import { StyledMainContainer } from "../../components/register-process/birthday-styles";
+import Form from "../../components/register-process/Form";
+import ProfilePicture from "../../components/register-process/ProfilePicture";
 
 const Register = () => {
-  const { register, handleSubmit } = useForm();
-  const [region, setRegion] = useState('');
+  const { register, handleSubmit, setValue } = useForm();
   
-  //Characters
-  const [characters, setCharacters] = useState([]);
+  const [region, setRegion] = useState('');
   const [selectedCharacter, setSelectedCharacter] = useState();
-
-  //Color
   const [selectedColor, setSelectedColor] = useState();
+  const [birthday, setBirthday] = useState('');
+  const [step, setStep] = useState(1);
 
+  const nextStep = () => setStep((prev) => prev + 1); 
+  const prevStep = () => setStep((prev) => prev - 1); 
 
   const regions = [
-    { value: "", label: "-- Select a region --" },
-    { value: "america", label: "America" },
-    { value: "asia", label: "Asia" },
-    { value: "europe", label: "Europe" },
+    { value: '', label: '-- Select a region --' },
+    { value: 'america', label: 'America' },
+    { value: 'asia', label: 'Asia' },
+    { value: 'europe', label: 'Europe' },
   ];
 
+  // Maneja el envío del formulario
   const submitForm = async (data) => {
-    const response = registerUser
-    return response.data
-  }
+    const completeData = {
+      ...data,
+      region,
+      selectedCharacter,
+      selectedColor,
+      birthday,
+    };
 
-  const handleChange = (e) => {
-    setRegion(e.target.value);
+    //const response = await registerUser(completeData); 
+    console.log(completeData)
+    //return response.data;
   };
 
-  return (<>
-    <HeaderProcess/>
-  <StyledMainContainer>
-    <form onSubmit={handleSubmit(submitForm)}>
+  const handleRegionChange = (e) => setRegion(e.target.value);
 
-      {/* SECCION DE CUMPLEAÑOS */}
-      <Birthday/>
-      {/* SECCION DE FORMULARIO */}
-      <div>
-        <label>Email</label>
-        <TextInput
-          id="email"
-          type="email"
-          {...register("email", { required: true })}
-        />
-      </div>
+  return (
+    <>
+      <HeaderProcess />
+      <StyledMainContainer>
+        <form onSubmit={handleSubmit(submitForm)}>
+        {step === 1 && (
+            <Birthday birthday={birthday} setBirthday={setBirthday} register={register} />
+          )}
 
-      <div>
-        <label>Nickname</label>
-        <TextInput
-          id="nickname"
-          {...register("nickname", { required: true })}
-        />
-      </div>
-
-      <div>
-        <label>Name</label>
-        <TextInput
-          id="name"
-          {...register("name", { required: true })}
-        />
-      </div>
-
-      <div>
-      <label>Region</label>
-        <CustomSelect
-        options={regions}
-        value={region}
-        onChange={handleChange}/>
-      </div>
-
-      <div>
-        <label>Password</label>
-        <TextInputPassword
-          id="password"
-          {...register("password", { required: true })}
-        />
-      </div>
-
-      {/* SECCION DE IMAGEN DE PERFIL */}
-
-      {/* Imagen seleccionada con fondo */}
-      <StyledProfileContainer bg={selectedColor || COLORS.variants.primaryOpacity}>
-        <StyledProfileImg
-          src={
-            PROFILE_CHARACTERS.find(char => char.name === selectedCharacter)?.imageUrl ||
-            '/icons/no user - icon.svg '
-          }
-          alt={`Selected character: ${selectedCharacter || 'none'}`}
-        />
-      </StyledProfileContainer>
-
-      {/* Grid de personajes */}
-      <ProfileSections title="Choose a character" icon='/icons/user-icon-profile.svg'
-      >
-        <StyledSelectionGrid>
-          {PROFILE_CHARACTERS.map(({ name, imageUrl }) => (
-            <StyledBoxSelection
-              key={name}
-              $isSelected={selectedCharacter === name}
-              onClick={() => setSelectedCharacter(name)}
-              title={name}
-            >
-              <img src={imageUrl} alt={name} />
-            </StyledBoxSelection>
-          ))}
-        </StyledSelectionGrid>
-      </ProfileSections>
-
-      {/* Grid de Color */}
-      <ProfileSections title="Choose a color" icon='/icons/background-color-icon-profile.svg'>
-        <StyledSelectionGrid>
-          {Object.entries(COLORS.userImageBackground).map(([name, color]) => (
-            <StyledBoxSelection
-              key={name}
-              color={color}
-              $isSelected={selectedColor === color}
-              onClick={() => setSelectedColor(color)}
-              title={name} // Tooltip opcional
+{step === 2 && (
+            <Form region={region} setRegion={setRegion} register={register} />
+          )}
+       {step === 3 && (
+            <ProfilePicture
+              selectedCharacter={selectedCharacter}
+              setSelectedCharacter={setSelectedCharacter}
+              selectedColor={selectedColor}
+              setSelectedColor={setSelectedColor}
             />
-          ))}
-        </StyledSelectionGrid>
-      </ProfileSections>
-      <PrimaryButton type="submit">Submit</PrimaryButton>
-    </form>
-  </StyledMainContainer >
-  </>);
+          )}
+        <div>
+            {step > 1 && (
+              <button type="button" onClick={prevStep}>Back</button>
+            )}
+            {step < 3 ? (
+              <PrimaryButton type="button" onClick={nextStep}>Continue</PrimaryButton>
+            ) : (
+              <PrimaryButton type="submit">Finish</PrimaryButton>
+            )}
+          </div>
+        </form>
+      </StyledMainContainer>
+    </>
+  );
 };
-
-
 // const Register = () => {
 //   const { setUser } = useUserContext();
 
