@@ -8,6 +8,7 @@ const StyledMainContainer = styled.div`
 	flex-direction: column;
 	padding: 20px;
 	gap: 20px;
+	margin-bottom: 20px;
 `;
 
 const StyledProfileContainer = styled.div`

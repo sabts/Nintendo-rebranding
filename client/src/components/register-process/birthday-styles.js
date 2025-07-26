@@ -7,6 +7,11 @@ const StyledMainContainer = styled.div`
 	flex-direction: column;
 	padding: 20px;
 	gap: 20px;
+	margin-bottom: 20px;
 `;
 
-export { StyledMainContainer };
+const StyledButtonContainer = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+`;
+export { StyledMainContainer, StyledButtonContainer };

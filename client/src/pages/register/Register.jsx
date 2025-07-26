@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../lib/utils/user-api";
-import { PrimaryButton } from "../../components/ui/buttons/Buttons";
+import { PrimaryButton, SecondaryButton } from "../../components/ui/buttons/Buttons";
 import { useState } from "react";
 import HeaderProcess from "../../components/header/Header-process";
 import Birthday from "../../components/register-process/Birthday";
-import { StyledMainContainer } from "../../components/register-process/birthday-styles";
+import { StyledButtonContainer, StyledMainContainer } from "../../components/register-process/birthday-styles";
 import Form from "../../components/register-process/Form";
 import ProfilePicture from "../../components/register-process/ProfilePicture";
 
@@ -64,16 +64,16 @@ const Register = () => {
               setSelectedColor={setSelectedColor}
             />
           )}
-        <div>
+        <StyledButtonContainer>
             {step > 1 && (
-              <button type="button" onClick={prevStep}>Back</button>
+              <SecondaryButton action={prevStep}>Back</SecondaryButton>
             )}
             {step < 3 ? (
-              <PrimaryButton type="button" onClick={nextStep}>Continue</PrimaryButton>
+              <PrimaryButton  action={nextStep}>Continue</PrimaryButton>
             ) : (
               <PrimaryButton type="submit">Finish</PrimaryButton>
             )}
-          </div>
+          </StyledButtonContainer>
         </form>
       </StyledMainContainer>
     </>

@@ -1,5 +1,6 @@
 import CustomSelect from "../ui/custom-select/CustomSelect";
 import { TextInput } from "../ui/inputs/Inputs";
+import { StyledMainContainer } from "./birthday-styles";
 
  const Form = ({ region, setRegion, register }) => {
         const regions = [
@@ -10,7 +11,7 @@ import { TextInput } from "../ui/inputs/Inputs";
         ];
       
         return (
-          <div>
+          <StyledMainContainer>
             <div>
               <label>Email</label>
               <TextInput type="email" {...register('email', { required: true })} />
@@ -35,7 +36,7 @@ import { TextInput } from "../ui/inputs/Inputs";
               <label>Password</label>
               <TextInput  type="password" {...register('password', { required: true })} />
             </div>
-          </div>
+          </StyledMainContainer>
         );
 };
 
