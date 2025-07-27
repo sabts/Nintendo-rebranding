@@ -52,7 +52,7 @@ const StyledStoreCard = styled.div`
 	width: 154px;
 	height: 244px;
 	align-items: center;
-	gap: 12px;
+	gap: 8px;
 	flex-direction: column;
 	border-radius: 1rem;
 	overflow: hidden;
@@ -70,10 +70,9 @@ const StyledStoreCard = styled.div`
 const StyledStoreInfo = styled.div`
 	color: ${COLORS.base.secondary};
 	display: flex;
-	justify-content: space-between;
 	align-items: flex-start;
-	padding: 0px 12.583px 6.291px 12.583px;
-	gap: 0.75rem;
+	padding: 0px 12px 8px 16px;
+	gap: 0.5rem;
 
 	@media (min-width: 768px) {
 		padding: 1.25rem;
@@ -88,7 +87,7 @@ const StyledStoreTitle = styled.h3`
 	font-size: 0.875rem;
 	font-weight: 600;
 	width: 100px;
-	height: 30px;
+	height: 32px;
 	margin: 0;
 	color: ${COLORS.base.secondary};
 	overflow: hidden;
@@ -123,7 +122,3 @@ export {
 	StyledStoreTitle,
 	StyledGamePrice
 };
-
-//const DisabledLink = styled(Link)`
-// pointer - events: none;
-// `;

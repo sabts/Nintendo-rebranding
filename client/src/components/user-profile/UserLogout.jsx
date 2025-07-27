@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { StyledMainContainer, StyledPhoto } from './NoUser-styles';
 import { PrimaryButton, SecondaryButton } from '../ui/buttons/Buttons';
 import Footer from '../footer/Footer';
+import Header from '../header/Header';
 
 
 const NoUser = () => {
     return <>
+    <Header/>
         <section>
             <picture>
                 <source

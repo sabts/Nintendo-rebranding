@@ -56,8 +56,8 @@ const StyledTabContainer = styled.div`
 	background: ${COLORS.variants.primaryOpacity};
 	width: 354px;
 	height: 97px;
-	overflow: hidden;
 	z-index: 10;
+	overflow: hidden;
 `;
 
 const StyledContentContainer = styled.div`
@@ -77,6 +77,17 @@ const StyledContentContainer = styled.div`
 	overflow: scroll;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+`;
+
+const StyledArrowToggle = styled.div`
+	transition: transform 0.3s ease;
+	transform: rotate(${props => (props.$isOpen ? '180deg' : '0deg')});
+
+	svg {
+		width: 16px;
+		height: 16px;
+		fill: #ccc;
+	}
 `;
 
 const StyledButtonCategory = styled.button`
@@ -100,23 +111,49 @@ const StyledContentButtons = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 298px;
-	font-size: 14px;
+	font-size: 20px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 300%;
 	padding: 8px 16px;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	gap: 10px;
 	border-radius: 20px;
 	border: 1px solid ${COLORS.variants.primaryOpacity};
+	height: fit-content;
+
+	ul {
+		width: 298px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 16px;
+		list-style: none;
+		font-size: 1rem;
+	}
 `;
 
 const StyledDropMenu = styled.div`
 	display: flex;
+	width: 270px;
+	height: fit-content;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 `;
+
+const StyledUl = styled.ul`
+	/* ul {
+		display: ${({ visibleSubitems }) => (visibleSubitems ? 'flex' : 'none')};
+		flex-direction: column;
+		gap: 20px;
+		list-style: none;
+		padding-left: 20px;
+		font-size: 16px;
+		border: 1px solid black;
+	} */
+`;
+
 export {
 	StyleOverlay,
 	StyledMenu,
@@ -124,6 +161,7 @@ export {
 	StyledUserImage,
 	StyledTabContainer,
 	StyledContentContainer,
+	StyledArrowToggle,
 	StyledButtonCategory,
 	StyledContentButtons,
 	StyledDropMenu

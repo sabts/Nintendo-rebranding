@@ -38,7 +38,7 @@ export const GameStoreCard = ({ name, slug, thumbnail, price, isFavorite }) => {
       <StyledStoreInfo>
         <div>
           <StyledStoreTitle>{name}</StyledStoreTitle>
-          <StyledGamePrice>{price}</StyledGamePrice>
+          <StyledGamePrice>{price} €</StyledGamePrice>
         </div>
         <FavoriteButton isCardPreview={false} />
       </StyledStoreInfo>

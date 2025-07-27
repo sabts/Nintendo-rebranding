@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
 import {
 	PrimaryButton,
@@ -88,9 +88,9 @@ const Profile = () => {
 					icon='/icons/favorite-icon-profile.svg'
 					title='Favorites'
 				>
-					{/* {user.favorites.map(game => (
+					 {user.favorites.map(game => (
     <p key={game.id}>{game.title}</p>
-  ))} */}
+  ))}
 				</ProfileSections>
 
 				<ProfileSections icon='/icons/friends-icon.svg' title='Friends'>
