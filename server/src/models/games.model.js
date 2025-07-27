@@ -14,7 +14,8 @@ const gameSchema = new Schema(
     tags: ["new"],
     thumbnail: { mobile: String, tablet: String, desktop: String },
     herobanner: { mobile: String, tablet: String, desktop: String },
-    images: [{ mobile: String, tablet: String, desktop: String, youtubeUrl: String }
+    images: [
+      { mobile: String, tablet: String, desktop: String, youtubeUrl: String },
     ],
     fileSize: Number,
     playModes: ["new"],

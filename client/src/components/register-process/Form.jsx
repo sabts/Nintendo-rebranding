@@ -1,5 +1,5 @@
 import CustomSelect from "../ui/custom-select/CustomSelect";
-import { TextInput } from "../ui/inputs/Inputs";
+import { TextInput, TextInputPassword } from "../ui/inputs/Inputs";
 import { StyledMainContainer } from "./birthday-styles";
 
  const Form = ({ region, setRegion, register }) => {
@@ -34,7 +34,7 @@ import { StyledMainContainer } from "./birthday-styles";
             </div>
             <div>
               <label>Password</label>
-              <TextInput  type="password" {...register('password', { required: true })} />
+              <TextInputPassword  type="password" {...register('password', { required: true })} />
             </div>
           </StyledMainContainer>
         );

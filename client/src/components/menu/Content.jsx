@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StyledContentButtons, StyledContentContainer, StyledDropMenu, SyledButtonCategory } from './menu-styles';
+import { StyledContentButtons, StyledContentContainer, StyledDropMenu} from './menu-styles';
 import { useState } from 'react';
 
 const Content = ({ items }) => {

@@ -76,7 +76,6 @@ Content-Type: application/json
     "preOrderAvailable": false,
     "isOnSale": false,
     "nintendoPoints": 100
-  }
 ]
 
 ###
@@ -121,4 +120,12 @@ Content-Type: application/json
 {
 "email": "sabrinatesting@gmail.com", 
 "password": "123456"
+}
+
+###
+POST {{HOST}}/api/user/favorites/add
+Content-Type: application/json
+
+{
+"gameId": "6878d711c8d9e0e965cac910"
 }

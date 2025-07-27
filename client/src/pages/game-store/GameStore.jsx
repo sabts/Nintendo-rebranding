@@ -22,7 +22,6 @@ const GameStore = () => {
   const applyFilters = async (newFilters) => {
     const filter = await filtersGames(newFilters)
     setGamesFilter(filter)
-    //lanzar peticion al back sobre la url que hemos creado para los filtros. Al metodo le pasamos por parametro newFilters
   };
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const GameStore = () => {
           </StyledTitleSection>
 
           <StyledTagsSection>
-            {Object.entries(applyFilters).map(([filter, values]) =>
+            {Object.entries(applyFilters).map(([selectedFilters, values]) =>
               Array.isArray(values) ? (
                 values.map((value) => (
                   <StyledTag key={value}>

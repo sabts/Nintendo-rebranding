@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { StyledButton, StyledMenu, StyledUserImage } from './menu-styles';
+import { StyledButton, StyledMenu, StyledUserImage, StyleOverlay } from './menu-styles';
 import Tabs from './Tabs';
 import Content from './Content';
 import { MENU_CONTENT } from '../../constants/menu-content';
 import { useUserContext } from '../../lib/providers/user.providers';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { URL_BASE } from '../../lib/utils/user-api';
 
 const Menu = () => {
@@ -12,13 +12,12 @@ const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(MENU_CONTENT[0].title);
   const currentSection = MENU_CONTENT.find(section => section.title === activeTab);
-  const navigate = useNavigate();
 
   const profilePicture = () => {
     if (user && user.profilePicture.img) {
       return URL_BASE + user.profilePicture.img
     } else {
-      return '/icons/no user - icon.svg' // cambiar a la foto a sin bordes
+      return '/icons/no user - icon.svg'
     }
   }
 
@@ -55,10 +54,12 @@ const Menu = () => {
 
       {/* MENÚ EXPANDIDO */}
       {isMenuOpen && (
+        <StyleOverlay>
         <div>
           <Tabs tabs={MENU_CONTENT} activeTab={activeTab} onTabChange={setActiveTab} />
           {currentSection && <Content items={currentSection.items} />}
         </div>
+        </StyleOverlay>
       )}
     </>
   );

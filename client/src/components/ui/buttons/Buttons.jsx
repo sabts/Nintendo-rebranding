@@ -5,9 +5,9 @@ const PrimaryButton = ({ children, action }) => {
   return <StyledPrimaryButton onClick={action}>{children}</StyledPrimaryButton>
 }
 
-const SecondaryButton = ({ children, isBackgroundDark }) => {
+const SecondaryButton = ({ children, isBackgroundDark, action }) => {
 
-  return <StyledSecondaryButton $isBackgroundDark={isBackgroundDark}>{children}</StyledSecondaryButton>
+  return <StyledSecondaryButton $isBackgroundDark={isBackgroundDark} onClick={action}>{children}</StyledSecondaryButton>
 }
 
 const TertiaryButton = ({ children, action }) => {
@@ -15,7 +15,7 @@ const TertiaryButton = ({ children, action }) => {
   return <StyledTertiaryButton>{children}</StyledTertiaryButton>
 }
 
-const FavoriteButton = ({ isCardPreview }) => {
+const FavoriteButton = ({ isCardPreview, gameId }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleFavoriteClick = (event) => {

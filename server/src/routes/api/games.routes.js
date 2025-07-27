@@ -11,6 +11,6 @@ router.get("/", getGames);
 router.get("/:uuid", getGameById);
 
 router.post("/", createGame);
-router.post("/filters", filterGames)
+router.post("/filters", filterGames);
 
 module.exports = router;

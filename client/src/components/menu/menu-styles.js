@@ -1,6 +1,20 @@
 import styled from 'styled-components';
 import COLORS from '../../styles/colors';
 
+const StyleOverlay = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	backdrop-filter: blur(4px);
+`;
+
 const StyledMenu = styled.div`
 	display: flex;
 	position: fixed;
@@ -24,24 +38,25 @@ const StyledButton = styled.button`
 `;
 
 const StyledUserImage = styled.img`
- height: 32px;
-    width: 32px;
-    border-radius: 50%;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
 	background: ${({ bg }) => bg || 'none'};
 	border: 1px solid ${COLORS.base.primary};
-`
+`;
 
 const StyledTabContainer = styled.div`
 	position: fixed;
 	display: flex;
 	justify-content: space-evenly;
-	bottom: 520px;
+	bottom: 515px;
 	left: 50%;
 	transform: translateX(-50%);
 	border-radius: 20px 20px 0px 0px;
 	background: ${COLORS.variants.primaryOpacity};
 	width: 354px;
 	height: 97px;
+	overflow: hidden;
 	z-index: 10;
 `;
 
@@ -53,22 +68,26 @@ const StyledContentContainer = styled.div`
 	display: flex;
 	width: 354px;
 	height: 430px;
-	padding: 50px 24px;
+	padding: 50px 24px 68px 24px;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 20px;
 	background: ${COLORS.base.primary};
 	z-index: 1;
+	overflow: scroll;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 `;
 
-const SyledButtonCategory = styled.button`
+const StyledButtonCategory = styled.button`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	width: 121px;
 	height: 98px;
-	background-color: transparent;
+	background: ${({ activeTab }) =>
+		activeTab ? COLORS.base.primary : COLORS.variants.primaryOpacity};
 	padding: 20px;
 	font-size: 20px;
 	font-weight: 700;
@@ -99,12 +118,13 @@ const StyledDropMenu = styled.div`
 	align-items: flex-start;
 `;
 export {
+	StyleOverlay,
 	StyledMenu,
 	StyledButton,
 	StyledUserImage,
 	StyledTabContainer,
 	StyledContentContainer,
-	SyledButtonCategory,
+	StyledButtonCategory,
 	StyledContentButtons,
 	StyledDropMenu
 };

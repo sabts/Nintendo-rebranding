@@ -11,21 +11,23 @@ const StyledModalOverlay = styled.div`
 	justify-content: center;
 	align-items: center;
 	z-index: 1000;
+	backdrop-filter: blur(4px);
 `;
 
 const StyledModalContent = styled.div`
 	background-color: white;
-	padding: 20px;
+	padding: 24px;
 	border-radius: 20px;
 	width: 359px;
-	height: 469px;
+	height: 480px;
 	position: relative;
+	overflow: scroll;
 `;
 
 const StyledCloseButton = styled.button`
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 20px;
+	right: 20px;
 	border: none;
 	background: none;
 	font-size: 20px;

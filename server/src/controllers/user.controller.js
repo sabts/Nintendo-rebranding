@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 
 const User = require("../models/user.model");
+const Game = require("../models/games.model");
 
 const generateUserCode = () => {
   const userCodeRegex = /^[A-Z]{2}\d{12}$/;
@@ -43,21 +44,45 @@ const login = async (req, res) => {
   return res.status(200).json(existingEmail);
 };
 
-const logout = (req, res) => {
-  res.clearCookie("user");
-  return res.status(200).json({
-    message: "Sesión cerrada. Usuario desconectado.",
-  });
-};
-
 const addProducts = async (req, res) => {
-  const { productId } = req.body;
+  const { gameId } = req.body;
 
-  req.user.cart.push(productId);
+  req.user.shoppingCart.push(gameId);
   await req.user.save();
 
-  const product = await Product.findById(productId);
-  res.json({ message: `el produucto ${productId} se ha agregadp añ carrito` });
+  const game = await Game.findById(gameId);
+  res.json({ message: `el producto ${gameId} se ha agregadp al carrito` });
 };
 
-module.exports = { register, login, logout };
+const addFavoriteGames = async (req, res) => {
+  const { gameId, state } = req.body;
+  const user = req.user;
+  const game = await Game.findById(gameId);
+
+  if (!game) {
+    return res.status(404).json({ message: "Juego no encontrado." });
+  }
+
+  const isFavorite = user.favorites.includes(gameId);
+  if (state && !isFavorite) {
+    user.favorites.push(gameId);
+    await user.save();
+    return res.json({ message: "Juego agregado a tus favoritos." });
+  }
+
+  if (!state && isFavorite) {
+    user.favorites = user.favorites.filter(
+      id => id.toString() !== gameId.toString()
+    );
+    await user.save();
+    return res.json({ message: "Juego eliminado de tus favoritos." });
+  }
+};
+
+const getFavorites = async (req, res) => {
+  const user = req.user;
+  const favoriteGames = await Game.find({ _id: { $in: user.favorites } });
+  res.json(favoriteGames);
+};
+
+module.exports = { register, login, addFavoriteGames, getFavorites };

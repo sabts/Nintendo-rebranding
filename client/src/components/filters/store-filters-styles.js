@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
+	gap: 20px;
 `;
 
 const StyledFilterLabel = styled.label`
@@ -18,18 +20,9 @@ const StyledCheckboxLabel = styled.label`
 	margin-bottom: 10px;
 `;
 
-const StyledButton = styled.button`
-	padding: 8px 12px;
-	background-color: red;
-	color: white;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-top: 10px;
-
-	&:hover {
-		background-color: darkred;
-	}
+const StyledBoxSelection = styled.div`
+	display: flex;
+	justify-content: space-evenly;
 `;
 
 export {
@@ -37,5 +30,5 @@ export {
 	StyledFilterLabel,
 	StyledInputRange,
 	StyledCheckboxLabel,
-	StyledButton
+	StyledBoxSelection
 };

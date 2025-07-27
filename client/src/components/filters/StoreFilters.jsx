@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { StyledButton, StyledFilterLabel, StyledForm, StyledInputRange } from "./store-filters-styles"
+import { StyledBoxSelection, StyledFilterLabel, StyledForm, StyledInputRange } from "./store-filters-styles"
 import { FILTERS } from "../../constants/store-filters";
 import { DropdownCheckbox } from "../ui/inputs/Inputs";
+import { PrimaryButton, SecondaryButton } from "../ui/buttons/Buttons";
 
 const StoreFilters = ({ applyFilters, onClose }) => {
   const [priceRange, setPriceRange] = useState(60);
@@ -65,14 +66,14 @@ const StoreFilters = ({ applyFilters, onClose }) => {
         onChange={setGameGender}
       />
 
-      <div>
-        <StyledButton type="button" onClick={handleSubmit}>
+      < StyledBoxSelection>
+        <PrimaryButton type="button" onClick={handleSubmit}>
           Apply
-        </StyledButton>
-        <StyledButton type="button" onClick={onClose}>
+        </PrimaryButton>
+        <SecondaryButton type="button" onClick={onClose}>
           Clear
-        </StyledButton>
-      </div>
+        </SecondaryButton>
+      </ StyledBoxSelection>
     </StyledForm>
   );
 };
