@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { StyledTabContainer, StyledButtonCategory } from "./menu-styles";
 
 const Tabs = ({ tabs, activeTab, onTabChange }) => {
@@ -8,7 +7,7 @@ const Tabs = ({ tabs, activeTab, onTabChange }) => {
         <StyledButtonCategory
           key={tab.title}
           onClick={() => onTabChange(tab.title)}
-          activeTab={activeTab === tab.title}
+          $activeTab={activeTab === tab.title}
         >
           <img src={tab.icon} alt={`${tab.title} icon`} />
           {tab.title}

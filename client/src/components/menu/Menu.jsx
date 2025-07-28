@@ -21,6 +21,10 @@ const Menu = () => {
     }
   }
 
+  const handleItemSelect = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <>
       <StyledMenu>
@@ -57,7 +61,7 @@ const Menu = () => {
         <StyleOverlay>
         <div>
           <Tabs tabs={MENU_CONTENT} activeTab={activeTab} onTabChange={setActiveTab} />
-          {currentSection && <Content items={currentSection.items} />}
+          {currentSection && <Content items={currentSection.items} onItemSelect={handleItemSelect} />}
         </div>
         </StyleOverlay>
       )}

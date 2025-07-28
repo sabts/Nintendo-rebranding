@@ -26,12 +26,16 @@ const Profile = () => {
 		return <NoUser />
 	}
 
+	if (!user || !user.profilePicture) {
+		return <div>Loading...</div>; 
+	  }
+
 	return (
 		<StyledMainContainerConnect>
 			<Header />
 			<StyledSectionsContainer>
 				{/* SECCION DE FOTO */}
-				<div bg={user.profilePicture.backgroundColor}>
+				<div bg={user?.profilePicture.backgroundColor}>
 					<StyledProfileImg
 						src={URL_BASE + user.profilePicture.img}
 						alt={`${user.username}`}
@@ -125,3 +129,4 @@ const logout = (setUser, navigate) => {
 };
 
 export default Profile;
+

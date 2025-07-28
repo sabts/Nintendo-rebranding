@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { StyledPrimaryButton } from "../ui/buttons/buttons-styles";
 import { StyledGamePurchaseSection, StyledRadioContainer, StyledRadioSelectButton, StyledSectionTitle, StyledToggleButton, StyledToggleContainer } from "./game-purchase-option-styles";
-
+import { useUserContext } from "../../lib/providers/user.providers";
+import { addProducts } from "../../lib/utils/user-api";
 
 const GamePurchaseOptions = ({ game }) => {
   const [hardware, setHardware] = useState("");
@@ -10,7 +11,7 @@ const GamePurchaseOptions = ({ game }) => {
 
   const toggle = (current, value) => (current === value ? "" : value);
 
-  console.log(game)
+  //console.log(game._id)
 
   return (
     <StyledGamePurchaseSection>
@@ -72,11 +73,12 @@ const handleShowOptions = (setShowOptions) => {
   setShowOptions(true);
 };
 
-const handleBuy = (hardware, format, game) => {
+const handleBuy = async (hardware, format, game) => {
   if (hardware && format) {
     const price = format === "Digital" ? game.price.digital : game.price.physical;
-    console.log(`Add ${game.name} for ${price}€ on ${hardware} (${format}) in cart`);
+    //console.log(`Add ${game.name} for ${price}€ on ${hardware} (${format}) in cart`);
+    await addProducts(game._id); 
   }
 };
 
-export default GamePurchaseOptions;
+export default GamePurchaseOptions

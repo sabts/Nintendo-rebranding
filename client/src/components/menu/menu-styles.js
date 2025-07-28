@@ -97,8 +97,8 @@ const StyledButtonCategory = styled.button`
 	align-items: center;
 	width: 121px;
 	height: 98px;
-	background: ${({ activeTab }) =>
-		activeTab ? COLORS.base.primary : COLORS.variants.primaryOpacity};
+	background: ${({ $activeTab }) =>
+		$activeTab ? COLORS.base.primary : COLORS.variants.primaryOpacity};
 	padding: 20px;
 	font-size: 20px;
 	font-weight: 700;

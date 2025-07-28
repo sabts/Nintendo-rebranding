@@ -57,23 +57,6 @@ const userSchema = new Schema({
   },
 });
 
-// -userID
-//     - userName
-//     - birtday
-//     - userNickname
-//     - region
-//     - email
-//     - password
-//     - favorite
-//     - gamesOwned{gameInfo{date register, code }, game Achivements }
-// -friends
-//     - points
-//     - profile picture{ img, color }
-// -shoppingCart[]
-
-// relacion 1 N mongo db
-// RELACION N - M entre usarios en mongo db
-
 const User = model("user", userSchema);
 
 module.exports = User;

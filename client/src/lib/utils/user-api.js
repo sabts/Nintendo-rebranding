@@ -23,11 +23,19 @@ const getFavorites = async () => {
 };
 
 const addFavoriteGame = async (gameId, state) => {
-	const response = await axios.post(`${URL_BASE}${URL_API_USER}/favorites`, {
+	const response = await axios.patch(`${URL_BASE}${URL_API_USER}/favorites`, {
 		gameId,
 		state
 	});
 	return response.data;
 };
 
-export { registerUser, login, getFavorites, addFavoriteGame };
+const addProducts = async gameId => {
+	const response = await axios.patch(
+		`${URL_BASE}${URL_API_USER}/shopping-cart`,
+		{ gameId }
+	);
+	return response.data;
+};
+
+export { registerUser, login, getFavorites, addFavoriteGame, addProducts };

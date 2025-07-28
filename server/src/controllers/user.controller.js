@@ -51,7 +51,7 @@ const addProducts = async (req, res) => {
   await req.user.save();
 
   const game = await Game.findById(gameId);
-  res.json({ message: `el producto ${gameId} se ha agregadp al carrito` });
+  res.json(game);
 };
 
 const addFavoriteGames = async (req, res) => {
@@ -85,4 +85,10 @@ const getFavorites = async (req, res) => {
   res.json(favoriteGames);
 };
 
-module.exports = { register, login, addFavoriteGames, getFavorites };
+module.exports = {
+  register,
+  login,
+  addFavoriteGames,
+  getFavorites,
+  addProducts,
+};
