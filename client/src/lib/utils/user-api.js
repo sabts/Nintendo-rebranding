@@ -30,12 +30,48 @@ const addFavoriteGame = async (gameId, state) => {
 	return response.data;
 };
 
-const addProducts = async gameId => {
+const addProducts = async (gameData, userId) => {
 	const response = await axios.patch(
 		`${URL_BASE}${URL_API_USER}/shopping-cart`,
-		{ gameId }
+		{
+			gameId: gameData.gameId,
+			name: gameData.name,
+			thumbnail: gameData.thumbnail,
+			hardware: gameData.hardware,
+			format: gameData.format,
+			price: gameData.price,
+			userId: userId
+		}
+	);
+	console.log('Datos enviados al backend:', { ...gameData, userId });
+	return response.data;
+};
+
+const getProductsinCart = async userId => {
+	const response = await axios.post(
+		`${URL_BASE}${URL_API_USER}/shopping-cart`,
+		{
+			userId
+		}
 	);
 	return response.data;
 };
 
-export { registerUser, login, getFavorites, addFavoriteGame, addProducts };
+const removeProductFromCart = async (gameId, userId) => {
+	const response = await axios.patch(
+		`${URL_BASE}${URL_API_USER}/shopping-cart/remove`,
+		{ gameId, userId }
+	);
+
+	return response.data;
+};
+
+export {
+	registerUser,
+	login,
+	getFavorites,
+	addFavoriteGame,
+	addProducts,
+	getProductsinCart,
+	removeProductFromCart
+};

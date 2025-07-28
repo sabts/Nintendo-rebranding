@@ -7,54 +7,67 @@ import Birthday from "../../components/register-process/Birthday";
 import { StyledButtonContainer, StyledMainContainer } from "../../components/register-process/birthday-styles";
 import Form from "../../components/register-process/Form";
 import ProfilePicture from "../../components/register-process/ProfilePicture";
+import { useNavigate } from "react-router-dom";
+import COLORS from "../../styles/colors";
 
 const Register = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors },setValue } = useForm();
   const [selectedCharacter, setSelectedCharacter] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [step, setStep] = useState(1);
+  const navigate = useNavigate()
 
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
 
   // Maneja el envío del formulario
   const submitForm = async (data) => {
-    console.log('holis')
-    const completeData = {
-      ...data,
-      selectedCharacter,
-      selectedColor,
+
+    const profilePicture = {
+      img: selectedCharacter.imageUrl,
+      backgroundColor: selectedColor
     };
 
-    //const response = await registerUser(completeData); 
-    console.log(completeData)
-    //return response.data;
+    const completeData = {
+      ...data,
+      profilePicture, 
+    };
+
+    const response = await registerUser(completeData); 
+    console.log(completeData);
+
+    if (response && response.data) {
+      localStorage.setItem('user', JSON.stringify(response.data));
+      navigate('/profile');
+    }
+    return response.data;
   };
 
-  const onError = (errors) => {
-    console.log("Errores de validación:", errors);
+
+  const handleFinalSubmit = (event) => {
+    event.preventDefault();
+    handleSubmit(submitForm)();
   };
   return (
     <>
       <HeaderProcess />
       <StyledMainContainer>
-        <form onSubmit={handleSubmit(submitForm, onError)}>
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
-          {/* {step === 1 && ( */}
+      <form onSubmit={handleFinalSubmit}>
+          {step === 1 && (
           <Birthday register={register} />
-          {/* )} */}
+          )} 
 
-          {/* {step === 2 && ( */}
+          {step === 2 && (
           <Form register={register} />
-          {/* )} */}
-          {/* {step === 3 && ( */}
+          )} 
+          {step === 3 && (
           <ProfilePicture
             selectedCharacter={selectedCharacter}
             setSelectedCharacter={setSelectedCharacter}
             selectedColor={selectedColor}
             setSelectedColor={setSelectedColor}
-          />
-          {/* )}
+            setValue={setValue} 
+          />)}
           <StyledButtonContainer>
             {step > 1 && (
               <SecondaryButton action={prevStep}>Back</SecondaryButton>
@@ -62,10 +75,9 @@ const Register = () => {
             {step < 3 ? (
               <PrimaryButton action={nextStep}>Continue</PrimaryButton>
             ) : (
-              null
-            )} */}
-          <input type="submit" value="Finish" />
-          {/* </StyledButtonContainer> */}
+              <button type="submit">Finish</button>
+            )} 
+           </StyledButtonContainer>
         </form>
       </StyledMainContainer >
     </>

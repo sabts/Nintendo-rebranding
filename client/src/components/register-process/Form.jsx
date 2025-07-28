@@ -3,7 +3,7 @@ import CustomSelect from "../ui/custom-select/CustomSelect";
 import { StyledMainContainer } from "./birthday-styles";
 import { StyledImgPassword, StyledInputText, StyledSelect, StyledSelectContainer } from "./form-styles";
 
-const Form = ({ region, setRegion, register }) => {
+const Form = ({ register }) => {
   const regions = [
     { value: '', label: '-- Select a region --' },
     { value: 'america', label: 'America' },
@@ -16,6 +16,7 @@ const Form = ({ region, setRegion, register }) => {
   const getPasswordIcon = (isOpen) => {
     return isOpen ? '/icons/eye-open-password.svg' : '/icons/eye-close-password.svg';
   };
+
 
   return (
     <StyledMainContainer>

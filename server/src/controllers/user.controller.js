@@ -45,18 +45,44 @@ const login = async (req, res) => {
 };
 
 const addProducts = async (req, res) => {
-  const { gameId } = req.body;
+  const { gameId, userId } = req.body;
+  const user = await User.findById(userId);
+  user.shoppingCart.push(gameId);
+  await user.save();
 
-  req.user.shoppingCart.push(gameId);
-  await req.user.save();
+  return res.status(200).json({
+    message: "Product added to cart successfully",
+    shoppingCart: user.shoppingCart,
+  });
+};
 
-  const game = await Game.findById(gameId);
-  res.json(game);
+const getShoppingCartGames = async (req, res) => {
+  const { userId } = req.body;
+
+  const user = await User.findById(userId);
+  const gamesInCart = await Game.find({ _id: { $in: user.shoppingCart } });
+
+  res.json(gamesInCart);
+};
+
+const removeCartGames = async (req, res) => {
+  const { gameId, userId } = req.body;
+
+  const user = await User.findByIdAndUpdate(
+    userId,
+    { $pull: { shoppingCart: gameId } },
+    { new: true }
+  );
+
+  return res.status(200).json({
+    message: "Product removed from cart successfully",
+    shoppingCart: user.shoppingCart,
+  });
 };
 
 const addFavoriteGames = async (req, res) => {
-  const { gameId, state } = req.body;
-  const user = req.user;
+  const { gameId, userId, state } = req.body;
+  const user = await User.findById(userId);
   const game = await Game.findById(gameId);
 
   if (!game) {
@@ -80,7 +106,8 @@ const addFavoriteGames = async (req, res) => {
 };
 
 const getFavorites = async (req, res) => {
-  const user = req.user;
+  const { gameId, userId } = req.body;
+
   const favoriteGames = await Game.find({ _id: { $in: user.favorites } });
   res.json(favoriteGames);
 };
@@ -91,4 +118,6 @@ module.exports = {
   addFavoriteGames,
   getFavorites,
   addProducts,
+  removeCartGames,
+  getShoppingCartGames,
 };

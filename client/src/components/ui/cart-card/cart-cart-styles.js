@@ -8,7 +8,7 @@ const StyledContainer = styled.section`
 	justify-content: space-between;
 	gap: 1rem;
 	width: 357px;
-	height: 84px;
+	height: 98px;
 	border-radius: 16px;
 	border: 1px solid ${COLORS.variants.primaryOpacity};
 `;
@@ -29,6 +29,7 @@ const StyledImg = styled.img`
 
 const StyledCartTextSection = styled.div`
 	display: flex;
+	width: 170px;
 	justify-content: center;
 	flex-direction: column;
 	height: 70px;
@@ -36,7 +37,7 @@ const StyledCartTextSection = styled.div`
 `;
 
 const StyledCartGameTitle = styled.h5`
-	height: fit-content;
+	height: 70px;
 	font-size: 14px;
 	font-weight: 600;
 	margin: 0;

@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { StyledEmptyCartContainer, StyledImg, StyledMainContainer, StyledTextContainer } from "./shopping-cart-styles";
 import CartCard from "../../components/ui/cart-card/CartCard";
 import { useUserContext } from "../../lib/providers/user.providers";
+import { getProductsinCart } from "../../lib/utils/user-api";
 
 const ShoppingCart = () => {
-  const {user} = useUserContext()
-  const hasItem = user?.shoppingCart?.length > 0; 
-  const gamesInCart =  user?.shoppingCart || []; 
+  const { user } = useUserContext();
+  const [gamesInCart, setGamesInCart] = useState([]);
+
+  useEffect(() => {
+    const getGamesInCart = async () => {
+      if (user?._id) {
+        const games = await getProductsinCart(user._id);
+        setGamesInCart(games); // Actualiza el estado con los juegos recibidos
+      }
+    };
+    
+    getGamesInCart();
+  }, [user]); // Solo se ejecuta cuando el 'user' cambia
+
+  // Verifica si el carrito está vacío en base al estado 'gamesInCart'
+  const hasItem = gamesInCart.length > 0;
+
   return (
     <>
       <Header />
@@ -31,7 +46,9 @@ const ShoppingCart = () => {
             </StyledTextContainer>
           </StyledEmptyCartContainer>
         ) : (
-          <CartCard gamesIn={gamesInCart} /> 
+          gamesInCart.map((game) => {
+            return <CartCard key={game._id} gameIn={game} />;
+          })
         )}
       </StyledMainContainer>
       <Footer />

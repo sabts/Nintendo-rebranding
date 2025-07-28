@@ -31,6 +31,13 @@ const UserProvider = ({ children }) => {
         return true
     }
 
+    const updateCart = (newCart) => {
+        setUser((prevUser) => ({
+          ...prevUser,
+          shoppingCart: newCart,
+        }));
+      };
+
     return (
         <UserContext.Provider
             value={{

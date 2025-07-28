@@ -9,6 +9,7 @@ const GamePurchaseOptions = ({ game }) => {
   const [format, setFormat] = useState("");
   const [showOptions, setShowOptions] = useState(false);
 
+  const { user } = useUserContext();
   const toggle = (current, value) => (current === value ? "" : value);
 
   //console.log(game._id)
@@ -59,7 +60,7 @@ const GamePurchaseOptions = ({ game }) => {
           {/* Botón de compra*/}
           <StyledPrimaryButton
             disabled={!hardware || !format}
-            onClick={() => handleBuy(hardware, format, game)}
+            onClick={() => handleBuy(hardware, format, game, user._id)}
           >
             {game.preOrderAvailable ? "Pre-order" : "Add to Cart"}
           </StyledPrimaryButton>
@@ -73,11 +74,21 @@ const handleShowOptions = (setShowOptions) => {
   setShowOptions(true);
 };
 
-const handleBuy = async (hardware, format, game) => {
-  if (hardware && format) {
+const handleBuy = async (hardware, format, game, userId) => {
+  if (hardware && format && userId) {
     const price = format === "Digital" ? game.price.digital : game.price.physical;
-    //console.log(`Add ${game.name} for ${price}€ on ${hardware} (${format}) in cart`);
-    await addProducts(game._id); 
+
+    const gameData = {
+      gameId: game._id, 
+      name: game.name,
+      thumbnail: game.thumbnail,
+      hardware,
+      format,
+      price,
+    };
+
+    const result = await addProducts(gameData, userId);
+    console.log("Juego agregado al carrito:", result);
   }
 };
 
