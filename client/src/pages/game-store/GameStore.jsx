@@ -21,6 +21,7 @@ const GameStore = () => {
 
   const applyFilters = async (newFilters) => {
     const filter = await filtersGames(newFilters)
+    setSelectedFilters(newFilters);
     setGamesFilter(filter)
   };
 
@@ -28,6 +29,8 @@ const GameStore = () => {
     setGamesFilter(games)
   }, [games])
 
+
+  //console.log(selectedFilters)
   return (
     <>
       <Header />
@@ -42,14 +45,19 @@ const GameStore = () => {
           </StyledTitleSection>
 
           <StyledTagsSection>
-            {Object.entries(applyFilters).map(([selectedFilters, values]) =>
-              Array.isArray(values) ? (
-                values.map((value) => (
-                  <StyledTag key={value}>
-                    {value}
-                    <button onClick={() => removeFilter(filter, value, setSelectedFilters)}><img src="/icons/close  menu - icon.svg" /></button>
-                  </StyledTag>
-                ))
+            {Object.entries(selectedFilters).map(([filterCategory, values]) =>
+              Array.isArray(values) && values.length > 0 ? (
+                values.map((value) => {
+                  console.log("Filtro seleccionado:", filterCategory, value);
+                  return (
+                    <StyledTag key={`${filterCategory}-${value}`}>
+                      {value}
+                      <button onClick={() => removeFilter(filterCategory, value, setSelectedFilters)}>
+                        <img src="/icons/close  menu - icon.svg" alt="remove tag" />
+                      </button>
+                    </StyledTag>
+                  );
+                })
               ) : null
             )}
           </StyledTagsSection>
@@ -80,7 +88,7 @@ const GameStore = () => {
 
 const removeFilter = (filterCategory, value, setSelectedFilters) => {
   setSelectedFilters((prevFilters) => {
-    const updatedFilters = { ...prevFilters };
+    const updatedFilters = { ...prevFilters }
     updatedFilters[filterCategory] = updatedFilters[filterCategory].filter((item) => item !== value);
     // if(!updatedFilters){return games}
     return updatedFilters;

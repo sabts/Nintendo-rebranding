@@ -21,7 +21,7 @@ const Login = () => {
 		try {
 			const response = await login({ email, password });
 			setUser(response)
-			console.log('Login successful:', response);
+			// 		console.log('Login successful:', response);
 			navigate('/profile');
 		} catch (error) {
 			setError(error.response?.data?.message || 'Login failed');
@@ -29,7 +29,7 @@ const Login = () => {
 	};
 
 	return (<>
-	<Header/>
+		<Header />
 		<picture>
 			<source
 				media="(min-width: 1024px)"
@@ -66,10 +66,10 @@ const Login = () => {
 			{error && <StyledError>{error}</StyledError>}
 
 			<Link to="/register">
-< StyledRedirection>You don’t have an account?</ StyledRedirection>
+				< StyledRedirection>You don’t have an account?</ StyledRedirection>
 			</Link>
 		</StyledMainContainer>
-		<Footer/>
+		<Footer />
 	</>
 	);
 };

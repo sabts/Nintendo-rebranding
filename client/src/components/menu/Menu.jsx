@@ -15,7 +15,7 @@ const Menu = () => {
 
   const profilePicture = () => {
     if (user && user.profilePicture.img) {
-      return URL_BASE + user.profilePicture.img
+      return user.profilePicture.img
     } else {
       return '/icons/no user - icon.svg'
     }
@@ -59,10 +59,10 @@ const Menu = () => {
       {/* MENÚ EXPANDIDO */}
       {isMenuOpen && (
         <StyleOverlay>
-        <div>
-          <Tabs tabs={MENU_CONTENT} activeTab={activeTab} onTabChange={setActiveTab} />
-          {currentSection && <Content items={currentSection.items} onItemSelect={handleItemSelect} />}
-        </div>
+          <div>
+            <Tabs tabs={MENU_CONTENT} activeTab={activeTab} onTabChange={setActiveTab} />
+            {currentSection && <Content items={currentSection.items} onItemSelect={handleItemSelect} />}
+          </div>
         </StyleOverlay>
       )}
     </>

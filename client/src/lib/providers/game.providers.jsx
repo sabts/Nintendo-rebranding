@@ -29,7 +29,7 @@ const GameProvider = ({ children }) => {
 const getGamesInMongoDB = async (setGames) => {
 	try {
 		const allGames = await getAllGames();
-		console.log('Games desde MongoDB:', allGames);
+		//console.log('Games desde MongoDB:', allGames);
 		setGames(allGames);
 	} catch (error) {
 		console.error('Error al obtener juegos:', error);

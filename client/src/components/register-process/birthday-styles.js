@@ -14,4 +14,6 @@ const StyledButtonContainer = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 `;
+
+
 export { StyledMainContainer, StyledButtonContainer };

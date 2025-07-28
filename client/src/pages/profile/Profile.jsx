@@ -27,8 +27,8 @@ const Profile = () => {
 	}
 
 	if (!user || !user.profilePicture) {
-		return <div>Loading...</div>; 
-	  }
+		return <div>Loading...</div>;
+	}
 
 	return (
 		<StyledMainContainerConnect>
@@ -37,7 +37,7 @@ const Profile = () => {
 				{/* SECCION DE FOTO */}
 				<div bg={user?.profilePicture.backgroundColor}>
 					<StyledProfileImg
-						src={URL_BASE + user.profilePicture.img}
+						src={user.profilePicture.img}
 						alt={`${user.username}`}
 						bg={user?.profilePicture?.backgroundColor}
 					/>
@@ -92,9 +92,9 @@ const Profile = () => {
 					icon='/icons/favorite-icon-profile.svg'
 					title='Favorites'
 				>
-					 {user.favorites.map(game => (
-    <p key={game.id}>{game.title}</p>
-  ))}
+					{user.favorites.map(game => (
+						<p key={game.id}>{game.title}</p>
+					))}
 				</ProfileSections>
 
 				<ProfileSections icon='/icons/friends-icon.svg' title='Friends'>
@@ -121,7 +121,7 @@ const Profile = () => {
 };
 
 const logout = (setUser, navigate) => {
-	console.log('se esta desconectando')
+	//	console.log('se esta desconectando')
 	setUser(null);
 	localStorage.removeItem('user');
 	sessionStorage.removeItem('user');

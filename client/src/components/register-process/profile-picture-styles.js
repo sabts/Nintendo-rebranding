@@ -12,8 +12,8 @@ const StyledMainContainer = styled.div`
 `;
 
 const StyledProfileContainer = styled.div`
-	width: 100px;
-	height: 100px;
+    width: 150px;
+	height: 150px;
 	border-radius: 50%;
 	background-color: ${({ bg }) => bg};
 	display: flex;
@@ -25,8 +25,8 @@ const StyledProfileContainer = styled.div`
 `;
 
 const StyledProfileImg = styled.img`
-	max-width: 100%;
-	max-height: 100%;
+    width: 100%;
+	height: 100%;
 `;
 
 const StyledSelectionGrid = styled.div`
