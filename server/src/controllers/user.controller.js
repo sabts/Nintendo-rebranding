@@ -85,10 +85,6 @@ const addFavoriteGames = async (req, res) => {
   const user = await User.findById(userId);
   const game = await Game.findById(gameId);
 
-  if (!game) {
-    return res.status(404).json({ message: "Juego no encontrado." });
-  }
-
   const isFavorite = user.favorites.includes(gameId);
   if (state && !isFavorite) {
     user.favorites.push(gameId);
@@ -106,9 +102,19 @@ const addFavoriteGames = async (req, res) => {
 };
 
 const getFavorites = async (req, res) => {
-  const { gameId, userId } = req.body;
+  const { userId } = req.body;
 
-  const favoriteGames = await Game.find({ _id: { $in: user.favorites } });
+  const user = await User.findById(userId);
+  const favoriteGames = await Game.find({
+    _id: { $in: user.favorites },
+  }).lean();
+
+  if (favoriteGames.length === 0) {
+    return res
+      .status(200)
+      .json({ message: "You don't have favorite games yet" });
+  }
+
   res.json(favoriteGames);
 };
 

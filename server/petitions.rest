@@ -147,3 +147,21 @@ Content-Type: application/json
 "userId": "687f7a0d7aafd56d7ec2fd2a",
 "gameId": "6878d711c8d9e0e965cac910"
 }
+
+###
+PATCH  {{HOST}}/api/user/favorites
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a",
+"gameId": "6878d711c8d9e0e965cac910",
+ "state": true  
+}
+
+###
+GET  {{HOST}}/api/user/favorites
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a"
+}

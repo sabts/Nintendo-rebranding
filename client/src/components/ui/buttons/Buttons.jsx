@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { StyledFavoriteButton, StyledPrimaryButton, StyledSecondaryButton, StyledTertiaryButton } from "./buttons-styles"
+import { useUserContext } from "../../../lib/providers/user.providers"
 
 const PrimaryButton = ({ children, action }) => {
   return <StyledPrimaryButton onClick={action}>{children}</StyledPrimaryButton>
@@ -15,8 +16,9 @@ const TertiaryButton = ({ children, action }) => {
   return <StyledTertiaryButton>{children}</StyledTertiaryButton>
 }
 
-const FavoriteButton = ({ isCardPreview, gameId }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const FavoriteButton = ({ isCardPreview, gameId, initialFavoriteState }) => {
+  const { user } = useUserContext();
+  const [isFavorite, setIsFavorite] = useState(initialFavoriteState);
 
   const handleFavoriteClick = (event) => {
     event.preventDefault();

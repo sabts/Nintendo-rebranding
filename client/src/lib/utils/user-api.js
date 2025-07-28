@@ -17,13 +17,17 @@ const login = async body => {
 	return response.data;
 };
 
-const getFavorites = async () => {
-	const response = await axios.get(`${URL_BASE}${URL_API_USER}/favorites`);
+const getFavorites = async userId => {
+	const response = await axios.get(
+		`${URL_BASE}${URL_API_USER}/favorites`,
+		userId
+	);
 	return response.data;
 };
 
-const addFavoriteGame = async (gameId, state) => {
+const addFavoriteGame = async (userId, gameId, state) => {
 	const response = await axios.patch(`${URL_BASE}${URL_API_USER}/favorites`, {
+		userId,
 		gameId,
 		state
 	});

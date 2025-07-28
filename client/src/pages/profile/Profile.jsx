@@ -17,6 +17,7 @@ import Header from '../../components/header/Header';
 import ProfileSections from '../../components/ui/profile-sections/ProfileSections';
 import Footer from '../../components/footer/Footer';
 import NoUser from '../../components/user-profile/UserLogout';
+import { GamePreview } from '../../components/ui/game-cards/GameCards';
 
 const Profile = () => {
 	const { user, setUser, isLogged } = useUserContext();
@@ -29,7 +30,7 @@ const Profile = () => {
 	if (!user || !user.profilePicture) {
 		return <div>Loading...</div>;
 	}
-
+	
 	return (
 		<StyledMainContainerConnect>
 			<Header />
@@ -93,7 +94,7 @@ const Profile = () => {
 					title='Favorites'
 				>
 					{user.favorites.map(game => (
-						<p key={game.id}>{game.title}</p>
+						<GamePreview key={game.id}>{game.title}</GamePreview>
 					))}
 				</ProfileSections>
 
