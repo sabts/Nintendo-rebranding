@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import { StyledEmptyCartContainer, StyledImg, StyledMainContainer, StyledTextContainer } from "./shopping-cart-styles";
+import { StyledCardsSection, StyledEmptyCartContainer, StyledFinalPrice, StyledImg, StyledMainContainer, StyledTextContainer } from "./shopping-cart-styles";
 import CartCard from "../../components/ui/cart-card/CartCard";
 import { useUserContext } from "../../lib/providers/user.providers";
 import { getProductsinCart } from "../../lib/utils/user-api";
+import { PrimaryButton } from "../../components/ui/buttons/Buttons";
 
 const ShoppingCart = () => {
   const { user } = useUserContext();
@@ -15,15 +16,19 @@ const ShoppingCart = () => {
     const getGamesInCart = async () => {
       if (user?._id) {
         const games = await getProductsinCart(user._id);
-        setGamesInCart(games); // Actualiza el estado con los juegos recibidos
+        setGamesInCart(games);
       }
     };
     
     getGamesInCart();
-  }, [user]); // Solo se ejecuta cuando el 'user' cambia
+  }, [user]);
 
-  // Verifica si el carrito está vacío en base al estado 'gamesInCart'
   const hasItem = gamesInCart.length > 0;
+
+  const getTotalPrice = () => 
+    gamesInCart
+      .reduce((total, game) => total + (parseFloat(game.price) || 0), 0)
+      .toFixed(2);
 
   return (
     <>
@@ -46,9 +51,15 @@ const ShoppingCart = () => {
             </StyledTextContainer>
           </StyledEmptyCartContainer>
         ) : (
-          gamesInCart.map((game) => {
-            return <CartCard key={game._id} gameIn={game} />;
-          })
+          <StyledCardsSection>
+            {gamesInCart.map((game) => {
+              return <CartCard key={game._id} gameIn={game} />;
+            })}
+            <StyledFinalPrice>
+              <span>Total Price: {getTotalPrice()} €</span>
+              <PrimaryButton>Continue</PrimaryButton>
+            </StyledFinalPrice>
+          </StyledCardsSection>
         )}
       </StyledMainContainer>
       <Footer />
