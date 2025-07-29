@@ -66,6 +66,15 @@ const StyledMyInfoDiv = styled.div`
 	}
 `;
 
+const StyledGrid = styled.div`
+display: flex;
+width: 1000px;
+overflow: auto;
+  white-space: nowrap;
+	gap: 12px;
+	  color: ${COLORS.base.primary};
+`
+
 export {
 	StyledMainContainerConnect,
 	StyledProfileImg,
@@ -73,5 +82,6 @@ export {
 	StyledAchievementsandPointsContainer,
 	StyledAchievementsandPoints,
 	StyledMyinfoContainer,
-	StyledMyInfoDiv
+	StyledMyInfoDiv,
+	StyledGrid
 };

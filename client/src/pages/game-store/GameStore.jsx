@@ -56,27 +56,27 @@ const GameStore = () => {
 						{Object.entries(selectedFilters).map(([filterCategory, values]) =>
 							Array.isArray(values) && values.length > 0
 								? values.map(value => {
-										console.log('Filtro seleccionado:', filterCategory, value);
-										return (
-											<StyledTag key={`${filterCategory}-${value}`}>
-												{value}
-												<button
-													onClick={() =>
-														removeFilter(
-															filterCategory,
-															value,
-															setSelectedFilters
-														)
-													}
-												>
-													<img
-														src='/icons/close  menu - icon.svg'
-														alt='remove tag'
-													/>
-												</button>
-											</StyledTag>
-										);
-								  })
+									console.log('Filtro seleccionado:', filterCategory, value);
+									return (
+										<StyledTag key={`${filterCategory}-${value}`}>
+											{value}
+											<button
+												onClick={() =>
+													removeFilter(
+														filterCategory,
+														value,
+														setSelectedFilters
+													)
+												}
+											>
+												<img
+													src='/icons/close  menu - icon.svg'
+													alt='remove tag'
+												/>
+											</button>
+										</StyledTag>
+									);
+								})
 								: null
 						)}
 					</StyledTagsSection>
@@ -92,7 +92,7 @@ const GameStore = () => {
 							slug={game.slug}
 							thumbnail={game.thumbnail}
 							price={game.price.digital}
-							isFavorite={user.favorites?.includes(game._id)}
+							isFavorite={user ? user.favorites?.includes(game._id) : false}
 						/>
 					))}
 				</StyledGamesContainer>

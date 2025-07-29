@@ -5,6 +5,7 @@ import { getFavorites, URL_BASE } from '../../lib/utils/user-api';
 import {
 	StyledAchievementsandPoints,
 	StyledAchievementsandPointsContainer,
+	StyledGrid,
 	StyledMainContainerConnect,
 	StyledMyinfoContainer,
 	StyledMyInfoDiv,
@@ -103,14 +104,16 @@ const Profile = () => {
 					icon='/icons/favorite-icon-profile.svg'
 					title='Favorites'
 				>
-					{favoriteGames.map(game => (
-						<GamePreview
-							key={game.id}
-							name={game.name}
-							slug={game.slug}
-							thumbnail={game.thumbnail}
-						/>
-					))}
+					<StyledGrid>
+						{favoriteGames.map(game => (
+							<GamePreview
+								key={game.id}
+								name={game.name}
+								slug={game.slug}
+								thumbnail={game.thumbnail}
+							/>
+						))}
+					</StyledGrid>
 				</ProfileSections>
 
 				<ProfileSections icon='/icons/friends-icon.svg' title='Friends'>
