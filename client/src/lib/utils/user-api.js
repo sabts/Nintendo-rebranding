@@ -18,10 +18,9 @@ const login = async body => {
 };
 
 const getFavorites = async userId => {
-	const response = await axios.get(
-		`${URL_BASE}${URL_API_USER}/favorites`,
+	const response = await axios.post(`${URL_BASE}${URL_API_USER}/favorites`, {
 		userId
-	);
+	});
 	return response.data;
 };
 

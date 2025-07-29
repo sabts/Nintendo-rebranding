@@ -42,6 +42,7 @@ const StyledGameTitle = styled.span`
 	display: flex;
 	width: 100px;
 	height: 30px;
+
 	font-size: 0.8rem;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -87,7 +88,7 @@ const StyledStoreTitle = styled.h3`
 	font-size: 0.875rem;
 	font-weight: 600;
 	width: 100px;
-	height: 32px;
+	height: 36px;
 	margin: 0;
 	color: ${COLORS.base.secondary};
 	overflow: hidden;

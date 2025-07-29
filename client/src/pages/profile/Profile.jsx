@@ -1,9 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../lib/providers/user.providers';
-import {
-	PrimaryButton,
-} from '../../components/ui/buttons/Buttons';
-import { URL_BASE } from '../../lib/utils/user-api';
+import { PrimaryButton } from '../../components/ui/buttons/Buttons';
+import { getFavorites, URL_BASE } from '../../lib/utils/user-api';
 import {
 	StyledAchievementsandPoints,
 	StyledAchievementsandPointsContainer,
@@ -11,26 +9,38 @@ import {
 	StyledMyinfoContainer,
 	StyledMyInfoDiv,
 	StyledProfileImg,
-	StyledSectionsContainer,
+	StyledSectionsContainer
 } from './profile-styles';
 import Header from '../../components/header/Header';
 import ProfileSections from '../../components/ui/profile-sections/ProfileSections';
 import Footer from '../../components/footer/Footer';
 import NoUser from '../../components/user-profile/UserLogout';
 import { GamePreview } from '../../components/ui/game-cards/GameCards';
+import { useEffect, useState } from 'react';
 
 const Profile = () => {
 	const { user, setUser, isLogged } = useUserContext();
+	const [favoriteGames, setFavoriteGames] = useState([]);
 	const navigate = useNavigate();
 
 	if (!isLogged()) {
-		return <NoUser />
+		return <NoUser />;
 	}
 
 	if (!user || !user.profilePicture) {
 		return <div>Loading...</div>;
 	}
-	
+
+	useEffect(() => {
+		const getFavoriteGames = async () => {
+			const games = await getFavorites(user._id);
+			console.log(games);
+			setFavoriteGames(games);
+		};
+		getFavoriteGames();
+	}, [user]);
+	//console.log(favoriteGames);
+
 	return (
 		<StyledMainContainerConnect>
 			<Header />
@@ -93,8 +103,13 @@ const Profile = () => {
 					icon='/icons/favorite-icon-profile.svg'
 					title='Favorites'
 				>
-					{user.favorites.map(game => (
-						<GamePreview key={game.id}>{game.title}</GamePreview>
+					{favoriteGames.map(game => (
+						<GamePreview
+							key={game.id}
+							name={game.name}
+							slug={game.slug}
+							thumbnail={game.thumbnail}
+						/>
 					))}
 				</ProfileSections>
 
@@ -130,4 +145,3 @@ const logout = (setUser, navigate) => {
 };
 
 export default Profile;
-

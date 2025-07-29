@@ -82,23 +82,27 @@ const removeCartGames = async (req, res) => {
 
 const addFavoriteGames = async (req, res) => {
   const { gameId, userId, state } = req.body;
+
+  console.log(gameId, userId, state);
   const user = await User.findById(userId);
   const game = await Game.findById(gameId);
 
   const isFavorite = user.favorites.includes(gameId);
-  if (state && !isFavorite) {
+  console.log(isFavorite);
+  if (!isFavorite) {
     user.favorites.push(gameId);
     await user.save();
     return res.json({ message: "Juego agregado a tus favoritos." });
   }
 
-  if (!state && isFavorite) {
-    user.favorites = user.favorites.filter(
-      id => id.toString() !== gameId.toString()
-    );
+  if (isFavorite) {
+    console.log(user.favorites);
+    user.favorites = user.favorites.filter(id => id.toString() !== gameId);
     await user.save();
     return res.json({ message: "Juego eliminado de tus favoritos." });
   }
+
+  res.json("funciona por favor:(");
 };
 
 const getFavorites = async (req, res) => {

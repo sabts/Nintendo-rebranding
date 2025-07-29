@@ -154,12 +154,12 @@ Content-Type: application/json
 
 {
 "userId": "687f7a0d7aafd56d7ec2fd2a",
-"gameId": "6878d711c8d9e0e965cac910",
+"gameId": "6878e1906527d7ecdee10d9c",
  "state": true  
 }
 
 ###
-GET  {{HOST}}/api/user/favorites
+POST   {{HOST}}/api/user/favorites
 Content-Type: application/json
 
 {

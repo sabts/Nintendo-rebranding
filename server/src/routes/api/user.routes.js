@@ -10,7 +10,7 @@ const {
 
 const router = require("express").Router();
 
-router.get("/favorites", getFavorites);
+router.post("/favorites", getFavorites);
 
 router.post("/register", register);
 router.post("/login", login);
