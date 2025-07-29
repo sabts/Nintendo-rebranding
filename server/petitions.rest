@@ -1,74 +1,167 @@
 @HOST = http://localhost:3000
 
+
+GET {{HOST}}/api/games
+
+
+###
 POST {{HOST}}/api/games
 Content-Type: application/json
 
 [
-  {
-    "name": "Minecraft",
-    "slug": "minecraft",
-    "uuid": "1234567Minecraft",
+ {
+    "name": "Mario Kart World",
+    "slug": "mario-kart-world",
+    "uuid": "b1c2d3e4-f5g6-h789-i012-3456789abcdef",
     "price": {
-      "digital": 29.99,
-      "physical": null
+      "digital": 69.99,
+      "physical": 79.99
     },
     "overview": {
-      "headline": "Experience the world of Minecraft like never before!",
-      "body": "Step into a blocky universe where creativity knows no bounds..."
+      "headline": "Race around the globe in the most exciting Mario Kart adventure yet!",
+      "body": "Compete in global racing events, unlock new tracks, and use wild new power-ups to leave your opponents in the dust!"
     },
-    "description": "Build, explore, and survive in a blocky world.",
-    "tags": ["Best Seller", "Offers", "Simulation", "Online co-op"],
+    "description": "Mario Kart World brings the iconic kart-racing action to new heights! Travel across different countries and cities, each with their own unique challenges, environments, and local characters. New power-ups, like the **Turbo Glider** and **Magnet Ball**, spice up the classic gameplay.\n\nFor the first time, race through real-world locations such as Paris, Tokyo, and New York City, each featuring dynamic environments with hazards and shortcuts to master.\n\nTake on local or online multiplayer races, or challenge yourself in time trials to beat your personal best. Mario and friends are back with new moves, better kart customization, and more ways to play!\n\nUse Mario Kart Pass to unlock extra tracks, characters, and karts. Customize your ride with new parts and exclusive skins.\n\nWhether you’re a seasoned racer or a newcomer to the series, Mario Kart World offers thrills for all players!",
+    "tags": ["Recent Release", "Multiplayer", "Racing"],
     "thumbnail": {
-      "mobile": "/images/minecraft/minecraft game-thumnail-tablet.png",
-      "tablet": "/images/minecraft/minecraft game-thumnail-tablet.png",
-      "desktop": "/images/minecraft/minecraft-thumnail-desktop.png "
-    },
-    "herobanner": {
-      "mobile": "/images/minecraft/minecraft-hero-mobile.png",
-      "tablet": "/images/minecraft/minecraft-hero-tablet.png",
-      "desktop": "/images/minecraft/minecraft-hero-desktop.png"
+      "mobile": "/images/mario-kart-world/mario-kart-world-thumbnail-mobile.png",
+      "tablet": "/images/mario-kart-world/mario-kart-world-thumbnail-tablet.png",
+      "desktop": "/images/mario-kart-world/mario-kart-world-thumbnail-desktop.png"
     },
     "images": [
       {
-        "mobile": "/images/minecraft/minecraft-mines-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-mines-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-mines-hero-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-hero-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-hero-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-hero-desktop.png",
+        "youtubeUrl": "https://www.youtube.com/watch?v=abcde12345"
       },
       {
-        "mobile": "/images/minecraft/minecraft-nether-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-nether-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-nether-hero-desktop.png"
-      },
-       {
-        "mobile": "/images/minecraft/minecraft-villagers-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-villagers-hero-mobile.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-race-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-race-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-race-desktop.png"
       },
       {
-        "mobile": "/images/minecraft/minecraft-super-mario-hero-mobile.png",
-        "tablet": "/images/minecraft/minecraft-villagers-hero-tablet.png",
-        "desktop": "/images/minecraft/minecraft-villagers-hero-desktop.png"
+        "mobile": "/images/mario-kart-world/mario-kart-world-power-ups-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-power-ups-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-power-ups-desktop.png"
+      },
+      {
+        "mobile": "/images/mario-kart-world/mario-kart-world-multiplayer-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-multiplayer-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-multiplayer-desktop.png"
+      },
+      {
+        "mobile": "/images/mario-kart-world/mario-kart-world-features-mobile.png",
+        "tablet": "/images/mario-kart-world/mario-kart-world-features-tablet.png",
+        "desktop": "/images/mario-kart-world/mario-kart-world-features-desktop.png"
       }
-
     ],
-    "trailerurl": "https://youtu.be/MmB9b5njVbA",
-    "fileSize": 0.5,
-    "playModes": ["TV mode", "Tabletop mode", "Handheld mode"],
-    "numOfPlayer": ["Single System (1-4)", "Local wireless (2-8)", "Online (2-8)"],
-    "system": ["Switch","Switch 2" ],
-    "publisher": "Mojang",
+    "fileSize": 6.5,
+    "playModes": ["TV mode", "Tabletop mode", "Handheld mode", "Online Multiplayer", "Local Multiplayer"],
+    "numOfPlayer": ["1-4 players local", "1-8 players online"],
+    "system": ["Switch 2"],
+    "publisher": "Nintendo",
     "languages": [
-      "English", "French", "German", "Italian", "Spanish", "Japanese"
+      "English",
+      "French",
+      "German",
+      "Spanish",
+      "Italian",
+      "Japanese"
     ],
-    "franchise": "Minecraft",
-    "ageRating": "PEGI 7",
-    "genres": "Action”, ”Simulation",
-    "releaseDate": "June 20, 2018",
+    "franchise": "Mario",
+    "ageRating": "PEGI 3",
+    "genres": ["Racing", "Action"],
+    "releaseDate": "June 5, 2025",
     "preOrderAvailable": false,
-    "isOnSale": true,
-    "nintendoPoints": 50
-  }
+    "isOnSale": false,
+    "nintendoPoints": 100
 ]
 
 ###
 GET {{HOST}}/api/games/48961602-5d47-43df-97a2-ee5fc1f692e8
+
+
+### Filtros combinados
+POST {{HOST}}/api/games/filters
+Content-Type: application/json
+
+{
+  "minPrice": 60,
+  "system": [],
+  "genres": [ "Adventure" ]
+}
+
+#######
+USERS REQUESTS
+##########
+
+
+POST {{HOST}}/api/user/register
+Content-Type: application/json
+
+{
+"name":"Sabrina Taraschi", 
+"nickname": "sabriTest",
+"email": "sabrinatesting@gmail.com", 
+"password": "123456",
+"region": "Europe",
+"birthday": "September 25, 1996",
+"profilePicture": {
+    "img": "/images/profile/pikmin.svg",
+    "backgroundColor": "#F3D50F"
+  }
+}
+
+###
+POST {{HOST}}/api/user/login
+Content-Type: application/json
+
+{
+"email": "sabrinatesting@gmail.com", 
+"password": "123456"
+}
+
+###
+POST {{HOST}}/api/user/favorites/add
+Content-Type: application/json
+
+{
+"gameId": "6878d711c8d9e0e965cac910"
+}
+
+###
+PATCH {{HOST}}/api/user/shopping-cart
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a",
+"gameId": "6878d711c8d9e0e965cac910"
+}
+
+####
+PATCH  {{HOST}}/api/user/shopping-cart/remove
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a",
+"gameId": "6878d711c8d9e0e965cac910"
+}
+
+###
+PATCH  {{HOST}}/api/user/favorites
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a",
+"gameId": "6878d711c8d9e0e965cac910",
+ "state": true  
+}
+
+###
+GET  {{HOST}}/api/user/favorites
+Content-Type: application/json
+
+{
+"userId": "687f7a0d7aafd56d7ec2fd2a"
+}

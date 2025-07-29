@@ -64,6 +64,7 @@ thumnnail{mobile, tablet, desktop} String
 Response:
 -Status 200
 -Se ve la informacion del juego
+
 ---
 
 ##Users
@@ -91,7 +92,6 @@ Response:
 -Status 200
 -Informacion del usario
 
-
 ###Registrar al usario
 url: /api/user/register
 Method: POST
@@ -112,11 +112,41 @@ Response:
 
 ###Log in del usario
 url: /api/user/login
-Method: GET
+Method: POST
 
 Body:
 -email
 -password
 
+Response:
 -Status 200
 -El usario de conecta y accede a sus datos
+
+###Desconectar un usario
+url: /api/user/logout
+Method: GET
+
+Response:
+-Status 200
+-El usario de desconecta y la pagina vuelve a su estado de no user
+
+###Agregar un producto al carrito
+-Method: PATCH
+-URL: api/users/cart
+-Headers: Authorization: Token
+
+-Body: productId
+
+Response:
+-Status: 200
+-Response: Se agrega el productoId al carrito
+
+###Guardar como favoritos
+-Method: PATCH
+-URL: api/users/favorites
+
+-Body: productId
+
+Response:
+-Status: 200
+-Response: Se agrega el productoId al array de favoritos

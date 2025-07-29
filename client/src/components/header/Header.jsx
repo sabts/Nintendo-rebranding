@@ -22,7 +22,7 @@ const Header = () => {
         </picture>
       </Link>
 
-      <Link to='/'>
+      <Link to='/shopping-cart'>
         <picture>
           <source
             src='/icons/shoping cart icon ipad and desktop.svg'

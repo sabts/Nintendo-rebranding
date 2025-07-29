@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon src/index.js"
   },
-  "keywords": [],
+  "keywords": ["Nintendo", "Website", "Rebranding"],
   "author": "",
   "license": "ISC",
   "description": "",

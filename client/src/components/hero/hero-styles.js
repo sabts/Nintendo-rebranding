@@ -67,7 +67,7 @@ const StyledHeroImage = styled.div`
 	margin-top: 2rem;
 
 	img {
-		width: 100%;
+		width: 200%;
 		max-width: 400px;
 	}
 

@@ -1,63 +1,61 @@
 const { model, Schema } = require("mongoose");
 
 const userSchema = new Schema({
-  userName: String,
-  userNickname: String,
+  name: String,
+  userCode: String,
+  nickname: String,
   region: String,
   email: String,
   password: String,
-  birthday: String,
-  //TODO: relacio 1-N
-  favorite: [],
+  birthday: Date,
+  favorites: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "game",
+    },
+  ],
   gamesOwned: [
     {
+      game: {
+        type: Schema.Types.ObjectId,
+        ref: "game",
+      },
       gameInfo: {
-        gameCode: {
-          type: String,
-          required: true,
-        },
+        gameCode: String,
         dateRegistered: {
           type: Date,
           default: Date.now,
         },
       },
-      gameAchievements: [
-        {
-          type: String,
-        },
-      ],
+      gameAchievements: [String],
     },
   ],
-  friends: [
+  friends: {
+    accepted: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+      },
+    ],
+    requests: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+      },
+    ],
+  },
+  shoppingCart: [
     {
-      friends: [],
-      reques: [],
+      type: Schema.Types.ObjectId,
+      ref: "game",
     },
   ],
-  points: Number,
+  points: { type: Number, default: 0 },
   profilePicture: {
     img: String,
     backgroundColor: String,
   },
-  shoppingCart: [],
 });
-
-// -userID
-//     - userName
-//     - birtday
-//     - userNickname
-//     - region
-//     - email
-//     - password
-//     - favorite
-//     - gamesOwned{gameInfo{date register, code }, game Achivements }
-// -friends
-//     - points
-//     - profile picture{ img, color }
-// -shoppingCart[]
-
-// relacion 1 N mongo db
-// RELACION N - M entre usarios en mongo db
 
 const User = model("user", userSchema);
 

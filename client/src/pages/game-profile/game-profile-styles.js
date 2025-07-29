@@ -1,55 +1,83 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
 
 const StyledPage = styled.div`
-	max-width: 800px;
-	margin: auto;
-	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+	align-self: stretch;
+	padding-inline: 20px;
+	color: ${COLORS.base.secondary};
+	font-size: 14px;
 `;
 
-const StyledTitle = styled.h1`
-	font-size: 2rem;
+const StyledTitleContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+`;
+
+const StyledTitle = styled.h2`
+	font-size: 20px;
 	margin-bottom: 1rem;
+	width: 280px;
+	font-weight: 600;
 `;
 
 const StyledImage = styled.img`
 	width: 100%;
-	border-radius: 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 4px;
 `;
 
-const StyledTags = styled.div`
+const StyledImagesDiv = styled.div`
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-bottom: 1rem;
-`;
-
-const StyledTag = styled.span`
-	background: #f3f4f6;
-	padding: 0.25rem 0.5rem;
-	border-radius: 0.25rem;
-	font-size: 0.75rem;
+	height: 78px;
+	justify-content: flex-end;
+	align-items: flex-start;
+	gap: 4px;
+	align-self: stretch;
 `;
 
 const StyledSection = styled.div`
 	margin-top: 1rem;
 `;
 
-const StyledLabel = styled.p`
-	font-weight: bold;
-	margin: 0.5rem 0 0.25rem;
+const StyledUl = styled.ul`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	align-self: stretch;
 `;
 
-const StyledText = styled.p`
-	margin: 0;
+const StyledLidiv = styled.div`
+	display: flex;
+	align-items: flex-start;
+	gap: 24px;
+	align-self: stretch;
+`;
+
+const StyledStrongLi = styled.strong`
+	width: 170px;
+	font-weight: 700;
+	color: ${COLORS.base.secondary};
+`;
+
+const StyledLi = styled.li`
+	width: 190px;
 `;
 
 export {
 	StyledPage,
-	StyledHeroBanner,
+	StyledImage,
+	StyledImagesDiv,
+	StyledTitleContainer,
 	StyledTitle,
-	StyledTag,
 	StyledSection,
-	StyledLabel,
-	StyledText
+	StyledUl,
+	StyledLidiv,
+	StyledStrongLi,
+	StyledLi
 };

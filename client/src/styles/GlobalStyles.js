@@ -25,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        font-family: sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
         margin: 0;
         background-color: ${COLORS.base.primary}
     }

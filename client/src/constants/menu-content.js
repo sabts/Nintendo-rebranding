@@ -4,6 +4,11 @@ export const MENU_CONTENT = [
 		icon: '/icons/games icon menu.svg',
 		items: [
 			{
+				label: 'All Games',
+				key: 'games',
+				url: '/games'
+			},
+			{
 				label: 'Switch 2 Games',
 				key: 'switch2',
 				url: '/link-to-switch2-game-filter'
