@@ -12,6 +12,7 @@ const StoreFilters = ({ applyFilters, onClose }) => {
   const [gameGender, setGameGender] = useState([]);
 
   const handleSubmit = () => {
+    console.log('holis :)')
     applyFilters({
       minPrice: priceRange,
       ageRating: age && age[0],
@@ -66,8 +67,8 @@ const StoreFilters = ({ applyFilters, onClose }) => {
         onChange={setGameGender}
       />
 
-      < StyledBoxSelection>
-        <PrimaryButton type="button" onClick={handleSubmit}>
+      <StyledBoxSelection>
+        <PrimaryButton type="button" action={handleSubmit}>
           Apply
         </PrimaryButton>
         <SecondaryButton type="button" onClick={onClose}>

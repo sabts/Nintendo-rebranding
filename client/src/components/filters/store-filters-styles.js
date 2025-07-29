@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import COLORS from '../../styles/colors';
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 20px;

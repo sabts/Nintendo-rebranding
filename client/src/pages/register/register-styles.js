@@ -23,6 +23,28 @@ const StyledButtonsContainer = styled.div`
 	display: flex;
 `;
 
+
+const StyledSubmitButton = styled.button`
+	display: flex;
+	width: 116px;
+	height: 40px;
+	padding: 13px 11.246px 12.035px 11.691px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	background-color: ${COLORS.base.tertiary};
+	border: none;
+	color: ${COLORS.base.primary};
+
+	&:hover {
+		background-color: ${COLORS.gradients.tertiary};
+	}
+
+	&:disabled {
+		background-color: ${COLORS.variants.tertiarySaturated};
+		cursor: not-allowed;
+	}
+`;
 /////////////////////////////
 //Proceso de Img de perfil //
 ////////////////////////////
@@ -91,5 +113,6 @@ export {
 	StyledProfileContainer,
 	StyledProfileImg,
 	StyledSelectionGrid,
-	StyledBoxSelection
+	StyledBoxSelection,
+	StyledSubmitButton
 };

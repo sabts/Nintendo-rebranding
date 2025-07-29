@@ -60,7 +60,7 @@ const GameStore = () => {
 									return (
 										<StyledTag key={`${filterCategory}-${value}`}>
 											{value}
-											<button
+											{/* <button
 												onClick={() =>
 													removeFilter(
 														filterCategory,
@@ -73,7 +73,7 @@ const GameStore = () => {
 													src='/icons/close  menu - icon.svg'
 													alt='remove tag'
 												/>
-											</button>
+											</button> */}
 										</StyledTag>
 									);
 								})

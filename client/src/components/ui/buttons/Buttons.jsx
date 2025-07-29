@@ -53,8 +53,8 @@ const FavoriteButton = ({ isCardPreview, gameId, initialFavoriteState }) => {
 							? '/icons/favorite true - icon.svg'
 							: '/icons/favorite false - icon.svg'
 						: isFavorite
-						? '/icons/favorite true - icon.svg'
-						: '/icons/empty-favorite-star-isnotpreview.svg'
+							? '/icons/favorite true - icon.svg'
+							: '/icons/empty-favorite-star-isnotpreview.svg'
 				}
 				alt='Favorite icon'
 			/>

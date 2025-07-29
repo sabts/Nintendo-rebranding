@@ -9,9 +9,10 @@ import Form from "../../components/register-process/Form";
 import ProfilePicture from "../../components/register-process/ProfilePicture";
 import { useNavigate } from "react-router-dom";
 import COLORS from "../../styles/colors";
+import { StyledSubmitButton } from "./register-styles";
 
 const Register = () => {
-  const { register, handleSubmit, formState: { errors },setValue } = useForm();
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
   const [selectedCharacter, setSelectedCharacter] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [step, setStep] = useState(1);
@@ -30,16 +31,16 @@ const Register = () => {
 
     const completeData = {
       ...data,
-      profilePicture, 
+      profilePicture,
     };
 
-    const response = await registerUser(completeData); 
+    const response = await registerUser(completeData);
     console.log(completeData);
 
     if (response && response.data) {
       localStorage.setItem('user', JSON.stringify(response.data));
-      navigate('/profile');
     }
+    navigate('/profile');
     return response.data;
   };
 
@@ -52,22 +53,22 @@ const Register = () => {
     <>
       <HeaderProcess />
       <StyledMainContainer>
-      <form onSubmit={handleFinalSubmit}>
+        <form onSubmit={handleFinalSubmit}>
           {step === 1 && (
-          <Birthday register={register} />
-          )} 
+            <Birthday register={register} />
+          )}
 
           {step === 2 && (
-          <Form register={register} />
-          )} 
+            <Form register={register} />
+          )}
           {step === 3 && (
-          <ProfilePicture
-            selectedCharacter={selectedCharacter}
-            setSelectedCharacter={setSelectedCharacter}
-            selectedColor={selectedColor}
-            setSelectedColor={setSelectedColor}
-            setValue={setValue} 
-          />)}
+            <ProfilePicture
+              selectedCharacter={selectedCharacter}
+              setSelectedCharacter={setSelectedCharacter}
+              selectedColor={selectedColor}
+              setSelectedColor={setSelectedColor}
+              setValue={setValue}
+            />)}
           <StyledButtonContainer>
             {step > 1 && (
               <SecondaryButton action={prevStep}>Back</SecondaryButton>
@@ -75,9 +76,9 @@ const Register = () => {
             {step < 3 ? (
               <PrimaryButton action={nextStep}>Continue</PrimaryButton>
             ) : (
-              <button type="submit">Finish</button>
-            )} 
-           </StyledButtonContainer>
+              <StyledSubmitButton type="submit">Finish</StyledSubmitButton>
+            )}
+          </StyledButtonContainer>
         </form>
       </StyledMainContainer >
     </>
