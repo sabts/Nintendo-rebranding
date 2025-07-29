@@ -10,8 +10,10 @@ import ProfilePicture from "../../components/register-process/ProfilePicture";
 import { useNavigate } from "react-router-dom";
 import COLORS from "../../styles/colors";
 import { StyledSubmitButton } from "./register-styles";
+import { useUserContext } from "../../lib/providers/user.providers";
 
 const Register = () => {
+  const { setUser } = useUserContext();
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
   const [selectedCharacter, setSelectedCharacter] = useState();
   const [selectedColor, setSelectedColor] = useState();
@@ -36,11 +38,14 @@ const Register = () => {
 
     const response = await registerUser(completeData);
     console.log(completeData);
+    console.log(response)
 
+    setUser(response)
     if (response && response.data) {
       localStorage.setItem('user', JSON.stringify(response.data));
     }
-    navigate('/profile');
+    navigate('/');
+    // el objetivo con el navigate es que cuando vaya a la home ya este el usario concectado
     return response.data;
   };
 

@@ -10,6 +10,7 @@ const GamePurchaseOptions = ({ game }) => {
   const [showOptions, setShowOptions] = useState(false);
 
   const { user } = useUserContext();
+
   const toggle = (current, value) => (current === value ? "" : value);
 
   //console.log(game._id)
@@ -79,7 +80,7 @@ const handleBuy = async (hardware, format, game, userId) => {
     const price = format === "Digital" ? game.price.digital : game.price.physical;
 
     const gameData = {
-      gameId: game._id, 
+      gameId: game._id,
       name: game.name,
       thumbnail: game.thumbnail,
       hardware,
@@ -91,5 +92,7 @@ const handleBuy = async (hardware, format, game, userId) => {
     console.log("Juego agregado al carrito:", result);
   }
 };
+
+// deberia salir un advertecnia que no puedes agegar cosas a al carrito si no estas logeado... o que lo puedas meter igual pero no deje comprarlo....
 
 export default GamePurchaseOptions

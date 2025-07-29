@@ -62,4 +62,8 @@ const FavoriteButton = ({ isCardPreview, gameId, initialFavoriteState }) => {
 	);
 };
 
+//problemas en favoritos: no cambia el estado cuando lo quito de favoritos (tal vez deberia crear otro de patch o simplificar la controllador que solo guarde los que tenga el estado true)
+
+// en el controlador de favoritos controlar estado del true o false y que simplemnte cambie que lo guarde o lo quite del array
+
 export { PrimaryButton, SecondaryButton, TertiaryButton, FavoriteButton };

@@ -105,14 +105,15 @@ const Profile = () => {
 					title='Favorites'
 				>
 					<StyledGrid>
-						{favoriteGames.map(game => (
-							<GamePreview
-								key={game.id}
-								name={game.name}
-								slug={game.slug}
-								thumbnail={game.thumbnail}
-							/>
-						))}
+						{Array.isArray(favoriteGames) &&
+							favoriteGames.map(game => (
+								<GamePreview
+									key={game.id}
+									name={game.name}
+									slug={game.slug}
+									thumbnail={game.thumbnail}
+								/>
+							))}
 					</StyledGrid>
 				</ProfileSections>
 

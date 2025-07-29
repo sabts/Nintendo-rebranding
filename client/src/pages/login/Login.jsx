@@ -21,7 +21,7 @@ const Login = () => {
 		try {
 			const response = await login({ email, password });
 			setUser(response)
-					console.log('Login successful:', response);
+			//console.log('Login successful:', response);
 			navigate('/profile');
 		} catch (error) {
 			setError(error.response?.data?.message || 'Login failed');
